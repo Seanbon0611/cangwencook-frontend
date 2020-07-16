@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+/config/secrets/*
+/config/database.yml
+/config/credentials.yml.enc
