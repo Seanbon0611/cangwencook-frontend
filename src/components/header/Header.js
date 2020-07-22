@@ -49,6 +49,8 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut, hidden }) =>
             <NavLink className="option" onClick={logOut} to="/">
               SIGNOUT
             </NavLink>
+            <CartIcon />
+            {hidden ? null : <CartDropdown />}
             </div>
             </div>
             );

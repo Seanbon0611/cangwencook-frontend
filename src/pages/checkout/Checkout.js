@@ -2,7 +2,8 @@ import React from "react";
 
 const Checkout = () => (
   <div>
-    <h1>Checkout Page</h1>
+    <h3>Checkout Page</h3>
+    <p>Items go here</p>
   </div>
 );
 export default Checkout;

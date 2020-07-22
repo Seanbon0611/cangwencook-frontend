@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from '@material-ui/core'
 import FormInput from "../../components/form-input/FormInput";
 import "./sign-up.styles.scss";
 import api from "../../services/api";
@@ -85,72 +86,72 @@ const SignUp = ({ setSuccess }) => {
         <div>
           <div className="form-container">
             <FormInput
-              inputField
+              className='input-field'
               type="text"
-              label="First Name:"
+              label="First Name"
               name="firstName"
               required
               value={firstName}
               onChange={onChange}
             />
             <FormInput
-              inputField
+              className='input-field'
               type="text"
-              label="Last Name:"
+              label="Last Name"
               required
               name="lastName"
               value={lastName}
               onChange={onChange}
             />
             <FormInput
-              inputField
+              className='input-field'
               type="text"
-              label="Email:"
+              label="Email"
               required
               name="email"
               value={email}
               onChange={onChange}
             />
             <FormInput
-              inputField
+              className='input-field'
               type="password"
               required
-              label="Password:"
+              label="Password"
               name="password"
               value={password}
               onChange={onChange}
             />
             <FormInput
-              inputField
+              className='input-field'
               type="password"
               required
-              label="Confirm Password:"
+              label="Confirm Password"
               name="passwordConfirmation"
               value={passwordConfirmation}
               onChange={onChange}
             />
             <div>
               <FormInput
-                inputField
+                className='input-field'
                 type="text"
                 required
-                label="Phone Number:"
+                label="Phone Number"
                 name="phoneNumber"
                 value={phoneNumber}
                 onChange={onChange}
               />
             </div>
             <FormInput
-              inputField
+              className='input-field'
               type="text"
               required
-              label="Shipping Address1:"
+              label="Shipping Address"
               name="address1"
               value={address1}
               onChange={onChange}
             />
             <FormInput
-              inputField
+              className='input-field'
               type="text"
               label="Shipping Address2"
               name="address2"
@@ -158,25 +159,25 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
-              inputField
+              className='input-field'
               type="text"
               required
-              label="City:"
+              label="City"
               name="city"
               value={city}
               onChange={onChange}
             />
             <FormInput
-              inputField
+              className='input-field'
               type="text"
               required
-              label="State:"
+              label="State"
               name="state"
               value={state}
               onChange={onChange}
             />
             <FormInput
-              inputField
+              className='input-field'
               type="text"
               required
               label="Zipcode:"

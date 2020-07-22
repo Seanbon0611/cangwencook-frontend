@@ -44,7 +44,7 @@ const Signin = ({ afterLogin, loginError }) => {
           type="text"
           value={email}
           inputField
-          label="Email:"
+          label="Email"
           name="email"
           onChange={onChange}
         />
@@ -52,7 +52,7 @@ const Signin = ({ afterLogin, loginError }) => {
           type="password"
           inputField
           value={password}
-          label="Password:"
+          label="Password"
           name="password"
           onChange={onChange}
         />

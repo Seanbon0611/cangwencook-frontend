@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Typography } from '@material-ui/core'
 import FormInput from '../../components/form-input/FormInput'
 import './single-product-page.styles.scss'
 
@@ -6,10 +7,10 @@ const SingleProductPage = ({ item }) => {
   return (
     <div className='single-product-container'>
       <div className='product-title'>
-      <h4>{item.name}</h4>
+      <Typography variant="h4">{item.name}</Typography>
       </div>
       <div>
-        <h6>{item.price}</h6>
+      <Typography variant="h5">{item.price}</Typography>
         </div>
         <div className='product-details'>
         <img src={item.image} alt="" />
@@ -28,11 +29,11 @@ const SingleProductPage = ({ item }) => {
         <div className="quantity">
         <label style={{fontSize: "15px", color: 'black'}}>Quantity:</label>
         <div className="number-field">
-        <FormInput type='number'inputField />
+        <FormInput type='number' />
         </div>
         </div>
         </div>
-        <input type='submit' value='Add To Cart'/>
+        <Button type='submit' variant='contained' color="primary">ADD TO CART</Button>
         </form>
       </div>
     </div>
