@@ -9,3 +9,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.space {
+  padding: 60px;
+}

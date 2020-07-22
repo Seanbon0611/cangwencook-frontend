@@ -1,9 +1,16 @@
 import React from "react";
+import Product from '../../components/product/Product'
+import './shop-styles.scss'
 
-const ShopPage = () => {
+
+const ShopPage = ({ products }) => {
   return (
     <div>
-      <h1>ShopPage</h1>
+      <div className='collections-container'>
+      {products.map(product => {
+        return <Product key={product.id} product={product} />
+      })}
+      </div>
     </div>
   );
 };
