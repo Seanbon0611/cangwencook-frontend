@@ -18,7 +18,7 @@ useEffect(() => {
 }, []);
   return (
     <div>
-      <h1>Recipes</h1>
+      <h3>Recipes</h3>
       <div className="videos-container">
         {videos.map((video) => <div>
           {loading ? "Loading..." : <VideoCard key={video.snippet.title} video={video} />}

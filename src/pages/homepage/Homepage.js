@@ -19,7 +19,7 @@ useEffect(() => {
 return (
   
   <div className="homepage">
-    <h1>Featured Video:</h1>
+    <h3>Featured Video:</h3>
     {loading ? "Loading..." : <VideoCard video={videos[0]}/>}
   </div>
 )};

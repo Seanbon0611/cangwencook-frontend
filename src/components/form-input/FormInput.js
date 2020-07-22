@@ -1,9 +1,10 @@
 import React from "react";
+import './form-input.styles.scss'
 
-const FormInput = ({ label, ...otherProps }) => (
-  <div>
+const FormInput = ({ inputField, label, ...otherProps }) => (
+  <div className={inputField ? 'input-field' : ""}>
     {label ? <label>{label}</label> : null}
-    <input className="" {...otherProps} />
+    <input {...otherProps} />
   </div>
 );
 

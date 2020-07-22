@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import MainContainer from "./containers/main-container/MainContainer";
-import { withRouter } from 'react-router'
+import { withRouter } from "react-router";
 import api from "./services/api";
 import "./App.css";
 
@@ -17,7 +17,7 @@ const App = (props) => {
       .autoLogin()
       .then((res) => res.json())
       .then((status) => checkLoggedIn(status))
-      .catch(err => console.log("error:", err))
+      .catch((err) => console.log("error:", err));
   }, []);
 
   const checkLoggedIn = (user) => {
@@ -40,23 +40,21 @@ const App = (props) => {
         "Content-Type": "application/json",
       },
     };
-    api.auth.logOut(config)
-    .then(res => res.json())
+    api.auth.logOut(config).then((res) => res.json());
 
     setLoggedIn(false);
     setIsAdmin(false);
     setFirstName(null);
-    setLoginError("Your session has timed out.")
+    setLoginError("Your session has timed out.");
     return () => props.history.push("/signin");
   };
 
   const afterLogin = (user) => {
-    checkLoggedIn(user)
+    checkLoggedIn(user);
     if (user.loggedIn) {
-      props.history.push('/')
+      props.history.push("/");
     }
-  }
-
+  };
 
   return (
     <div>

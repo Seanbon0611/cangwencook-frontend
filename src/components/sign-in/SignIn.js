@@ -36,23 +36,27 @@ const Signin = ({ afterLogin, loginError }) => {
     api.auth.login(config).then(user => afterLogin(user)).then(clearState)
   };
   return (
-    <div>
+    <div className='input-field'>
       <h1>Sign-in</h1>
       <form onSubmit={handleSubmit}>
+        <div>
         <FormInput
           type="text"
           value={email}
+          inputField
           label="Email:"
           name="email"
           onChange={onChange}
         />
         <FormInput
           type="password"
+          inputField
           value={password}
           label="Password:"
           name="password"
           onChange={onChange}
         />
+        </div>
         <input type="submit" />
       </form>
     </div>

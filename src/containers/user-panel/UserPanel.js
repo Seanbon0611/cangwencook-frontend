@@ -10,7 +10,7 @@ import SingleProductPage from "../../pages/single-product-page/SingleProductPage
 const UserPanel = ({ firstName, products }) => {
   return (
     <div>
-    <h1>{`Hello ${firstName}(User)`}</h1>
+    <h3>{`Hello ${firstName}(User)`}</h3>
       <Switch>
         <Route exact path="/" render={() => <HomePage />} />
         <Route path="/videos" render={() => <VideosPage />} />
