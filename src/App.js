@@ -16,7 +16,10 @@ const App = (props) => {
     api.auth
       .autoLogin()
       .then((res) => res.json())
-      .then((status) => checkLoggedIn(status))
+      .then((status) => {
+        console.log(status);
+        checkLoggedIn(status);
+      })
       .catch((err) => console.log("error:", err));
   }, []);
 

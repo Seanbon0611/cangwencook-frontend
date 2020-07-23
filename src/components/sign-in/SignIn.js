@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import FormInput from "../form-input/FormInput";
+import { Button } from "@material-ui/core";
 import api from "../../services/api";
+import "./sign-in.styles.scss";
 
 const initialState = {
   email: "",
@@ -33,31 +35,36 @@ const Signin = ({ afterLogin, loginError }) => {
         password: password,
       }),
     };
-    api.auth.login(config).then(user => afterLogin(user)).then(clearState)
+    api.auth
+      .login(config)
+      .then((user) => afterLogin(user))
+      .then(clearState);
   };
   return (
-    <div className='input-field'>
+    <div>
       <h1>Sign-in</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-        <FormInput
-          type="text"
-          value={email}
-          inputField
-          label="Email"
-          name="email"
-          onChange={onChange}
-        />
-        <FormInput
-          type="password"
-          inputField
-          value={password}
-          label="Password"
-          name="password"
-          onChange={onChange}
-        />
+        <div className="sign-in-inputs">
+          <FormInput
+            type="text"
+            value={email}
+            inputField
+            label="Email"
+            name="email"
+            onChange={onChange}
+          />
+          <FormInput
+            type="password"
+            inputField
+            value={password}
+            label="Password"
+            name="password"
+            onChange={onChange}
+          />
         </div>
-        <input type="submit" />
+        <Button type="submit" variant="contained" color="primary">
+          Submit
+        </Button>
       </form>
     </div>
   );

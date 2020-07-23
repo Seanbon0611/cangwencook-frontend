@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button } from '@material-ui/core'
+import { Button, Select, MenuItem } from "@material-ui/core";
 import FormInput from "../../components/form-input/FormInput";
 import "./sign-up.styles.scss";
+import states from "../../states";
 import api from "../../services/api";
 
 const initialState = {
@@ -86,7 +87,6 @@ const SignUp = ({ setSuccess }) => {
         <div>
           <div className="form-container">
             <FormInput
-              className='input-field'
               type="text"
               label="First Name"
               name="firstName"
@@ -95,7 +95,6 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
-              className='input-field'
               type="text"
               label="Last Name"
               required
@@ -104,7 +103,6 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
-              className='input-field'
               type="text"
               label="Email"
               required
@@ -113,7 +111,6 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
-              className='input-field'
               type="password"
               required
               label="Password"
@@ -122,7 +119,6 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
-              className='input-field'
               type="password"
               required
               label="Confirm Password"
@@ -132,7 +128,6 @@ const SignUp = ({ setSuccess }) => {
             />
             <div>
               <FormInput
-                className='input-field'
                 type="text"
                 required
                 label="Phone Number"
@@ -142,7 +137,6 @@ const SignUp = ({ setSuccess }) => {
               />
             </div>
             <FormInput
-              className='input-field'
               type="text"
               required
               label="Shipping Address"
@@ -151,7 +145,6 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
-              className='input-field'
               type="text"
               label="Shipping Address2"
               name="address2"
@@ -159,7 +152,6 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
-              className='input-field'
               type="text"
               required
               label="City"
@@ -167,17 +159,19 @@ const SignUp = ({ setSuccess }) => {
               value={city}
               onChange={onChange}
             />
-            <FormInput
-              className='input-field'
-              type="text"
-              required
+            <Select
               label="State"
+              onChange={onChange}
               name="state"
               value={state}
-              onChange={onChange}
-            />
+            >
+              {Object.entries(states).map(([abb, name]) => (
+                <MenuItem key={abb} value={abb}>
+                  {abb}
+                </MenuItem>
+              ))}
+            </Select>
             <FormInput
-              className='input-field'
               type="text"
               required
               label="Zipcode:"
@@ -187,7 +181,9 @@ const SignUp = ({ setSuccess }) => {
             />
           </div>
         </div>
-        <input type="submit" />
+        <Button type="submit" variant="contained" color="primary">
+          Submit
+        </Button>
       </form>
     </div>
   );

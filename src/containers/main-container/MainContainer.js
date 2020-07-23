@@ -8,19 +8,25 @@ import AboutPage from "../../pages/about/About";
 import SigninAndSignup from "../../pages/sign-in-and-sign-up/SigninAndSignup";
 import UserPanel from "../user-panel/UserPanel";
 import AdminPanel from "../admin-panel/AdminPanel";
-import SingleProductPage from '../../pages/single-product-page/SingleProductPage'
+import SingleProductPage from "../../pages/single-product-page/SingleProductPage";
 import api from "../../services/api";
 
-const MainContainer = ({ loggedIn, loginError, isAdmin, firstName, afterLogin }) => {
+const MainContainer = ({
+  loggedIn,
+  loginError,
+  isAdmin,
+  firstName,
+  afterLogin,
+}) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     api.product
       .getProducts()
       .then((res) => res.json())
       .then((json) => {
-        setProducts(json.products)
-      })
-  },[]);
+        setProducts(json.products);
+      });
+  }, []);
 
   if (loggedIn) {
     if (isAdmin) {
@@ -32,7 +38,7 @@ const MainContainer = ({ loggedIn, loginError, isAdmin, firstName, afterLogin })
     } else {
       return (
         <div>
-          <UserPanel firstName={firstName} products={products}/>
+          <UserPanel firstName={firstName} products={products} />
         </div>
       );
     }
@@ -42,14 +48,24 @@ const MainContainer = ({ loggedIn, loginError, isAdmin, firstName, afterLogin })
         <Switch>
           <Route exact path="/" render={() => <HomePage />} />
           <Route path="/videos" render={() => <VideosPage />} />
-          <Route path="/shop/:id" render={(routerProps) => {
-            const itemId = routerProps.match.params.id
-            const item = products.find(product => product.id.toString() === itemId)
-            return item ? <SingleProductPage item={item} /> : "Loading..."
-          }} />
+          <Route
+            path="/shop/:id"
+            render={(routerProps) => {
+              const itemId = routerProps.match.params.id;
+              const item = products.find(
+                (product) => product.id.toString() === itemId
+              );
+              return item ? <SingleProductPage item={item} /> : "Loading...";
+            }}
+          />
           <Route path="/shop" render={() => <ShopPage products={products} />} />
           <Route path="/checkout" component={CheckoutPage} />
-          <Route path="/signin" render={() => <SigninAndSignup afterLogin={afterLogin} error={loginError}/>} />
+          <Route
+            path="/signin"
+            render={() => (
+              <SigninAndSignup afterLogin={afterLogin} error={loginError} />
+            )}
+          />
           <Route path="/about" component={AboutPage} />
         </Switch>
       </div>
