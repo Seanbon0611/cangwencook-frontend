@@ -35,10 +35,10 @@ const Signin = ({ afterLogin, loginError }) => {
         password: password,
       }),
     };
-    api.auth
-      .login(config)
-      .then((user) => afterLogin(user))
-      .then(clearState);
+    api.auth.login(config).then((user) => {
+      afterLogin(user);
+      clearState();
+    });
   };
   return (
     <div>

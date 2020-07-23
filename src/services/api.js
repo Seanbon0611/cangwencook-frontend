@@ -2,8 +2,7 @@ const API_ROOT = "http://localhost:3000";
 
 const login = async (config) => {
   const response = await fetch(`${API_ROOT}/login`, config);
-  const json = await response.json();
-  return json;
+  return response.json();
 };
 
 const signUp = async (config) => {
