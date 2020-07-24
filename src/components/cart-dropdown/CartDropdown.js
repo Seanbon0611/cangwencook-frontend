@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleCartHidden } from "../../redux/cart/CartAction";
 import { Button, Modal, Backdrop, Fade, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import CartItem from "../cart-item/CartItem";
 import "./cart-dropdown.styles.scss";
 
 const getModalStyle = () => {
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const CartDropdown = () => {
+  const cart = useSelector((state) => state.cart.cartItems);
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(true);
@@ -57,6 +59,9 @@ const CartDropdown = () => {
         <Fade in={open}>
           <div className={classes.paper}>
             <Typography variant="h5">Shopping Cart</Typography>
+            {cart.map((item) => {
+              return <CartItem key={item.id} item={item} />;
+            })}
             <Typography variant="body1">Your Cart is Empty!</Typography>
             <Link to="/checkout">
               <Button
