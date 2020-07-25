@@ -3,6 +3,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import MainContainer from "./containers/main-container/MainContainer";
 import { withRouter } from "react-router";
+import { useFetch } from "./hooks/use-fetch/useFetch";
 import api from "./services/api";
 import "./App.css";
 
@@ -12,16 +13,7 @@ const App = (props) => {
   const [loginError, setLoginError] = useState(null);
   const [firstName, setFirstName] = useState(null);
 
-  useEffect(() => {
-    api.auth
-      .autoLogin()
-      .then((res) => res.json())
-      .then((status) => {
-        console.log(status);
-        checkLoggedIn(status);
-      })
-      .catch((err) => console.log("error:", err));
-  }, []);
+  useFetch("http://localhost:3000/autologin");
 
   const checkLoggedIn = (user) => {
     if (user.expires) {

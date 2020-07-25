@@ -1,9 +1,13 @@
-.cart-items {
-  height: 320px;
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  .checkout-btn {
-    margin-top: auto;
-  }
+.checkout-btn {
+  position: relative;
+  margin-top:5%;
+}
+.subtotal {
+  position: relative;
+  margin-top:40%;
+}
+.cart-empty {
+  margin: 0 auto;
+  font-size: 18px;
+  padding:100px 0px;
 }

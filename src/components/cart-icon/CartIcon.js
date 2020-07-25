@@ -7,9 +7,8 @@ import "./cart-icon.styles.scss";
 const CartIcon = () => {
   const dispatch = useDispatch();
   return (
-    <div className="cart-icon" onClick={() => dispatch(toggleCartHidden())}>
-      <ShoppingIcon className="shopping-icon" />
-      <span className="item-count">0</span>
+    <div onClick={() => dispatch(toggleCartHidden())}>
+      <span className="cart">CART</span>
     </div>
   );
 };

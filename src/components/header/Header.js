@@ -76,7 +76,7 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
             SIGN-IN
           </NavLink>
 
-          <CartIcon />
+          <CartIcon className='option'/>
           {hidden ? null : <CartDropdown />}
         </div>
       </div>

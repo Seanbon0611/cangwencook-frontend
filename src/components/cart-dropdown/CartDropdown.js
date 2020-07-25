@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCartHidden } from "../../redux/cart/CartAction";
-import { Button, Modal, Backdrop, Fade, Typography } from "@material-ui/core";
+import {
+  Button,
+  Modal,
+  Backdrop,
+  Fade,
+  Typography,
+  Divider,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CartItem from "../cart-item/CartItem";
 import "./cart-dropdown.styles.scss";
@@ -25,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
     width: 350,
-    height: 500,
+    overflow: "scroll",
+    height: 350,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
@@ -59,24 +67,38 @@ const CartDropdown = () => {
         <Fade in={open}>
           <div className={classes.paper}>
             <Typography variant="h5">Shopping Cart</Typography>
-            {cart.map((item) => {
-              return <CartItem key={item.id} item={item} />;
-            })}
-            <Typography variant="body1">Your Cart is Empty!</Typography>
-            <Link to="/checkout">
-              <Button
-                className="checkout-btn"
-                variant="contained"
-                color="secondary"
-                onClick={handleClose}
-              >
-                GO TO CHECKOUT
-              </Button>
-            </Link>
+            <Divider />
+            {cart.length ? (
+              [
+                cart.map((item) => <CartItem key={item.id} item={item} />),
+                <div className="subtotal">
+                  <Typography className="subtotal" variant="body1">
+                    Subtotal: $
+                    {cart.reduce((acc, item) => acc + item.quantity * item.price,
+                      0
+                    )}
+                  </Typography>
+                </div>,
+              ]
+            ) : (
+              <Typography className="cart-empty" variant="body1">
+                Your Cart is Empty!
+              </Typography>
+            )}
+            <div class="checkout-btn">
+              <Link to="/checkout">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={handleClose}
+                >
+                  GO TO CHECKOUT
+                </Button>
+              </Link>
+            </div>
           </div>
         </Fade>
       </Modal>
-      <div className="cart-items"></div>
     </div>
   );
 };

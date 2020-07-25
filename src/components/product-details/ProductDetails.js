@@ -12,19 +12,19 @@ const ProductDetails = ({ item }) => {
   const dispatch = useDispatch();
   return (
     <div>
+    <Select className="size-dropdown">
+            <MenuItem>XS</MenuItem>
+            <MenuItem>S</MenuItem>
+            <MenuItem>M</MenuItem>
+            <MenuItem>L</MenuItem>
+            <MenuItem>XL</MenuItem>
+            <MenuItem>2XL</MenuItem>
+          </Select>
       <form onSubmit={handleSubmit}>
         <div className="add-to-cart-form">
           <div>
             <Typography variant="h5">{item.price}</Typography>
           </div>
-          <select className="size-dropdown">
-            <option>XS</option>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            <option>XL</option>
-            <option>2XL</option>
-          </select>
           <div className="quantity">
             <label style={{ fontSize: "15px", color: "black" }}>
               Quantity:

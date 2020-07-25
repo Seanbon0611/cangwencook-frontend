@@ -11,7 +11,6 @@ const Homepage = () => {
       .getVideos()
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.items);
         setVideos(data.items);
         setLoading(false);
       });
