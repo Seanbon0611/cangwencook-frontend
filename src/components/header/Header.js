@@ -66,7 +66,7 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
           <NavLink className="option" to="/about">
             ABOUT
           </NavLink>
-          <NavLink className="option" to="/videos">
+          <NavLink className="option" to="/recipes">
             RECIPES
           </NavLink>
           <NavLink className="option" to="/shop">
@@ -75,7 +75,9 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
           <NavLink className="option" to="/signin">
             SIGN-IN
           </NavLink>
-
+          <NavLink className="option" to="/signup">
+          SIGN-UP
+        </NavLink>
           <CartIcon className='option'/>
           {hidden ? null : <CartDropdown />}
         </div>

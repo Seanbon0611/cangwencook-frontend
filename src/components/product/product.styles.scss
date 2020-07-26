@@ -24,16 +24,4 @@
       width: 10%;
     }
   }
-  .add-to-cart {
-    position: absolute;
-    top: 220px;
-    right: 105px;
-    width: 30%;
-    display: none;
-  }
-  &:hover {
-    .add-to-cart {
-      display: flex;
-    }
-  }
 }

@@ -7,7 +7,7 @@ const ShopPage = ({ products }) => {
     <div>
       <div className="collections-container">
         {products.map((product) => {
-          return <Product key={product.id} product={product} />;
+          return <Product key={product.attributes.id} product={product.attributes} />;
         })}
       </div>
     </div>

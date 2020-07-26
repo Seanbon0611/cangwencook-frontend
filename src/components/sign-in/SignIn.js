@@ -62,9 +62,9 @@ const Signin = ({ afterLogin, loginError }) => {
             onChange={onChange}
           />
         </div>
-        <Button type="submit" variant="contained" color="primary">
+        <button type="submit" className="primary">
           Submit
-        </Button>
+        </button>
       </form>
     </div>
   );

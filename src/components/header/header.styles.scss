@@ -1,9 +1,10 @@
 .header {
-  height: 85px;
+  border-bottom: 1px solid black;
+  height: 150px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
   z-index: 9999999;
   .logo-container {
     display: flex;

@@ -5,9 +5,9 @@ import "./single-product-page.styles.scss";
 
 const SingleProductPage = ({ item }) => {
   return (
-    <div>
-      <ProductShowcase item={item} />
-      <ProductDetails item={item} />
+    <div className='single-product-container'>
+    <ProductShowcase item={item.attributes} />
+    <ProductDetails item={item.attributes} />
     </div>
   );
 };

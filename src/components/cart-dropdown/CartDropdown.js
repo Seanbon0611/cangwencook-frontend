@@ -41,6 +41,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 const CartDropdown = () => {
   const cart = useSelector((state) => state.cart.cartItems);
+  const subtotal = cart.reduce(
+    (accumulatedQuantity, cartItem) =>
+      accumulatedQuantity + cartItem.quantity * cartItem.price,
+    0
+  )
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(true);
@@ -66,17 +71,21 @@ const CartDropdown = () => {
       >
         <Fade in={open}>
           <div className={classes.paper}>
+            <div className="shopping-header">
             <Typography variant="h5">Shopping Cart</Typography>
+            </div>
             <Divider />
             {cart.length ? (
               [
-                cart.map((item) => <CartItem key={item.id} item={item} />),
+                cart.map((item) => {
+                  return <div className="cart-preview">
+                  <CartItem key={item.id} item={item} />
+                  </div>
+                }),
                 <div className="subtotal">
                   <Typography className="subtotal" variant="body1">
                     Subtotal: $
-                    {cart.reduce((acc, item) => acc + item.quantity * item.price,
-                      0
-                    )}
+                    {subtotal.toFixed(2)}
                   </Typography>
                 </div>,
               ]
@@ -85,7 +94,7 @@ const CartDropdown = () => {
                 Your Cart is Empty!
               </Typography>
             )}
-            <div class="checkout-btn">
+            <div className="checkout-btn">
               <Link to="/checkout">
                 <Button
                   variant="contained"

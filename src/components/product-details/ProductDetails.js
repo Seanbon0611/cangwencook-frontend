@@ -12,14 +12,8 @@ const ProductDetails = ({ item }) => {
   const dispatch = useDispatch();
   return (
     <div>
-    <Select className="size-dropdown">
-            <MenuItem>XS</MenuItem>
-            <MenuItem>S</MenuItem>
-            <MenuItem>M</MenuItem>
-            <MenuItem>L</MenuItem>
-            <MenuItem>XL</MenuItem>
-            <MenuItem>2XL</MenuItem>
-          </Select>
+    <label>s</label>
+    <input type='radio' name='size' value='s' />
       <form onSubmit={handleSubmit}>
         <div className="add-to-cart-form">
           <div>
