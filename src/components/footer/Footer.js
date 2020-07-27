@@ -27,6 +27,10 @@ const Footer = () => {
       <Typography>Subscribe via email</Typography>
       <Typography>Searchbar Here</Typography>
       <Typography>Follow Us</Typography>
+      <span>icon</span>
+      <span>icon</span>
+      <span>icon</span>
+      <span>icon</span>
       </div>
     </div>
   );

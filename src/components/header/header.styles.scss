@@ -20,11 +20,12 @@
   .nav-options {
     flex-direction: column;
     display: flex;
+    padding-bottom: 20px;
     align-items: center;
     justify-content: flex-end;
     .utilities {
       display: flex;
-      p {
+      a {
         padding-left: 10px;
       }
       align-items: center;

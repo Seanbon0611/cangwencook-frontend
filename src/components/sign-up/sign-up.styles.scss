@@ -10,5 +10,15 @@
     .sign-up-title {
       color: #4E4D68;
     }
+    .full-name {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .first-name {
+        padding-right: 10px;
+      }
+      .last-name {
+        padding-left: 10px;
+      }
+    }
   }
 }

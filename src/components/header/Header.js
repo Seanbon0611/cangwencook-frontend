@@ -5,10 +5,13 @@ import { useSelector } from "react-redux";
 import CustomButton from "../custom-button/CustomButton";
 import CartDropdown from "../cart-dropdown/CartDropdown";
 import CartIcon from "../cart-icon/CartIcon";
-import FormInput from '../form-input/FormInput'
+import FormInput from "../form-input/FormInput";
 import "./header.styles.scss";
 
 const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   const hidden = useSelector((state) => state.cart.hidden);
   if (loggedIn) {
     if (isAdmin) {
@@ -65,18 +68,26 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
           <img alt="logo" src={logo} className="logo" />
         </NavLink>
         <div className="nav-options">
-          <div className='utilities'>
-          <form>
-          <FormInput
-          type="search"
-          placeholder="Search"
-          name="search"
-        />
-        </form>
-        <p>icon</p>
-        <p>icon</p>
-        <p>icon</p>
-        <p>icon</p>
+          <div className="utilities">
+            <form onSubmit={handleSubmit}>
+              <FormInput type="search" placeholder="Search" name="search" />
+            </form>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
+            >
+              youtube
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="httas://www.instagram.com/cangwencook/"
+            >
+              insta
+            </a>
+            <a href=''>icon</a>
+            <a href=''>icon</a>
           </div>
           <div className="paths">
             <NavLink className="option" to="/about">

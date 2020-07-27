@@ -63,6 +63,8 @@ const SignUp = ({ setSuccess }) => {
             <h1 className="sign-up-title">Create Account</h1>
             <p>Already have an account? Click here to sign in.</p>
             <p>*Required</p>
+            <div className="full-name">
+            <div className="first-name">
             <FormInput
               asterisk
               type="text"
@@ -72,6 +74,8 @@ const SignUp = ({ setSuccess }) => {
               value={firstName}
               onChange={onChange}
             />
+            </div>
+            <div className="last-name">
             <FormInput
               asterisk
               type="text"
@@ -81,6 +85,8 @@ const SignUp = ({ setSuccess }) => {
               value={lastName}
               onChange={onChange}
             />
+            </div>
+            </div>
             <FormInput
               asterisk
               type="text"
