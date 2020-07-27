@@ -2,8 +2,10 @@ import React from "react";
 import logo from "../../assets/cgc-logo.png";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CustomButton from "../custom-button/CustomButton";
 import CartDropdown from "../cart-dropdown/CartDropdown";
 import CartIcon from "../cart-icon/CartIcon";
+import FormInput from '../form-input/FormInput'
 import "./header.styles.scss";
 
 const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
@@ -63,23 +65,36 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
           <img alt="logo" src={logo} className="logo" />
         </NavLink>
         <div className="nav-options">
-          <NavLink className="option" to="/about">
-            ABOUT
-          </NavLink>
-          <NavLink className="option" to="/recipes">
-            RECIPES
-          </NavLink>
-          <NavLink className="option" to="/shop">
-            SHOP
-          </NavLink>
-          <NavLink className="option" to="/signin">
-            SIGN-IN
-          </NavLink>
-          <NavLink className="option" to="/signup">
-          SIGN-UP
-        </NavLink>
-          <CartIcon className='option'/>
-          {hidden ? null : <CartDropdown />}
+          <div className='utilities'>
+          <form>
+          <FormInput
+          type="search"
+          placeholder="Search"
+          name="search"
+        />
+        </form>
+        <p>icon</p>
+        <p>icon</p>
+        <p>icon</p>
+        <p>icon</p>
+          </div>
+          <div className="paths">
+            <NavLink className="option" to="/about">
+              ABOUT
+            </NavLink>
+            <NavLink className="option" to="/recipes">
+              RECIPES
+            </NavLink>
+            <NavLink className="option" to="/shop">
+              SHOP
+            </NavLink>
+            <NavLink className="option" to="/signin">
+              SIGN-IN
+            </NavLink>
+            <NavLink className="option" to="/signup">
+              <CustomButton className="sign-up-btn">SIGN-UP</CustomButton>
+            </NavLink>
+          </div>
         </div>
       </div>
     );
@@ -87,3 +102,6 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
 };
 
 export default Header;
+
+// <CartIcon className="option" />
+// {hidden ? null : <CartDropdown />}

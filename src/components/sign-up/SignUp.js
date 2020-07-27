@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Button, Select, MenuItem } from "@material-ui/core";
+import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../../components/form-input/FormInput";
 import "./sign-up.styles.scss";
-import states from "../../states";
 import api from "../../services/api";
 
 const initialState = {
@@ -11,28 +10,10 @@ const initialState = {
   email: "",
   password: "",
   passwordConfirmation: "",
-  phoneNumber: "",
-  address1: "",
-  address2: "",
-  city: "",
-  state: "",
-  zipcode: "",
 };
 const SignUp = ({ setSuccess }) => {
   const [
-    {
-      firstName,
-      lastName,
-      email,
-      password,
-      passwordConfirmation,
-      address1,
-      address2,
-      city,
-      state,
-      zipcode,
-      phoneNumber,
-    },
+    { firstName, lastName, email, password, passwordConfirmation },
     setState,
   ] = useState(initialState);
   const [errors, setErrors] = useState([]);
@@ -61,12 +42,6 @@ const SignUp = ({ setSuccess }) => {
         email: email,
         password: password,
         passwordConfirmation: passwordConfirmation,
-        phoneNumber: phoneNumber,
-        address1: address1,
-        address2: address2,
-        city: city,
-        state: state,
-        zipcode: zipcode,
       }),
     };
     api.user.signUp(config).then((res) => {
@@ -79,14 +54,17 @@ const SignUp = ({ setSuccess }) => {
   };
   return (
     <div className="sign-up-container">
-      <h1>Sign-up</h1>
       <form onSubmit={handleSubmit}>
         {Object.entries(errors).map((err) => (
           <h4 className="error">{`Error: ${err[0]} ${err[1][0]}`}</h4>
         ))}
         <div>
           <div className="form-container">
+            <h1 className="sign-up-title">Create Account</h1>
+            <p>Already have an account? Click here to sign in.</p>
+            <p>*Required</p>
             <FormInput
+              asterisk
               type="text"
               label="First Name"
               name="firstName"
@@ -95,6 +73,7 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
+              asterisk
               type="text"
               label="Last Name"
               required
@@ -103,6 +82,7 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
+              asterisk
               type="text"
               label="Email"
               required
@@ -111,6 +91,7 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
+              asterisk
               type="password"
               required
               label="Password"
@@ -119,6 +100,7 @@ const SignUp = ({ setSuccess }) => {
               onChange={onChange}
             />
             <FormInput
+              asterisk
               type="password"
               required
               label="Confirm Password"
@@ -126,64 +108,15 @@ const SignUp = ({ setSuccess }) => {
               value={passwordConfirmation}
               onChange={onChange}
             />
-            <div>
-              <FormInput
-                type="text"
-                required
-                label="Phone Number"
-                name="phoneNumber"
-                value={phoneNumber}
-                onChange={onChange}
-              />
-            </div>
-            <FormInput
-              type="text"
-              required
-              label="Shipping Address"
-              name="address1"
-              value={address1}
-              onChange={onChange}
-            />
-            <FormInput
-              type="text"
-              label="Shipping Address2"
-              name="address2"
-              value={address2}
-              onChange={onChange}
-            />
-            <FormInput
-              type="text"
-              required
-              label="City"
-              name="city"
-              value={city}
-              onChange={onChange}
-            />
-            <Select
-              label="State"
-              onChange={onChange}
-              name="state"
-              value={state}
-            >
-              {Object.entries(states).map(([abb, name]) => (
-                <MenuItem key={abb} value={abb}>
-                  {abb}
-                </MenuItem>
-              ))}
-            </Select>
-            <FormInput
-              type="text"
-              required
-              label="Zipcode:"
-              name="zipcode"
-              value={zipcode}
-              onChange={onChange}
-            />
+            <CustomButton type="submit" color="primary">
+              Create Account
+            </CustomButton>
+            <p>Forgot your password? Click here to reset.</p>
+            <p>
+              By signing up you accept the Terms of Service and Privacy Policy.
+            </p>
           </div>
         </div>
-        <Button type="submit" variant="contained" color="primary">
-          Submit
-        </Button>
       </form>
     </div>
   );

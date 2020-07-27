@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormInput from "../form-input/FormInput";
-import { Button } from "@material-ui/core";
+import CustomButton from "../custom-button/CustomButton";
+import { Link } from 'react-router-dom'
 import api from "../../services/api";
 import "./sign-in.styles.scss";
 
@@ -42,10 +43,15 @@ const Signin = ({ afterLogin, loginError }) => {
   };
   return (
     <div>
-      <h1>Sign-in</h1>
       <form onSubmit={handleSubmit}>
         <div className="sign-in-inputs">
+          <h1 className="sign-in-title">Sign-in</h1>
+          <div className='to-signup'>
+          <span>Don’t have an account?</span><Link to='/signup' className='link-to'>Click here to sign up.</Link>
+          </div>
+          <p>*Required</p>
           <FormInput
+            asterisk
             type="text"
             value={email}
             inputField
@@ -54,6 +60,7 @@ const Signin = ({ afterLogin, loginError }) => {
             onChange={onChange}
           />
           <FormInput
+          asterisk
             type="password"
             inputField
             value={password}
@@ -61,10 +68,14 @@ const Signin = ({ afterLogin, loginError }) => {
             name="password"
             onChange={onChange}
           />
+          <CustomButton type="submit" className="ripple">
+            Submit
+          </CustomButton>
+          <p>Forgot your password? Click here to reset.</p>
+          <p>
+            By signing up you accept the Terms of Service and Privacy Policy.
+          </p>
         </div>
-        <button type="submit" className="primary">
-          Submit
-        </button>
       </form>
     </div>
   );

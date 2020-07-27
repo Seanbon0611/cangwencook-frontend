@@ -1,22 +1,17 @@
 import React from "react";
-import { FormControl, InputLabel, Input } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import "./form-input.styles.scss";
 
-const useStyles = makeStyles({
-  root: {
-    "padding-right": "10px",
-    "padding-top": "10px"
-  },
-});
 
-const FormInput = ({ inputField, label, ...otherProps }) => {
-  const classes = useStyles();
+const FormInput = ({ asterisk, label, ...otherProps }) => {
   return (
-    <FormControl className={classes.root}>
-      {label ? <InputLabel>{label}</InputLabel> : null}
-      <Input {...otherProps} />
-    </FormControl>
+    <div className="input-container">
+      {label ? (
+        <label className="form-input-label">
+          {asterisk ? `${label}*` : label}
+        </label>
+      ) : null}
+      <input className="form-input" {...otherProps} />
+    </div>
   );
 };
 

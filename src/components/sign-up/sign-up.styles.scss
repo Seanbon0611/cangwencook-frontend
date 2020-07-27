@@ -1,4 +1,14 @@
-.form-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.sign-up-container {
+  padding-top: 75px;
+  .form-container {
+    border: 1px solid black;
+    text-align: left;
+    padding: 25px 40px;
+    border-radius: 9px;
+    margin: 0 auto;
+    width: 510px;
+    .sign-up-title {
+      color: #4E4D68;
+    }
+  }
 }

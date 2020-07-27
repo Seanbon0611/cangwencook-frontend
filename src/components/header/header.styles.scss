@@ -17,22 +17,31 @@
       width: 100%;
     }
   }
-
   .nav-options {
-    width: 100%;
-    height: 100%;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 40px;
+    .utilities {
+      display: flex;
+      p {
+        padding-left: 10px;
+      }
+      align-items: center;
+    }
     .shopping-icon {
       width: 50px;
       height: 50px;
       padding: 10px 10px;
     }
     .option {
-      padding: 10px 15px;
+      padding: 10px 30px;
       cursor: pointer;
+    }
+    .sign-up-btn {
+      width: 104px;
+      height: 44px;
+      font-size: 90%;
     }
   }
 }

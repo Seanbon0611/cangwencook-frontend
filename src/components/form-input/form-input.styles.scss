@@ -1,0 +1,12 @@
+.input-container {
+  padding: 10px 0px;
+  flex-direction: column;
+  .form-input {
+    width: 407px;
+    font-size: 18px;
+    height: 44px;
+  }
+  .form-input-label {
+    display: flex;
+  }
+}
