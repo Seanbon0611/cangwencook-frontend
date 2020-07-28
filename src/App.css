@@ -9,10 +9,6 @@ body {
   text-align: center;
 }
 a {
-  text-decoration: none !important;
+  text-decoration: none;
   color: black;
-}
-
-.space {
-  padding: 60px;
 }

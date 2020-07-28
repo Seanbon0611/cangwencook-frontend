@@ -68,7 +68,6 @@ const App = (props) => {
         isAdmin={isAdmin}
         firstName={firstName}
       />
-      <div className="space"></div>
       <Footer />
     </div>
   );

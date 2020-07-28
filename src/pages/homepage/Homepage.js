@@ -22,7 +22,7 @@ const Homepage = ({ recipes }) => {
   return (
   <div className="homepage">
       <div className="image-container">
-        <img src="https://storage.cloud.google.com/can-gwen-cook-pics/landingpic.jpg" />
+        <img src="https://storage.cloud.google.com/can-gwen-cook-pics/the-new-banner.png" />
       </div>
       <h1 variant='h3'>Latest Recipes</h1>
       <div className="top-recipes">

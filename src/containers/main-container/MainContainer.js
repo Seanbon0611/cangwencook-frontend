@@ -5,8 +5,8 @@ import RecipesPage from "../../pages/recipes/Recipes";
 import ShopPage from "../../pages/shop/Shop";
 import CheckoutPage from "../../pages/checkout/Checkout";
 import AboutPage from "../../pages/about/About";
-import SignIn from "../../components/sign-in/SignIn";
-import SignUp from '../../components/sign-up/SignUp'
+import SignIn from "../../pages/sign-in/SignIn";
+import SignUp from '../../pages/sign-up/SignUp'
 import UserPanel from "../user-panel/UserPanel";
 import AdminPanel from "../admin-panel/AdminPanel";
 import SingleProductPage from "../../pages/single-product-page/SingleProductPage";

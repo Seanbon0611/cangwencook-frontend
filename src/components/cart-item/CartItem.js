@@ -1,9 +1,7 @@
 import React from "react";
-import { span } from "@material-ui/core";
 import "./cart-item.styles.scss";
 
 const CartItem = ({ item }) => {
-  console.log("wowee", item)
   return (
     <div className="cart-item">
       <img src={item.image} alt="item" />

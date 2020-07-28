@@ -1,0 +1,11 @@
+.shop-header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px 20px 110px;
+  
+  .shop-options {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}

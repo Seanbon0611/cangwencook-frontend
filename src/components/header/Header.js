@@ -1,5 +1,9 @@
 import React from "react";
-import logo from "../../assets/cgc-logo.png";
+import { ReactComponent as Logo } from "../../assets/can-gwen-cook-logo.svg";
+import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
+import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
+import { ReactComponent as Pinetrest } from "../../assets/icons/Pinterest.svg";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CustomButton from "../custom-button/CustomButton";
@@ -18,7 +22,7 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
       return (
         <div className="header">
           <NavLink className="logo-container" to="/">
-            <img alt="logo" src={logo} className="logo" />
+            <Logo />
           </NavLink>
           <div className="nav-options">
             <NavLink className="option" to="/about">
@@ -40,7 +44,7 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
       return (
         <div className="header">
           <NavLink className="logo-container" to="/">
-            <img alt="logo" src={logo} className="logo" />
+            <Logo />
           </NavLink>
           <div className="nav-options">
             <NavLink className="option" to="/about">
@@ -65,29 +69,17 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
     return (
       <div className="header">
         <NavLink className="logo-container" to="/">
-          <img alt="logo" src={logo} className="logo" />
+          <Logo />
         </NavLink>
         <div className="nav-options">
           <div className="utilities">
             <form onSubmit={handleSubmit}>
               <FormInput type="search" placeholder="Search" name="search" />
             </form>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
-            >
-              youtube
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="httas://www.instagram.com/cangwencook/"
-            >
-              insta
-            </a>
-            <a href=''>icon</a>
-            <a href=''>icon</a>
+            <a target="_blank" rel="noopener noreferrer" href='https://www.facebook.com/gwen.kong.9'><Facebook /></a>
+            <a target="_blank" rel="noopener noreferrer" href='httas://www.instagram.com/cangwencook/'><Instagram /></a>
+            <a target="_blank" rel="noopener noreferrer" href='href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"'><Youtube /></a>
+            <a target="_blank" rel="noopener noreferrer" href='https://www.facebook.com/gwen.kong.9'><Pinetrest /></a>
           </div>
           <div className="paths">
             <NavLink className="option" to="/about">

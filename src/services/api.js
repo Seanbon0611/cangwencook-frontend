@@ -39,6 +39,12 @@ const logOut = (config) => {
   return fetch(`${API_ROOT}/signout`, config);
 };
 
+const getCS = async () => {
+  const response = await fetch('http://localhost:3000/secret');
+  console.log(response)
+  return response.json()
+}
+
 export default {
   API_ROOT: API_ROOT,
   auth: {
