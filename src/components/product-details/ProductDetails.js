@@ -15,33 +15,45 @@ const ProductDetails = ({ item }) => {
   };
   const dispatch = useDispatch();
   return (
-    <div className='product-details-container'>
-    <div className="product-name">
-      <span>{item.name}</span>
-    </div>
+    <div className="product-details-container">
+      <div className="product-name">
+        <span>{item.name}</span>
+      </div>
       <form onSubmit={handleSubmit}>
-          <div className="item-price">
-            <p>{`$${item.price}`}</p>
-          </div>
-          <div className="sizes">
-            <select name="size" id="size" onChange={handleChange}>
-              <option>Size</option>
-              <option className='size-option' value="xs">X-Small</option>
-              <option className='size-option' value="s">Small</option>
-              <option className='size-option' value="m">Medium</option>
-              <option className='size-option' value="l">Large</option>
-              <option className='size-option' value="xl">X-Large</option>
-              <option className='size-option' value="xxl">XX-Large</option>
-            </select>
-            </div>
-            <div className='quantity-container'>
-            <p>Quantity:</p>
+        <div className="item-price">
+          <p>{`$${item.price}`}</p>
+        </div>
+        <div className="sizes">
+          <select name="size" id="size" onChange={handleChange}>
+            <option>Size</option>
+            <option className="size-option" value="xs">
+              X-Small
+            </option>
+            <option className="size-option" value="s">
+              Small
+            </option>
+            <option className="size-option" value="m">
+              Medium
+            </option>
+            <option className="size-option" value="l">
+              Large
+            </option>
+            <option className="size-option" value="xl">
+              X-Large
+            </option>
+            <option className="size-option" value="xxl">
+              XX-Large
+            </option>
+          </select>
+        </div>
+        <div className="quantity-container">
+          <p>Quantity:</p>
           <div className="quantity">
             <div className="plus-minus">&#45;</div>
             <span className="value">1</span>
             <div className="plus-minus">&#43;</div>
           </div>
-          </div>
+        </div>
         <div className="add-to-btns">
           <div className="add-to-cart">
             <CustomButton

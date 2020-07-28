@@ -6,10 +6,8 @@ const CartItem = ({ item }) => {
     <div className="cart-item">
       <img src={item.image} alt="item" />
       <div className="item-details">
-        <span variant="body1" className="name">
-          {item.name}
-        </span>
-        <span variant="body1" className="price">
+        <span className="name">{item.name}</span>
+        <span className="price">
           {item.quantity} x ${item.price}
         </span>
       </div>

@@ -1,0 +1,13 @@
+.checkout-item-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .checkout-img {
+    width: 206.75px;
+    height: 188.05px;
+    border: 1px solid black;
+    border-radius: 8px;
+  }
+  .checkout-item-details {
+    float: left;
+  }
+}

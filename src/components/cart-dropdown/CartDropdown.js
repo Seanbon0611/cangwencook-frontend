@@ -2,14 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCartHidden } from "../../redux/cart/CartAction";
-import {
-  Button,
-  Modal,
-  Backdrop,
-  Fade,
-  Typography,
-  Divider,
-} from "@material-ui/core";
+import CustomButton from "../custom-button/CustomButton";
+import { Modal, Backdrop, Fade, Typography, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CartItem from "../cart-item/CartItem";
 import "./cart-dropdown.styles.scss";
@@ -45,7 +39,7 @@ const CartDropdown = () => {
     (accumulatedQuantity, cartItem) =>
       accumulatedQuantity + cartItem.quantity * cartItem.price,
     0
-  )
+  );
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(true);
@@ -72,20 +66,21 @@ const CartDropdown = () => {
         <Fade in={open}>
           <div className={classes.paper}>
             <div className="shopping-header">
-            <Typography variant="h5">Shopping Cart</Typography>
+              <Typography variant="h5">Shopping Cart</Typography>
             </div>
             <Divider />
             {cart.length ? (
               [
                 cart.map((item) => {
-                  return <div className="cart-preview">
-                  <CartItem key={item.id} item={item} />
-                  </div>
+                  return (
+                    <div className="cart-preview">
+                      <CartItem key={item.id} item={item} />
+                    </div>
+                  );
                 }),
                 <div className="subtotal">
                   <Typography className="subtotal" variant="body1">
-                    Subtotal: $
-                    {subtotal.toFixed(2)}
+                    Subtotal: ${subtotal.toFixed(2)}
                   </Typography>
                 </div>,
               ]
@@ -96,13 +91,9 @@ const CartDropdown = () => {
             )}
             <div className="checkout-btn">
               <Link to="/checkout">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={handleClose}
-                >
+                <CustomButton onClick={handleClose}>
                   GO TO CHECKOUT
-                </Button>
+                </CustomButton>
               </Link>
             </div>
           </div>

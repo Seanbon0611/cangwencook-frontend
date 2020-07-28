@@ -6,7 +6,7 @@ import ShopPage from "../../pages/shop/Shop";
 import CheckoutPage from "../../pages/checkout/Checkout";
 import AboutPage from "../../pages/about/About";
 import SignIn from "../../pages/sign-in/SignIn";
-import SignUp from '../../pages/sign-up/SignUp'
+import SignUp from "../../pages/sign-up/SignUp";
 import UserPanel from "../user-panel/UserPanel";
 import AdminPanel from "../admin-panel/AdminPanel";
 import SingleProductPage from "../../pages/single-product-page/SingleProductPage";
@@ -22,7 +22,6 @@ const MainContainer = ({
 }) => {
   const [products, setProducts] = useState([]);
   const [recipes, setRecipes] = useState([]);
-
   useEffect(() => {
     api.product
       .getProducts()
@@ -32,9 +31,10 @@ const MainContainer = ({
       });
   }, []);
   useEffect(() => {
-    api.recipes.getRecipes()
-    .then(recipesList => setRecipes(recipesList.recipes.data))
-  }, [])
+    api.recipes
+      .getRecipes()
+      .then((recipesList) => setRecipes(recipesList.recipes.data));
+  }, []);
   if (loggedIn) {
     if (isAdmin) {
       return (
@@ -45,7 +45,11 @@ const MainContainer = ({
     } else {
       return (
         <div>
-          <UserPanel firstName={firstName} recipes={recipes} products={products} />
+          <UserPanel
+            firstName={firstName}
+            recipes={recipes}
+            products={products}
+          />
         </div>
       );
     }
@@ -53,40 +57,34 @@ const MainContainer = ({
     return (
       <div>
         <Switch>
-          <Route exact path="/" render={() => <HomePage recipes={recipes}/>} />
+          <Route exact path="/" render={() => <HomePage recipes={recipes} />} />
           <Route
-          path="/shop/:id"
-          render={(routerProps) => {
-            const itemId = routerProps.match.params.id;
-            const item = products.find(
-              (product) =>{
-                return product.id.toString() === itemId
-              }
-              );
+            path="/shop/:id"
+            render={(routerProps) => {
+              const itemId = routerProps.match.params.id;
+              const item = products.find((product) => {
+                return product.id.toString() === itemId;
+              });
               return item ? <SingleProductPage item={item} /> : "Loading...";
             }}
-            />
-            <Route
+          />
+          <Route
             path="/recipes/:id"
             render={(routerProps) => {
               const recipeId = routerProps.match.params.id;
-              const recipe = recipes.find(
-                (recipe) =>{
-                  return recipe.id.toString() === recipeId
-                }
-              );
+              const recipe = recipes.find((recipe) => {
+                return recipe.id.toString() === recipeId;
+              });
               return recipe ? <SingleRecipe recipe={recipe} /> : "Loading...";
             }}
           />
-            <Route path="/shop" render={() => <ShopPage products={products} />} />
-            <Route path="/checkout" component={CheckoutPage} />
-            <Route path="/recipes" render={() => <RecipesPage />} />
-            <Route path="/signup" render={() => <SignUp />} />
+          <Route path="/shop" render={() => <ShopPage products={products} />} />
+          <Route path="/checkout" component={CheckoutPage} />
+          <Route path="/recipes" render={() => <RecipesPage />} />
+          <Route path="/signup" render={() => <SignUp />} />
           <Route
             path="/signin"
-            render={() => (
-              <SignIn afterLogin={afterLogin} error={loginError} />
-            )}
+            render={() => <SignIn afterLogin={afterLogin} error={loginError} />}
           />
           <Route path="/about" component={AboutPage} />
         </Switch>

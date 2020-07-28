@@ -76,10 +76,34 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
             <form onSubmit={handleSubmit}>
               <FormInput type="search" placeholder="Search" name="search" />
             </form>
-            <a target="_blank" rel="noopener noreferrer" href='https://www.facebook.com/gwen.kong.9'><Facebook /></a>
-            <a target="_blank" rel="noopener noreferrer" href='httas://www.instagram.com/cangwencook/'><Instagram /></a>
-            <a target="_blank" rel="noopener noreferrer" href='href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"'><Youtube /></a>
-            <a target="_blank" rel="noopener noreferrer" href='https://www.facebook.com/gwen.kong.9'><Pinetrest /></a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/gwen.kong.9"
+            >
+              <Facebook />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/cangwencook/"
+            >
+              <Instagram />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href='href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"'
+            >
+              <Youtube />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/gwen.kong.9"
+            >
+              <Pinetrest />
+            </a>
           </div>
           <div className="paths">
             <NavLink className="option" to="/about">

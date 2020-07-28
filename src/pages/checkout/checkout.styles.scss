@@ -1,0 +1,12 @@
+.checkout-container {
+  .checkout-header {
+    display: flex;
+    padding-left: 70px;
+    font-size: 38px;
+    color: #4e4d68;
+  }
+  .checkout-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

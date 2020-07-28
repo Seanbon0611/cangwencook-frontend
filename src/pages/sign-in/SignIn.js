@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormInput from "../../components/form-input/FormInput";
 import CustomButton from "../../components/custom-button/CustomButton";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import api from "../../services/api";
 import "./sign-in.styles.scss";
 
@@ -46,8 +46,11 @@ const Signin = ({ afterLogin, loginError }) => {
       <form onSubmit={handleSubmit}>
         <div className="sign-in-inputs">
           <h1 className="sign-in-title">Sign-in</h1>
-          <div className='to-signup'>
-          <span>Don’t have an account?</span><Link to='/signup' className='link-to'>Click here to sign up.</Link>
+          <div className="to-signup">
+            <span>Don’t have an account?</span>
+            <Link to="/signup" className="link-to">
+              Click here to sign up.
+            </Link>
           </div>
           <p>*Required</p>
           <FormInput
@@ -59,7 +62,7 @@ const Signin = ({ afterLogin, loginError }) => {
             onChange={onChange}
           />
           <FormInput
-          asterisk
+            asterisk
             type="password"
             value={password}
             label="Password"

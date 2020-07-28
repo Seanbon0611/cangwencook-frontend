@@ -1,12 +1,12 @@
 import React from "react";
 import Product from "../../components/product/Product";
-import ShopHeader from '../../components/shop-header/ShopHeader'
+import ShopHeader from "../../components/shop-header/ShopHeader";
 import "./shop-styles.scss";
 
 const ShopPage = ({ products }) => {
   return (
     <div>
-    <ShopHeader />
+      <ShopHeader />
       <div className="collections-container">
         {products.map((product) => {
           return (

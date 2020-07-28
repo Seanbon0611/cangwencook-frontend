@@ -47,7 +47,7 @@ const SignUp = () => {
     };
     api.user.signUp(config).then((res) => {
       if (res.msg === "Successfully Created") {
-        console.log(res)
+        console.log(res);
         setSuccess(true);
       } else if (res.error) {
         setErrors(res.error);
