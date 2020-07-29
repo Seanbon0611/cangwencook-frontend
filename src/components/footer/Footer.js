@@ -1,7 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import { ReactComponent as FooterLogo } from "../../assets/footer-logo.svg";
-import { ReactComponent as Keys } from "../../assets/recipe-key-svg.svg";
 import "./footer.styles.scss";
 
 const Footer = () => {

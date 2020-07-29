@@ -4,7 +4,13 @@ import CheckoutForm from "../../components/checkout-form/CheckoutForm";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
 import CustomButton from "../../components/custom-button/CustomButton";
 import { Divider } from "@material-ui/core";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 import "./checkout.styles.scss";
+
+const stripePromise = loadStripe(
+  "pk_live_51H21vEL37GrW3rTgNa9pjd9ZR5sDQLHAqJGWM5h6zMhl6yYflfCPeWmNVB0Jfr1EBpxPe7JMrbIlEdb6PQyRTKO400qhRzBu14"
+);
 
 const Checkout = () => {
   const cart = useSelector((state) => state.cart.cartItems);
@@ -19,7 +25,13 @@ const Checkout = () => {
     <div className="checkout-container">
       <h3 className="checkout-header">Check Out</h3>
       <div className="checkout-details">
-        <div>{cart.length ? <CheckoutForm /> : null}</div>
+        <div>
+          {cart.length ? (
+            <Elements stripe={stripePromise}>
+              <CheckoutForm />
+            </Elements>
+          ) : null}
+        </div>
         <div>
           {cart.length ? (
             cart.map((item) => {

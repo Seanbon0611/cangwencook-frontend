@@ -1,6 +1,13 @@
-.recipe-card-container{
+.recipe-card-container {
   padding-bottom: 50px;
   .recipe-thumbnail {
     width: 400px;
+  }
+  .keys {
+    .key-type {
+      width: 60px;
+      height: 60px;
+      padding: 0px 3px;
+    }
   }
 }

@@ -8,11 +8,16 @@ const ShopPage = ({ products }) => {
     <div>
       <ShopHeader />
       <div className="collections-container">
-        {products.map((product) => {
-          return (
-            <Product key={product.attributes.id} product={product.attributes} />
-          );
-        })}
+        {products
+          ? products.map((product) => {
+              return (
+                <Product
+                  key={product.attributes.id}
+                  product={product.attributes}
+                />
+              );
+            })
+          : "Loading..."}
       </div>
     </div>
   );

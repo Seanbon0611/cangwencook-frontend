@@ -8,10 +8,14 @@ const SingleProductPage = ({ item }) => {
   return (
     <div>
       <ShopHeader />
-      <div className="single-product-container">
-        <ProductShowcase item={item.attributes} />
-        <ProductDetails item={item.attributes} />
-      </div>
+      {item ? (
+        <div className="single-product-container">
+          <ProductShowcase item={item.attributes} />
+          <ProductDetails item={item.attributes} />
+        </div>
+      ) : (
+        "Loading..."
+      )}
     </div>
   );
 };

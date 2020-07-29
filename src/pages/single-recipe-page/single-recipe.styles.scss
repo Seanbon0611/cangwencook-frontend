@@ -1,4 +1,23 @@
+.recipe-title {
+  display: flex;
+  padding: 30px 0px 0px 70px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+  color: #4e4d68;
+  margin: auto;
+}
+.recipe-image-keys-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.keys {
+  display: flex;
+  padding-left: 70px;
+  .key-type {
+    padding: 0px 3px;
+  }
+}
 .recipe-image {
-  width: 40%;
-  height: auto;
+  width: 80%;
 }
