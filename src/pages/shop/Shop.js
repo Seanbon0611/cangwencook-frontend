@@ -5,7 +5,7 @@ import "./shop-styles.scss";
 
 const ShopPage = ({ products }) => {
   return (
-    <div>
+    <div className='shop-container'>
       <ShopHeader />
       <div className="collections-container">
         {products

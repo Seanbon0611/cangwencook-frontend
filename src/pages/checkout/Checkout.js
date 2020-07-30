@@ -131,7 +131,7 @@ const Checkout = ({ currentUser }) => {
                   </div>
                 );
               }),
-              <div>
+              <div className='totals'>
                 <Divider />
                 <p>{`Subtotal: $${subtotal.toFixed(2)}`}</p>
                 <p>{`Tax: $${tax.toFixed(2)}`}</p>

@@ -1,16 +1,20 @@
 import React from "react";
 import { ReactComponent as Keto } from "../../assets/keys/keto.svg";
+import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
+import { ReactComponent as Comment } from "../../assets/icons/comment.svg";
+import { ReactComponent as Bookmark } from "../../assets/icons/bookmark.svg";
 import { ReactComponent as AirFryer } from "../../assets/keys/air-fryer.svg";
 import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
 import { ReactComponent as GlutenFree } from "../../assets/keys/gluten-free.svg";
 import { ReactComponent as LowCalorie } from "../../assets/keys/low-calorie.svg";
 import { ReactComponent as RecipeKeys } from "../../assets/keys/recipe-key-svg.svg";
+import CustomButton from "../../components/custom-button/CustomButton";
 import "./single-recipe.styles.scss";
 
 const SingleRecipe = ({ recipe }) => {
   const { attributes } = recipe;
   return (
-    <div>
+    <div className="single-recipe-container">
       <h1 className="recipe-title">{attributes.title}</h1>
       <div className="keys">
         {attributes.keto ? <Keto className="key-type" /> : null}
@@ -19,8 +23,31 @@ const SingleRecipe = ({ recipe }) => {
         {attributes.gluten_free ? <GlutenFree className="key-type" /> : null}
       </div>
       <p>Calories: {attributes.calories}</p>
+      <p>Fat: {attributes.fat}g</p>
+      <p>Net Carbs: 5g</p>
       <div className="recipe-image-keys-container">
-        <img className="recipe-image" src={attributes.image} />
+        <div className="recipe-image-container">
+          <img className="recipe-image" src={attributes.image} />
+          <div class="clickable-container">
+            <div className="interactable-container">
+              <Heart className="interactable" />
+              <Comment className="interactable" />
+              <Bookmark className="interactable" />
+            </div>
+            <div className="btns-container">
+              <div className="btn1">
+                <CustomButton style={{width: "200px"}}>
+                  Play Video
+                </CustomButton>
+              </div>
+              <div className="btn2">
+                <CustomButton style={{width: "200px"}}>
+                  Print Recipe
+                </CustomButton>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="recipe-keys">
           <RecipeKeys />
         </div>

@@ -1,4 +1,8 @@
-.collections-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.shop-container {
+  padding-bottom: 70px;
+  .collections-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }

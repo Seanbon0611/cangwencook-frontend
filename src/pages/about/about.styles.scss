@@ -1,6 +1,33 @@
 .about-container {
-  margin: 0 auto;
-  width: 600px;
-  padding-top: 20px;
-  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0px 0px 0px 100px;
+  text-align: left;
+  padding-top: 40px;
+  padding-bottom: 100px;
+
+  h1 {
+    color: #4e4d68;
+  }
+  .newsletter {
+    margin: 0 auto;
+    margin-top: 200px;
+    text-align: center;
+    width: 300px;
+    height: 190px;
+    border: 1px solid black;
+    border-radius: 8px;
+    flex-direction: column;
+    input {
+      width: 200px;
+      height: 30px;
+      font-size: 18px;
+    }
+    a {
+      padding-right: 10px;
+      .social {
+        width: 40px;
+      }
+    }
+  }
 }
