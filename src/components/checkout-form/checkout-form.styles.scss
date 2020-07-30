@@ -1,6 +1,33 @@
+.checkout-form-container {
+  text-align: left;
+  padding-left: 70px;
+  width: 650px;
+  .full-name {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .first-name {
+      padding-right: 10px;
+    }
+    .last-name {
+      padding-left: 10px;
+    }
+  }
+  .other-shipping-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .state {
+      padding-right: 10px;
+    }
+    .zipcode {
+      padding-left: 10px;
+    }
+  }
+}
+
 .payment-info {
-  padding: 25px;
+  padding: 20px 70px;
   .card-input {
+    width: 580px;
     border: 1px solid black;
     border-radius: 3px;
     padding: 20px;

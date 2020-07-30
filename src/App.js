@@ -7,14 +7,20 @@ import api from "./services/api";
 import "./App.css";
 
 const App = (props) => {
+  const [currentUser, setCurrentUser] = useState(null)
+  const [currentOrder, setCurrentOrder] = useState(null)
   const [loggedIn, setLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const [firstName, setFirstName] = useState(null);
 
   useEffect(() => {
-    api.auth.autoLogin()
-  }, [])
+    api.auth
+      .autoLogin()
+      .then((res) => res.json())
+      .then((json) => checkLoggedIn(json))
+      .catch((err) => console.log("error:", err));
+  }, []);
 
   const checkLoggedIn = (user) => {
     if (user.expires) {
@@ -25,6 +31,8 @@ const App = (props) => {
     setIsAdmin(user.isAdmin);
     setLoginError(user.error || null);
     setFirstName(user.firstName);
+    setCurrentUser(user.id)
+    setCurrentOrder(user.currentOrder.data.attributes)
   };
 
   const logOut = () => {
@@ -51,7 +59,7 @@ const App = (props) => {
       props.history.push("/");
     }
   };
-
+console.log(currentOrder)
   return (
     <div>
       <Header
@@ -62,6 +70,8 @@ const App = (props) => {
         logOut={logOut}
       />
       <MainContainer
+      currentOrder={currentOrder}
+        currentUser={currentUser}
         loggedIn={loggedIn}
         afterLogin={afterLogin}
         loginError={loginError}

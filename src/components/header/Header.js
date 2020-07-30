@@ -7,8 +7,6 @@ import { ReactComponent as Pinetrest } from "../../assets/icons/Pinterest.svg";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CustomButton from "../custom-button/CustomButton";
-import CartDropdown from "../cart-dropdown/CartDropdown";
-import CartIcon from "../cart-icon/CartIcon";
 import FormInput from "../form-input/FormInput";
 import "./header.styles.scss";
 
@@ -47,20 +45,58 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
             <Logo />
           </NavLink>
           <div className="nav-options">
-            <NavLink className="option" to="/about">
-              ABOUT
-            </NavLink>
-            <NavLink className="option" to="/videos">
-              RECIPES
-            </NavLink>
-            <NavLink className="option" to="/shop">
-              SHOP
-            </NavLink>
-            <NavLink className="option" onClick={logOut} to="/">
-              SIGNOUT
-            </NavLink>
-            <CartIcon />
-            {hidden ? null : <CartDropdown />}
+            <div className="utilities">
+              <form onSubmit={handleSubmit}>
+                <div className='searchbar-container'>
+                <FormInput style={{width: "350px"}}type="search" placeholder="Search" name="search" />
+                </div>
+              </form>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/gwen.kong.9"
+              >
+                <Facebook className='social'/>
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/cangwencook/"
+              >
+                <Instagram className='social'/>
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
+              >
+                <Youtube className='social'/>
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/gwen.kong.9"
+              >
+                <Pinetrest className='social'/>
+              </a>
+            </div>
+            <div className="paths">
+              <NavLink className="option" to="/about">
+                About
+              </NavLink>
+              <NavLink className="option" to="/recipes">
+                Recipes
+              </NavLink>
+              <NavLink className="option" to="/shop">
+                Shop
+              </NavLink>
+              <NavLink className="option" to="/account">
+                Account
+              </NavLink>
+              <NavLink className="option" onClick={logOut} to="/">
+                <CustomButton>Signout</CustomButton>
+              </NavLink>
+            </div>
           </div>
         </div>
       );
@@ -74,52 +110,54 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
         <div className="nav-options">
           <div className="utilities">
             <form onSubmit={handleSubmit}>
-              <FormInput type="search" placeholder="Search" name="search" />
+            <div className='searchbar-container'>
+            <FormInput style={{width: "350px"}}type="search" placeholder="Search" name="search" />
+            </div>
             </form>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/gwen.kong.9"
             >
-              <Facebook />
+              <Facebook className='social' />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.instagram.com/cangwencook/"
             >
-              <Instagram />
+              <Instagram className='social' />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href='href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"'
+              href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
             >
-              <Youtube />
+              <Youtube className='social' />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/gwen.kong.9"
             >
-              <Pinetrest />
+              <Pinetrest className='social' />
             </a>
           </div>
           <div className="paths">
             <NavLink className="option" to="/about">
-              ABOUT
+              About
             </NavLink>
             <NavLink className="option" to="/recipes">
-              RECIPES
+              Recipes
             </NavLink>
             <NavLink className="option" to="/shop">
-              SHOP
+              Shop
             </NavLink>
             <NavLink className="option" to="/signin">
-              SIGN-IN
+              Sign-In
             </NavLink>
             <NavLink className="option" to="/signup">
-              <CustomButton className="sign-up-btn">SIGN-UP</CustomButton>
+              <CustomButton className="sign-up-btn">Sign-Up</CustomButton>
             </NavLink>
           </div>
         </div>
@@ -132,3 +170,4 @@ export default Header;
 
 // <CartIcon className="option" />
 // {hidden ? null : <CartDropdown />}
+//<span>{`Welcome ${firstName}`}</span>

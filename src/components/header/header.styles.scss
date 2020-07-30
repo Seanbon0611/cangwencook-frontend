@@ -25,15 +25,14 @@
     justify-content: flex-end;
     .utilities {
       display: flex;
+      padding-left: 0px;
       a {
-        padding-left: 10px;
+        padding-left:15px;
+        .social {
+          width: 40px;
+        }
       }
       align-items: center;
-    }
-    .shopping-icon {
-      width: 50px;
-      height: 50px;
-      padding: 10px 10px;
     }
     .option {
       padding: 10px 30px;

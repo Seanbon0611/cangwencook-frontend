@@ -11,7 +11,7 @@ const ShopHeader = () => {
       <div className="shop-title">
         <h1>Shop</h1>
       </div>
-      <div class="shop-options">
+      <div className="shop-options">
         <p className="option">WISHLIST</p>
         <CartIcon className="option" />
       </div>

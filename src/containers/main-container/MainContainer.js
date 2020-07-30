@@ -9,9 +9,15 @@ import SignIn from "../../pages/sign-in/SignIn";
 import SignUp from "../../pages/sign-up/SignUp";
 import UserPanel from "../user-panel/UserPanel";
 import AdminPanel from "../admin-panel/AdminPanel";
+import SingleRecipe from "../../pages/single-recipe-page/SingleRecipe";
 import SingleProductPage from "../../pages/single-product-page/SingleProductPage";
 import api from "../../services/api";
-import SingleRecipe from "../../pages/single-recipe-page/SingleRecipe";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import OrderConfirmation from "../../pages/order-confirmation/OrderConfirmation";
+const stripePromise = loadStripe(
+  "pk_test_51H21vEL37GrW3rTgFD9IYQ3uTzcm66S8GU6ee4khfRinCXNOicIaazI6l0sLxXlwMSdPTvd3Q0aiPTe09XOLE4Gl00snYcwan7"
+);
 
 const MainContainer = ({
   loggedIn,
@@ -19,6 +25,8 @@ const MainContainer = ({
   isAdmin,
   firstName,
   afterLogin,
+  currentUser,
+  currentOrder
 }) => {
   const [products, setProducts] = useState([]);
   const [recipes, setRecipes] = useState([]);
@@ -49,6 +57,9 @@ const MainContainer = ({
             firstName={firstName}
             recipes={recipes}
             products={products}
+            stripePromise={stripePromise}
+            currentUser={currentUser}
+            currentOrder={currentOrder}
           />
         </div>
       );
@@ -79,7 +90,14 @@ const MainContainer = ({
             }}
           />
           <Route path="/shop" render={() => <ShopPage products={products} />} />
-          <Route path="/checkout" component={CheckoutPage} />
+          <Route
+            path="/checkout"
+            render={() => (
+              <Elements stripe={stripePromise}>
+                <CheckoutPage />
+              </Elements>
+            )}
+          />
           <Route path="/recipes" render={() => <RecipesPage />} />
           <Route path="/signup" render={() => <SignUp />} />
           <Route
@@ -87,6 +105,7 @@ const MainContainer = ({
             render={() => <SignIn afterLogin={afterLogin} error={loginError} />}
           />
           <Route path="/about" component={AboutPage} />
+          <Route path='/orderconfirmation' component={OrderConfirmation} />
         </Switch>
       </div>
     );

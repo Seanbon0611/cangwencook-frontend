@@ -4,7 +4,8 @@
   transition: background 0.5s;
 }
 .ripple:hover {
-  background: #BEDB58 radial-gradient(circle, transparent 1%, #dff395 1%) center/15000%;
+  background: #bedb58 radial-gradient(circle, transparent 1%, #dff395 1%)
+    center/15000%;
 }
 .ripple:active {
   background-color: #dff395;
@@ -24,7 +25,18 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   color: white;
-  background-color: #BEDB58;
+  background-color: #bedb58;
   box-shadow: 0 0 4px #999;
   outline: none;
+  &.inverted {
+    background-color: white;
+    color: #bedb58;
+    border: 1px solid #bedb58;
+
+    &:hover {
+      background-color: #bedb58;
+      color: white;
+      border: none;
+    }
+  }
 }

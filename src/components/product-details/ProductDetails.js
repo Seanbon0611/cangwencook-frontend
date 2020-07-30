@@ -1,19 +1,46 @@
 import React from "react";
 import FormInput from "../../components/form-input/FormInput";
 import CustomButton from "../custom-button/CustomButton";
-import { addItem } from "../../redux/cart/CartAction";
+import { addItem, removeItemFromCart } from "../../redux/cart/CartAction";
 import { Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 import "./product-details.styles.scss";
 
-const ProductDetails = ({ item }) => {
+const ProductDetails = ({ item, currentOrder }) => {
+  console.log(item)
   const handleChange = (e) => {
     console.log(e.target.value);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const addLineItem = await axios.post("http://localhost:3000", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      data: {
+        order_id: currentOrder.id,
+        product_id: item.id,
+      },
+    });
+
   };
   const dispatch = useDispatch();
+  const handleClicks = async (item) => {
+    const addLineItem = await fetch("http://localhost:3000/lineitem/new", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        order_id: currentOrder.id,
+        product_id: item.id,
+      })
+    });
+    dispatch(addItem(item))
+  };
   return (
     <div className="product-details-container">
       <div className="product-name">
@@ -49,9 +76,9 @@ const ProductDetails = ({ item }) => {
         <div className="quantity-container">
           <p>Quantity:</p>
           <div className="quantity">
-            <div className="plus-minus">&#45;</div>
+            <div className="plus-minus" onClick={() => dispatch(removeItemFromCart(item))}>&#45;</div>
             <span className="value">1</span>
-            <div className="plus-minus">&#43;</div>
+            <div className="plus-minus" onClick={() => dispatch(addItem(item))}>&#43;</div>
           </div>
         </div>
         <div className="add-to-btns">
@@ -59,13 +86,13 @@ const ProductDetails = ({ item }) => {
             <CustomButton
               style={{ width: "180px" }}
               type="submit"
-              onClick={() => dispatch(addItem(item))}
+              onClick={() => handleClicks(item)}
             >
               ADD TO CART
             </CustomButton>
           </div>
           <div>
-            <CustomButton>ADD TO WISHLIST</CustomButton>
+            <CustomButton inverted>ADD TO WISHLIST</CustomButton>
           </div>
           <p>Product Info</p>
         </div>

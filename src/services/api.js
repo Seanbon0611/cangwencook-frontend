@@ -1,18 +1,18 @@
-const API_ROOT = "http://localhost:3000";
+const API_ROOT = "http://localhost:3000"
 
 const login = async (config) => {
   const response = await fetch(`${API_ROOT}/login`, config)
   return response.json()
-};
+}
 
 const signUp = async (config) => {
   const response = await fetch(`${API_ROOT}/user/new`, config)
   return response.json()
-};
+}
 
 const getProducts = () => {
   return fetch(`${API_ROOT}/products`, { credentials: "include" })
-};
+}
 
 const recipesPlaylist = () => {
   return fetch(
@@ -33,16 +33,14 @@ const getRecipes = async () => {
 
 const autoLogin = () => {
   return fetch(`${API_ROOT}/autologin`, { credentials: "include" })
-};
+}
 
 const logOut = (config) => {
   return fetch(`${API_ROOT}/signout`, config)
-};
+}
 
-const getCS = async () => {
-  const response = await fetch('http://localhost:3000/secret')
-  console.log(response)
-  return response.json()
+const getCS = (config) => {
+  return fetch(`${API_ROOT}/secret`, config)
 }
 
 export default {
@@ -55,6 +53,9 @@ export default {
   user: {
     signUp: signUp,
   },
+  checkout: {
+    getCS: getCS
+  },
   product: {
     getProducts: getProducts,
   },
@@ -63,6 +64,6 @@ export default {
     getVideos: getVideos,
   },
   recipes: {
-    getRecipes: getRecipes
-  }
-};
+    getRecipes: getRecipes,
+  },
+}

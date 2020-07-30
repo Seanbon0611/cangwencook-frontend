@@ -1,13 +1,30 @@
 .checkout-item-container {
+  padding-top: 22px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  .checkout-img {
-    width: 206.75px;
-    height: 188.05px;
-    border: 1px solid black;
-    border-radius: 8px;
+  .chkout-image-cont {
+    padding-left: 90px;
+    .checkout-img {
+      width: 206.75px;
+      height: 188.05px;
+      border: 1px solid black;
+      border-radius: 8px;
+    }
   }
   .checkout-item-details {
-    float: left;
+    text-align: left;
+  }
+  .chkout-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .grp-item {
+      padding-right: 70px;
+      font-weight: bold;
+    }
+    .grp-item2 {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
