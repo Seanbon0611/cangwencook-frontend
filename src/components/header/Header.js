@@ -5,7 +5,6 @@ import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
 import { ReactComponent as Pinetrest } from "../../assets/icons/Pinterest.svg";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../form-input/FormInput";
 import "./header.styles.scss";
