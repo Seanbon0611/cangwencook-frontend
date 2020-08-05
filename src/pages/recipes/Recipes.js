@@ -31,15 +31,3 @@ const RecipesPage = () => {
 };
 
 export default RecipesPage;
-
-// <div className="videos-container">
-//   {videos.map((video) => (
-//     <div key={video.id}>
-//       {loading ? (
-//         "Loading..."
-//       ) : (
-//         <VideoCard key={video.snippet.title} video={video} />
-//       )}
-//     </div>
-//   ))}
-// </div>
