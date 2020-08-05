@@ -1,0 +1,11 @@
+.account-page-container {
+  text-align: left;
+  padding-left: 70px;
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  form {
+    width: 550px;
+  }
+}

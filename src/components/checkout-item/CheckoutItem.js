@@ -12,7 +12,7 @@ const CheckoutItem = ({ item }) => {
       </div>
       <div className="checkout-item-details">
         <h3>{item.name}</h3>
-        <p>Size: M</p>
+        <p>Size: S</p>
         <p>Quantity: {item.quantity}</p>
         <div className='chkout-group'>
         <p className='grp-item'>${item.price}</p>
