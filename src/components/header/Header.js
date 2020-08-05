@@ -14,7 +14,6 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  const hidden = useSelector((state) => state.cart.hidden);
   if (loggedIn) {
     if (isAdmin) {
       return (
@@ -47,8 +46,13 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
           <div className="nav-options">
             <div className="utilities">
               <form onSubmit={handleSubmit}>
-                <div className='searchbar-container'>
-                <FormInput style={{width: "350px"}}type="search" placeholder="Search" name="search" />
+                <div className="searchbar-container">
+                  <FormInput
+                    style={{ width: "350px" }}
+                    type="search"
+                    placeholder="Search"
+                    name="search"
+                  />
                 </div>
               </form>
               <a
@@ -56,28 +60,28 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/gwen.kong.9"
               >
-                <Facebook className='social'/>
+                <Facebook className="social" />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/cangwencook/"
               >
-                <Instagram className='social'/>
+                <Instagram className="social" />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
               >
-                <Youtube className='social'/>
+                <Youtube className="social" />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/gwen.kong.9"
               >
-                <Pinetrest className='social'/>
+                <Pinetrest className="social" />
               </a>
             </div>
             <div className="paths">
@@ -110,37 +114,42 @@ const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
         <div className="nav-options">
           <div className="utilities">
             <form onSubmit={handleSubmit}>
-            <div className='searchbar-container'>
-            <FormInput style={{width: "350px"}}type="search" placeholder="Search" name="search" />
-            </div>
+              <div className="searchbar-container">
+                <FormInput
+                  style={{ width: "350px" }}
+                  type="search"
+                  placeholder="Search"
+                  name="search"
+                />
+              </div>
             </form>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/gwen.kong.9"
             >
-              <Facebook className='social' />
+              <Facebook className="social" />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.instagram.com/cangwencook/"
             >
-              <Instagram className='social' />
+              <Instagram className="social" />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
             >
-              <Youtube className='social' />
+              <Youtube className="social" />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/gwen.kong.9"
             >
-              <Pinetrest className='social' />
+              <Pinetrest className="social" />
             </a>
           </div>
           <div className="paths">

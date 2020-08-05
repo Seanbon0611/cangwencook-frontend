@@ -11,7 +11,14 @@ import AccountPage from "../../pages/account/Account";
 import OrderConfirmation from "../../pages/order-confirmation/OrderConfirmation";
 import { Elements } from "@stripe/react-stripe-js";
 
-const UserPanel = ({ firstName, products, recipes, stripePromise, currentUser, currentOrder }) => {
+const UserPanel = ({
+  firstName,
+  products,
+  recipes,
+  stripePromise,
+  currentUser,
+  currentOrder,
+}) => {
   return (
     <div>
       <Switch>
@@ -23,7 +30,11 @@ const UserPanel = ({ firstName, products, recipes, stripePromise, currentUser, c
             const item = products.find((product) => {
               return product.id.toString() === itemId;
             });
-            return item ? <SingleProductPage item={item} currentOrder={currentOrder} /> : "Loading...";
+            return item ? (
+              <SingleProductPage item={item} currentOrder={currentOrder} />
+            ) : (
+              "Loading..."
+            );
           }}
         />
         <Route
@@ -38,17 +49,17 @@ const UserPanel = ({ firstName, products, recipes, stripePromise, currentUser, c
         />
         <Route path="/shop" render={() => <ShopPage products={products} />} />
         <Route
-            path="/checkout"
-            render={() => (
-              <Elements stripe={stripePromise}>
-                <CheckoutPage currentUser={currentUser}/>
-              </Elements>
-            )}
-          />
+          path="/checkout"
+          render={() => (
+            <Elements stripe={stripePromise}>
+              <CheckoutPage currentUser={currentUser} />
+            </Elements>
+          )}
+        />
         <Route path="/recipes" render={() => <RecipesPage />} />
-        <Route path="/about" component={AboutPage} />
+        <Route path="/about" render={() => <AboutPage recipes={recipes} />} />
         <Route path="/account" component={AccountPage} />
-        <Route path='/orderconfirmation' component={OrderConfirmation} />
+        <Route path="/orderconfirmation" component={OrderConfirmation} />
       </Switch>
     </div>
   );

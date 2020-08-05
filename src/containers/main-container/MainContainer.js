@@ -26,7 +26,7 @@ const MainContainer = ({
   firstName,
   afterLogin,
   currentUser,
-  currentOrder
+  currentOrder,
 }) => {
   const [products, setProducts] = useState([]);
   const [recipes, setRecipes] = useState([]);
@@ -104,8 +104,8 @@ const MainContainer = ({
             path="/signin"
             render={() => <SignIn afterLogin={afterLogin} error={loginError} />}
           />
-          <Route path="/about" component={AboutPage} />
-          <Route path='/orderconfirmation' component={OrderConfirmation} />
+          <Route path="/about" render={() => <AboutPage recipes={recipes} />} />
+          <Route path="/orderconfirmation" component={OrderConfirmation} />
         </Switch>
       </div>
     );

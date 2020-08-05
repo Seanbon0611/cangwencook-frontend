@@ -12,14 +12,18 @@ const AccountPage = () => {
       <div className="split">
         <div>
           <form>
-            <FormInput label="First Name:" asterisk />
-            <FormInput label="Last Name:" asterisk />
-            <FormInput label="Address1:" asterisk />
-            <FormInput label="Address2:" asterisk />
-            <FormInput label="City:" asterisk />
-            <FormInput label="State:" asterisk />
-            <FormInput label="Zipcode:" asterisk />
-            <FormInput label="Phone:" asterisk />
+            <FormInput type="text" label="First Name:" asterisk />
+            <FormInput type="text" label="Last Name:" asterisk />
+            <FormInput type="text" label="Address1:" />
+            <FormInput type="text" label="Address2:" />
+            <FormInput type="text" label="City:" />
+            <FormInput label="State:" />
+            <FormInput type="text" label="Zipcode:" />
+            <FormInput
+              type="text"
+              label="Phone:"
+              placeholder="If we need to contact you"
+            />
             <input type="checkbox" />
             <label>Set as Default Address?</label>
             <CustomButton type="submit">Submit</CustomButton>

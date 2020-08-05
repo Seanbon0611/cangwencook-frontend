@@ -17,8 +17,12 @@ const RecipesPage = () => {
       <div className="recipe-header-container">
         <h1 className="recipe-header">Recipes</h1>
         <div className="filters">
-          <span>Filter</span>
-          <span>Sort By</span>
+          <div className="filter">
+            <span>Filter</span>
+          </div>
+          <div className="sort-by">
+            <span>Sort By</span>
+          </div>
         </div>
       </div>
       <div className="recipe-cards">
