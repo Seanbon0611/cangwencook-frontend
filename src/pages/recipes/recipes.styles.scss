@@ -1,5 +1,22 @@
-.recipe-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
+.recipe-container {
+  padding-top: 20px;
+  .recipe-header-container {
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .recipe-header {
+      text-align: left;
+      padding-left: 70px;
+      color: #4e4d68;
+    }
+    .filters {
+      padding: 40px;
+    }
+  }
+  .recipe-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
 }
