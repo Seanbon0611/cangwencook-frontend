@@ -21,13 +21,14 @@ const SingleRecipe = ({ recipe }) => {
         {attributes.dairy_free ? <DairyFree className="key-type" /> : null}
         {attributes.low_calorie ? <LowCalorie className="key-type" /> : null}
         {attributes.gluten_free ? <GlutenFree className="key-type" /> : null}
+        {attributes.air_fryer ? <AirFryer className="key-type" /> : null}
       </div>
       <p>Calories: {attributes.calories}</p>
       <p>Fat: {attributes.fat}g</p>
       <p>Net Carbs: 5g</p>
       <div className="recipe-image-keys-container">
         <div className="recipe-image-container">
-          <img className="recipe-image" src={attributes.image} />
+          <img className="recipe-image" alt="recipe" src={attributes.image} />
           <div class="clickable-container">
             <div className="interactable-container">
               <Heart className="interactable" />
@@ -36,12 +37,12 @@ const SingleRecipe = ({ recipe }) => {
             </div>
             <div className="btns-container">
               <div className="btn1">
-                <CustomButton style={{width: "200px"}}>
+                <CustomButton style={{ width: "200px" }}>
                   Play Video
                 </CustomButton>
               </div>
               <div className="btn2">
-                <CustomButton style={{width: "200px"}}>
+                <CustomButton style={{ width: "200px" }}>
                   Print Recipe
                 </CustomButton>
               </div>

@@ -12,13 +12,14 @@ const RecipeCard = ({ recipe }) => {
   return (
     <div className="recipe-card-container">
       <Link to={`/recipes/${recipe.id}`}>
-        <img className="recipe-thumbnail" src={attributes.image} />
+        <img alt="recipe" className="recipe-thumbnail" src={attributes.image} />
       </Link>
       <div className="keys">
         {attributes.keto ? <Keto className="key-type" /> : null}
         {attributes.dairy_free ? <DairyFree className="key-type" /> : null}
         {attributes.low_calorie ? <LowCalorie className="key-type" /> : null}
         {attributes.gluten_free ? <GlutenFree className="key-type" /> : null}
+        {attributes.air_fryer ? <AirFryer className="key-type" /> : null}
       </div>
       <h2 className="recipe-title">{attributes.title}</h2>
       <p variant="body1">{attributes.description}</p>

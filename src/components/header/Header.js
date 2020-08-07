@@ -9,7 +9,7 @@ import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../form-input/FormInput";
 import "./header.styles.scss";
 
-const Header = ({ loggedIn, loginError, isAdmin, firstName, logOut }) => {
+const Header = ({ loggedIn, loginError, isAdmin, logOut }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };

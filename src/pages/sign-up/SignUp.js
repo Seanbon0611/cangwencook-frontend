@@ -24,10 +24,6 @@ const SignUp = () => {
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const clearState = () => {
-    setState({ ...initialState });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const config = {
@@ -119,6 +115,7 @@ const SignUp = () => {
                 value={passwordConfirmation}
                 onChange={onChange}
               />
+              {errors && <h1>{errors}</h1>}
               <CustomButton type="submit">Create Account</CustomButton>
               <p>Forgot your password? Click here to reset.</p>
               <p>

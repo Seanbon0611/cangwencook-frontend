@@ -1,14 +1,12 @@
 import React from "react";
-import FormInput from "../../components/form-input/FormInput";
 import CustomButton from "../custom-button/CustomButton";
 import { addItem, removeItemFromCart } from "../../redux/cart/CartAction";
-import { Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import "./product-details.styles.scss";
 
 const ProductDetails = ({ item, currentOrder }) => {
-  console.log(item)
+  console.log(item);
   const handleChange = (e) => {
     console.log(e.target.value);
   };
@@ -24,7 +22,6 @@ const ProductDetails = ({ item, currentOrder }) => {
         product_id: item.id,
       },
     });
-
   };
   const dispatch = useDispatch();
   const handleClicks = async (item) => {
@@ -37,9 +34,9 @@ const ProductDetails = ({ item, currentOrder }) => {
       body: JSON.stringify({
         order_id: currentOrder.id,
         product_id: item.id,
-      })
+      }),
     });
-    dispatch(addItem(item))
+    dispatch(addItem(item));
   };
   return (
     <div className="product-details-container">
@@ -76,9 +73,16 @@ const ProductDetails = ({ item, currentOrder }) => {
         <div className="quantity-container">
           <p>Quantity:</p>
           <div className="quantity">
-            <div className="plus-minus" onClick={() => dispatch(removeItemFromCart(item))}>&#45;</div>
+            <div
+              className="plus-minus"
+              onClick={() => dispatch(removeItemFromCart(item))}
+            >
+              &#45;
+            </div>
             <span className="value">1</span>
-            <div className="plus-minus" onClick={() => dispatch(addItem(item))}>&#43;</div>
+            <div className="plus-minus" onClick={() => dispatch(addItem(item))}>
+              &#43;
+            </div>
           </div>
         </div>
         <div className="add-to-btns">

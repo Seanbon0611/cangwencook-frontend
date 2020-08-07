@@ -7,20 +7,12 @@ import api from "./services/api";
 import "./App.css";
 
 const App = (props) => {
-  const [currentUser, setCurrentUser] = useState(null)
-  const [currentOrder, setCurrentOrder] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null);
+  const [currentOrder, setCurrentOrder] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const [firstName, setFirstName] = useState(null);
-
-  useEffect(() => {
-    api.auth
-      .autoLogin()
-      .then((res) => res.json())
-      .then((json) => checkLoggedIn(json))
-      .catch((err) => console.log("error:", err));
-  }, []);
 
   const checkLoggedIn = (user) => {
     if (user.expires) {
@@ -31,9 +23,17 @@ const App = (props) => {
     setIsAdmin(user.isAdmin);
     setLoginError(user.error || null);
     setFirstName(user.firstName);
-    setCurrentUser(user.id)
-    setCurrentOrder(user.currentOrder.data.attributes)
+    setCurrentUser(user.id);
+    setCurrentOrder(user.currentOrder.data.attributes);
   };
+
+  useEffect(() => {
+    api.auth
+      .autoLogin()
+      .then((res) => res.json())
+      .then((json) => checkLoggedIn(json))
+      .catch((err) => console.log("error:", err));
+  }, []);
 
   const logOut = () => {
     const config = {
@@ -59,7 +59,7 @@ const App = (props) => {
       props.history.push("/");
     }
   };
-console.log(currentOrder)
+  console.log(currentOrder);
   return (
     <div>
       <Header
@@ -70,7 +70,7 @@ console.log(currentOrder)
         logOut={logOut}
       />
       <MainContainer
-      currentOrder={currentOrder}
+        currentOrder={currentOrder}
         currentUser={currentUser}
         loggedIn={loggedIn}
         afterLogin={afterLogin}
