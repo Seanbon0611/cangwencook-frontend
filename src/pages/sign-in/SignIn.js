@@ -37,12 +37,13 @@ const Signin = ({ afterLogin, loginError }) => {
       }),
     };
     api.auth.login(config).then((user) => {
+      console.log(user);
       afterLogin(user);
       clearState();
     });
   };
   return (
-    <div className='sign-in-container'>
+    <div className="sign-in-container">
       <form onSubmit={handleSubmit}>
         <div className="sign-in-inputs">
           <h1 className="sign-in-title">Sign-in</h1>

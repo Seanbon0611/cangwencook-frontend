@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import MainContainer from "./containers/main-container/MainContainer";
@@ -7,22 +8,23 @@ import api from "./services/api";
 import "./App.css";
 
 const App = (props) => {
-  const [currentUser, setCurrentUser] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [loginError, setLoginError] = useState(null);
-  const [firstName, setFirstName] = useState(null);
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const loggedIn = useSelector((state) => state.user.loggedIn);
+  const isAdmin = useSelector((state) => state.user.isAdmin);
+  const loginError = useSelector((state) => state.user.loginError);
+  const firstName = useSelector((state) => state.user.firstName);
+  const dispatch = useDispatch();
 
   const checkLoggedIn = (user) => {
     if (user.expires) {
       const expiresAt = Date.parse(user.expires) - Date.now();
       setTimeout(logOut, expiresAt);
     }
-    setLoggedIn(user.loggedIn);
-    setIsAdmin(user.isAdmin);
-    setLoginError(user.error || null);
-    setFirstName(user.firstName);
-    setCurrentUser(user.id);
+    dispatch({ type: "SET_CURRENT_USER", payload: user.id });
+    dispatch({ type: "SET_LOGGED_IN", payload: user.loggedIn });
+    dispatch({ type: "SET_IS_ADMIN", payload: user.isAdmin });
+    dispatch({ type: "ERROR_OCCURED", payload: user.error || null });
+    dispatch({ type: "SET_FIRST_NAME", payload: user.firstName });
   };
 
   useEffect(() => {
@@ -44,10 +46,7 @@ const App = (props) => {
     };
     api.auth.logOut(config).then((res) => res.json());
 
-    setLoggedIn(false);
-    setIsAdmin(false);
-    setFirstName(null);
-    setLoginError("Your session has timed out.");
+    dispatch({ type: "LOG_OUT_USER" });
     return () => props.history.push("/signin");
   };
 
