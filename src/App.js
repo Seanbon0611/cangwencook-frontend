@@ -8,7 +8,6 @@ import "./App.css";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [currentOrder, setCurrentOrder] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loginError, setLoginError] = useState(null);
@@ -24,7 +23,6 @@ const App = (props) => {
     setLoginError(user.error || null);
     setFirstName(user.firstName);
     setCurrentUser(user.id);
-    setCurrentOrder(user.currentOrder.data.attributes);
   };
 
   useEffect(() => {
@@ -59,7 +57,6 @@ const App = (props) => {
       props.history.push("/");
     }
   };
-  console.log(currentOrder);
   return (
     <div>
       <Header
@@ -70,7 +67,6 @@ const App = (props) => {
         logOut={logOut}
       />
       <MainContainer
-        currentOrder={currentOrder}
         currentUser={currentUser}
         loggedIn={loggedIn}
         afterLogin={afterLogin}

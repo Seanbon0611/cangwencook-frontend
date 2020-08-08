@@ -26,7 +26,6 @@ const MainContainer = ({
   firstName,
   afterLogin,
   currentUser,
-  currentOrder,
 }) => {
   const [products, setProducts] = useState([]);
   const [recipes, setRecipes] = useState([]);
@@ -59,7 +58,6 @@ const MainContainer = ({
             products={products}
             stripePromise={stripePromise}
             currentUser={currentUser}
-            currentOrder={currentOrder}
           />
         </div>
       );

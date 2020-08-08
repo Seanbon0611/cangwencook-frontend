@@ -90,9 +90,6 @@ const Header = ({ loggedIn, loginError, isAdmin, logOut }) => {
               <NavLink className="option" to="/recipes">
                 Recipes
               </NavLink>
-              <NavLink className="option" to="/shop">
-                Shop
-              </NavLink>
               <NavLink className="option" to="/account">
                 Account
               </NavLink>
@@ -157,9 +154,6 @@ const Header = ({ loggedIn, loginError, isAdmin, logOut }) => {
             </NavLink>
             <NavLink className="option" to="/recipes">
               Recipes
-            </NavLink>
-            <NavLink className="option" to="/shop">
-              Shop
             </NavLink>
             <NavLink className="option" to="/signin">
               Sign-In

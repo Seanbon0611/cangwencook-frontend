@@ -6,12 +6,15 @@
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    left:0%;
+    left: 0%;
     width: 100%;
   }
 }
-    .top-recipes {
-      padding-top: 50px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+h1 {
+  color: #4e4d68;
+}
+.top-recipes {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

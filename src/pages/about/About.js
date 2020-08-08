@@ -5,10 +5,10 @@ import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
 import { ReactComponent as Pinetrest } from "../../assets/icons/Pinterest.svg";
 import "./about.styles.scss";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
+import NewsletterForm from "../../components/newsletter-form/NewsletterForm";
 
 const AboutPage = ({ recipes }) => {
   const topTwo = recipes.slice(0, 2);
-  console.log(topTwo);
   return (
     <div className="about-container">
       <div className="bio">
@@ -52,7 +52,7 @@ const AboutPage = ({ recipes }) => {
         <div className="newsletter">
           <h2>Dont Miss a Recipe</h2>
           <div>
-            <input type="searchbar" placeholder="Email" />
+            <NewsletterForm />
           </div>
           <a
             target="_blank"
