@@ -29,7 +29,7 @@ const SingleRecipe = ({ recipe }) => {
       <div className="recipe-image-keys-container">
         <div className="recipe-image-container">
           <img className="recipe-image" alt="recipe" src={attributes.image} />
-          <div class="clickable-container">
+          <div className="clickable-container">
             <div className="interactable-container">
               <Heart className="interactable" />
               <Comment className="interactable" />
@@ -55,13 +55,13 @@ const SingleRecipe = ({ recipe }) => {
       </div>
       <h2>Ingredients:</h2>
       {attributes.ingredients.map((ingredient) => (
-        <p>
+        <p key={ingredient.name}>
           {ingredient.measurement} of {ingredient.name}
         </p>
       ))}
       <h2>Procedure:</h2>
       {attributes.instructions.map((step, index) => (
-        <p>
+        <p key={index}>
           Step {index + 1}: {step.step}
         </p>
       ))}

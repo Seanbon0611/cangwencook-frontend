@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   height: 200px;
   color: white;
-  background-color: #4E4D68;
+  background-color: #4e4d68;
   width: 100%;
   align-items: center;
   z-index: 100;
@@ -19,13 +19,16 @@
       width: 40px;
     }
   }
-  input {
-    width: 200px;
-    height: 40px;
-    font-size: 18px;
-  }
   .section {
     padding-left: 40px;
     text-align: left;
+    h3 {
+      margin: 0;
+    }
+    input {
+      width: 200px;
+      height: 40px;
+      font-size: 18px;
+    }
   }
 }

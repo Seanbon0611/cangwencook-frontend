@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
+import NewsletterForm from "../newsletter-form/NewsletterForm";
 import { ReactComponent as FooterLogo } from "../../assets/footer-logo.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
@@ -29,37 +30,44 @@ const Footer = () => {
         <Typography>Contact</Typography>
       </div>
       <div className="section">
-        <Typography variant='h5'>Subscribe via email</Typography>
-        <input type="searchbar" placeholder='Email' />
-        <Typography variant='h5'>Follow Us</Typography>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.facebook.com/gwen.kong.9"
+        <h3>Subscribe via email</h3>
+        <form
+          method="POST"
+          action="https://na1595191147.activehosted.com/proc.php"
         >
-          <Facebook className="social" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.instagram.com/cangwencook/"
-        >
-          <Instagram className="social" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
-        >
-          <Youtube className="social" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.facebook.com/gwen.kong.9"
-        >
-          <Pinetrest className="social" />
-        </a>
+          <NewsletterForm />
+        </form>
+        <h3>Follow Us</h3>
+        <div class="socials">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/gwen.kong.9"
+          >
+            <Facebook className="social" />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/cangwencook/"
+          >
+            <Instagram className="social" />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
+          >
+            <Youtube className="social" />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/gwen.kong.9"
+          >
+            <Pinetrest className="social" />
+          </a>
+        </div>
       </div>
     </div>
   );
