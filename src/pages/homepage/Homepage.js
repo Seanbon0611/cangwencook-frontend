@@ -10,7 +10,7 @@ const Homepage = ({ recipes }) => {
       <div className="image-container">
         <img
           alt="home"
-          src="https://storage.cloud.google.com/can-gwen-cook-pics/the-new-banner.png"
+          src="https://storage.googleapis.com/can-gwen-cook-pics/the-new-banner.png"
         />
       </div>
       <h1>Latest Recipes</h1>

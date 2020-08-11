@@ -73,7 +73,10 @@ const Signin = ({ afterLogin, loginError }) => {
           <CustomButton type="submit" className="ripple">
             Submit
           </CustomButton>
-          <p>Forgot your password? Click here to reset.</p>
+          <p>
+            Forgot your password? <Link to="/password_reset">Click here</Link>{" "}
+            to reset.
+          </p>
           <p>
             By signing up you accept the Terms of Service and Privacy Policy.
           </p>
