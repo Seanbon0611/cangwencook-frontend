@@ -74,7 +74,7 @@ const Signin = ({ afterLogin, loginError }) => {
             Submit
           </CustomButton>
           <p>
-            Forgot your password? <Link to="/password_reset">Click here</Link>{" "}
+            Forgot your password? <Link to="/forgot-password">Click here</Link>{" "}
             to reset.
           </p>
           <p>

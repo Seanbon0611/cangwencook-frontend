@@ -16,6 +16,8 @@ import api from "../../services/api";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import OrderConfirmation from "../../pages/order-confirmation/OrderConfirmation";
+import ForgotPasswordPage from "../../pages/forgot-password/ForgotPassword";
+import PasswordResetPage from "../../pages/password-reset/PasswordReset";
 const stripePromise = loadStripe(
   "pk_test_51H21vEL37GrW3rTgFD9IYQ3uTzcm66S8GU6ee4khfRinCXNOicIaazI6l0sLxXlwMSdPTvd3Q0aiPTe09XOLE4Gl00snYcwan7"
 );
@@ -105,7 +107,12 @@ const MainContainer = ({
           />
           <Route path="/about" render={() => <AboutPage recipes={recipes} />} />
           <Route path="/orderconfirmation" component={OrderConfirmation} />
-          <Route path="/password_reset" component={ForgotPassweordPage} />
+          <Route path="/forgot-password" component={ForgotPasswordPage} />
+          <Route
+            exact
+            path="/password_reset/:token"
+            component={PasswordResetPage}
+          />
         </Switch>
       </div>
     );

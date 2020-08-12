@@ -38,7 +38,7 @@ const Footer = () => {
           <NewsletterForm />
         </form>
         <h3>Follow Us</h3>
-        <div class="socials">
+        <div className="socials">
           <a
             target="_blank"
             rel="noopener noreferrer"
