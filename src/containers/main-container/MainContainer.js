@@ -5,7 +5,6 @@ import RecipesPage from "../../pages/recipes/Recipes";
 import ShopPage from "../../pages/shop/Shop";
 import CheckoutPage from "../../pages/checkout/Checkout";
 import AboutPage from "../../pages/about/About";
-import ForgotPassweordPage from "../../pages/forgot-password/ForgotPassword";
 import SignIn from "../../pages/sign-in/SignIn";
 import SignUp from "../../pages/sign-up/SignUp";
 import UserPanel from "../user-panel/UserPanel";
@@ -111,7 +110,10 @@ const MainContainer = ({
           <Route
             exact
             path="/password_reset/:token"
-            component={PasswordResetPage}
+            render={(routerProps) => {
+              let token = routerProps.match.params.token;
+              return <PasswordResetPage token={token} />;
+            }}
           />
         </Switch>
       </div>

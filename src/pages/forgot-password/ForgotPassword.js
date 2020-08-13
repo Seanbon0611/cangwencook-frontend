@@ -10,7 +10,7 @@ const ForgotPasswordPage = () => {
     let data = JSON.stringify({
       email: e.target.email.value,
     });
-    const response = await fetch("http://localhost:3000/password_reset", {
+    const response = await fetch("http://localhost:3000/forgot_password", {
       method: "POST",
       credentials: "include",
       headers: {
