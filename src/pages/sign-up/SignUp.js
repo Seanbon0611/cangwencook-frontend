@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CustomButton from "../../components/custom-button/CustomButton";
 import FormInput from "../../components/form-input/FormInput";
+import { Link } from "react-router-dom";
 import "./sign-up.styles.scss";
 import api from "../../services/api";
 
@@ -62,7 +63,13 @@ const SignUp = () => {
           <div>
             <div className="form-container">
               <h1 className="sign-up-title">Create Account</h1>
-              <p>Already have an account? Click here to sign in.</p>
+              <p>
+                Already have an account?{" "}
+                <Link to="/signin" className="link-to">
+                  Click here to sign in
+                </Link>
+                .
+              </p>
               <p>*Required</p>
               <div className="full-name">
                 <div className="first-name">
@@ -117,10 +124,19 @@ const SignUp = () => {
               />
               {errors && <h1>{errors}</h1>}
               <CustomButton type="submit">Create Account</CustomButton>
-              <p>Forgot your password? Click here to reset.</p>
               <p>
-                By signing up you accept the Terms of Service and Privacy
-                Policy.
+                Forgot your password?{" "}
+                <Link className="link-to" to="/forgot-password">
+                  Click here
+                </Link>{" "}
+                to reset.
+              </p>
+              <p>
+                By signing up you accept the{" "}
+                <span className="link-to">
+                  Terms of Service and Privacy Policy
+                </span>
+                .
               </p>
             </div>
           </div>

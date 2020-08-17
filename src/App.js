@@ -2,12 +2,15 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import NewsletterModal from "./components/newsletter-modal/NewsletterModal";
+import useModal from "./hooks/useModal";
 import MainContainer from "./containers/main-container/MainContainer";
 import { withRouter } from "react-router";
 import api from "./services/api";
 import "./App.css";
 
 const App = (props) => {
+  const { isShowing, toggle } = useModal();
   const currentUser = useSelector((state) => state.user.currentUser);
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const isAdmin = useSelector((state) => state.user.isAdmin);
@@ -26,6 +29,12 @@ const App = (props) => {
     dispatch({ type: "ERROR_OCCURED", payload: user.error || null });
     dispatch({ type: "SET_FIRST_NAME", payload: user.firstName });
   };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      toggle();
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     api.auth
@@ -73,6 +82,10 @@ const App = (props) => {
         isAdmin={isAdmin}
         firstName={firstName}
       />
+      <button className="button-default" onClick={toggle}>
+        Show Modal
+      </button>
+      <NewsletterModal isShowing={isShowing} hide={toggle} />
       <Footer />
     </div>
   );

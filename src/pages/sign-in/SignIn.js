@@ -23,7 +23,6 @@ const Signin = ({ afterLogin, loginError }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const config = {
       method: "POST",
       credentials: "include",
@@ -74,11 +73,16 @@ const Signin = ({ afterLogin, loginError }) => {
             Submit
           </CustomButton>
           <p>
-            Forgot your password? <Link to="/forgot-password">Click here</Link>{" "}
+            Forgot your password?{" "}
+            <Link className="link-to" to="/forgot-password">
+              Click here
+            </Link>{" "}
             to reset.
           </p>
           <p>
-            By signing up you accept the Terms of Service and Privacy Policy.
+            By signing up you accept the{" "}
+            <span className="link-to">Terms of Service and Privacy Policy</span>
+            .
           </p>
         </div>
       </form>

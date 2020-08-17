@@ -14,8 +14,9 @@
     border-radius: 9px;
     padding-left: 50px;
     .sign-in-title {
+      padding-top: 20px;
       text-align: left;
-      color: #4E4D68;
+      color: #4e4d68;
     }
     .to-signup {
       display: flex;
@@ -30,4 +31,7 @@
       width: 100px;
     }
   }
+}
+.link-to {
+  text-decoration: underline !important;
 }

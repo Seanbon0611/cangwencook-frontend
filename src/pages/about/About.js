@@ -58,9 +58,6 @@ const AboutPage = ({ recipes }) => {
               action="https://na1595191147.activehosted.com/proc.php"
             >
               <NewsletterForm />
-              <div>
-                <CustomButton type="submit">Submit</CustomButton>
-              </div>
             </form>
           </div>
           <a
