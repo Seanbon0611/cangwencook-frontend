@@ -82,9 +82,6 @@ const App = (props) => {
         isAdmin={isAdmin}
         firstName={firstName}
       />
-      <button className="button-default" onClick={toggle}>
-        Show Modal
-      </button>
       <NewsletterModal isShowing={isShowing} hide={toggle} />
       <Footer />
     </div>

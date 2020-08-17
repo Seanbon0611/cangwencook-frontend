@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import NewsletterForm from "../newsletter-form/NewsletterForm";
+import CustomButton from "../custom-button/CustomButton";
 import "./newsletter-modal.styles.scss";
 
 const NewsletterModal = ({ isShowing, hide }) =>
@@ -16,17 +18,20 @@ const NewsletterModal = ({ isShowing, hide }) =>
           >
             <div className="modal">
               <div className="modal-header">
-                <button
-                  type="button"
+                <span
+                  aria-hidden="true"
                   className="modal-close-button"
-                  data-dismiss="modal"
-                  aria-label="Close"
                   onClick={hide}
                 >
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                  &times;
+                </span>
               </div>
-              <p>Hello, I'm a modal.</p>
+              <form>
+                <h1>Don't Miss a Recipe</h1>
+                <label>Email</label>
+                <NewsletterForm />
+                <CustomButton type="submit">Subscribe</CustomButton>
+              </form>
             </div>
           </div>
         </React.Fragment>,

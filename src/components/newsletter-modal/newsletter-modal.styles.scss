@@ -25,10 +25,16 @@
   z-index: 100;
   background: white;
   position: relative;
-  margin: 1.75rem auto;
+  margin: 10rem auto;
+  border: 1px solid black;
   border-radius: 3px;
-  max-width: 500px;
-  padding: 2rem;
+  max-width: 513px;
+  max-height: 402px;
+  width: 513px;
+  height: 402px;
+  padding: 10px 40px 10px 40px;
+  text-align: left;
+  // margin: 0 auto;
 }
 
 .modal-header {
@@ -37,22 +43,13 @@
 }
 
 .modal-close-button {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1;
+  font-size: 3rem;
+  line-height: 37px;
   color: #000;
   opacity: 0.3;
   cursor: pointer;
   border: none;
-}
-
-button {
-  font-size: 0.9rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 3px;
-  padding: 0.3rem 1rem;
-  margin-left: 0.5rem;
+  padding: 10px 0px 0px 0px;
 }
 
 .button-default {
