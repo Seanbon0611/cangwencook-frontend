@@ -21,18 +21,23 @@ const Header = ({ loggedIn, loginError, isAdmin, logOut }) => {
             <Logo />
           </NavLink>
           <div className="nav-options">
-            <NavLink className="option" to="/about">
-              ANALYTICS
-            </NavLink>
-            <NavLink className="option" to="/videos">
-              RECIPES
-            </NavLink>
-            <NavLink className="option" to="/shop">
-              EDIT INVENTORY
-            </NavLink>
-            <NavLink className="option" onClick={logOut} to="/">
-              SIGNOUT
-            </NavLink>
+            <div className="paths">
+              <NavLink className="option" to="/about">
+                Analytics
+              </NavLink>
+              <NavLink className="option" to="/recipes">
+                Recipes
+              </NavLink>
+              <NavLink className="option" to="/shop">
+                Edit Inventory
+              </NavLink>
+              <NavLink className="option" to="/admin-blog">
+                Blog
+              </NavLink>
+              <NavLink className="option" onClick={logOut} to="/">
+                SIGNOUT
+              </NavLink>
+            </div>
           </div>
         </div>
       );
@@ -159,7 +164,7 @@ const Header = ({ loggedIn, loginError, isAdmin, logOut }) => {
               Sign-In
             </NavLink>
             <NavLink className="option" to="/signup">
-              <CustomButton className="sign-up-btn">Sign-Up</CustomButton>
+              <button>Sign-Up</button>
             </NavLink>
           </div>
         </div>

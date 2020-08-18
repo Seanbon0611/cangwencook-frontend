@@ -1,13 +1,13 @@
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1040;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  opacity: 0.5;
-}
+// .modal-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 1040;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: #000;
+//   opacity: 0.5;
+// }
 
 .modal-wrapper {
   position: fixed;
@@ -34,9 +34,10 @@
   height: 402px;
   padding: 10px 40px 10px 40px;
   text-align: left;
-  // margin: 0 auto;
 }
-
+.submit-button {
+  padding-top: 20px;
+}
 .modal-header {
   display: flex;
   justify-content: flex-end;

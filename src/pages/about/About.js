@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
@@ -10,6 +10,9 @@ import NewsletterForm from "../../components/newsletter-form/NewsletterForm";
 
 const AboutPage = ({ recipes }) => {
   const topTwo = recipes.slice(0, 2);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="about-container">
       <div className="bio">

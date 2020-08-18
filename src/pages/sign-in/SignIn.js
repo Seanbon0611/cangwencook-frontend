@@ -10,7 +10,8 @@ const initialState = {
   password: "",
 };
 
-const Signin = ({ afterLogin, loginError }) => {
+const Signin = ({ afterLogin }) => {
+  const [loginError, setLoginError] = useState(null);
   const [{ email, password }, setState] = useState(initialState);
 
   const onChange = (e) => {
@@ -36,13 +37,16 @@ const Signin = ({ afterLogin, loginError }) => {
       }),
     };
     api.auth.login(config).then((user) => {
-      console.log(user);
+      if (user.error) {
+        setLoginError(user.error);
+      }
       afterLogin(user);
       clearState();
     });
   };
   return (
     <div className="sign-in-container">
+      {loginError && <h1 style={{ color: "red" }}>{loginError}</h1>}
       <form onSubmit={handleSubmit}>
         <div className="sign-in-inputs">
           <h1 className="sign-in-title">Sign-in</h1>

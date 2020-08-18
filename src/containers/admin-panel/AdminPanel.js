@@ -1,9 +1,13 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+import RecipesPage from "../../pages/recipes/Recipes";
 
-const AdminPanel = ({ firstName }) => {
+const AdminPanel = ({ firstName, recipes }) => {
   return (
     <div>
-      <h3>{`Hello ${firstName}(Admin)`}</h3>
+      <Switch>
+        <Route path="/recipes" component={RecipesPage} />
+      </Switch>
     </div>
   );
 };

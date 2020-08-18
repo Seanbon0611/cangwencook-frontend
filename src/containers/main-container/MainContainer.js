@@ -48,7 +48,11 @@ const MainContainer = ({
     if (isAdmin) {
       return (
         <div>
-          <AdminPanel firstName={firstName} />
+          <AdminPanel
+            firstName={firstName}
+            recipes={recipes}
+            currentUser={currentUser}
+          />
         </div>
       );
     } else {
@@ -122,23 +126,3 @@ const MainContainer = ({
 };
 
 export default MainContainer;
-
-// const getData = () => {
-//   return (dispatch) => {
-//     api.product
-//       .getProducts()
-//       .then((res) => res.json())
-//       .then((json) => {
-//         dispatch({
-//           type: "FETCH_PRODUCTS",
-//           payload: json.products.data,
-//         });
-//       });
-//   };
-// };
-// const dispatch = useDispatch();
-// const products = useSelector((state) => state.shop.products.payload);
-
-// useEffect(() => {
-//   dispatch(getData());
-// }, []);

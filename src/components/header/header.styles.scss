@@ -1,8 +1,9 @@
 .header {
   border-bottom: 1px solid black;
-  height: 150px;
+  height: 160px;
   width: 100%;
   display: flex;
+  // align-items: center;
   justify-content: space-between;
   // margin-bottom: 25px;
   z-index: 9999999;
@@ -20,14 +21,14 @@
   .nav-options {
     flex-direction: column;
     display: flex;
-    padding-bottom: 20px;
+    padding: 0px 50px 20px 0px;
     align-items: center;
     justify-content: flex-end;
     .utilities {
       display: flex;
       padding-left: 0px;
       a {
-        padding-left:15px;
+        padding-left: 15px;
         .social {
           width: 40px;
         }
@@ -36,6 +37,8 @@
     }
     .option {
       padding: 10px 30px;
+      font-size: 18px;
+      line-height: 29px;
       cursor: pointer;
     }
     .sign-up-btn {

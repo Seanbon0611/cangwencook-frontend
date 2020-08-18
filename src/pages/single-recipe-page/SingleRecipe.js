@@ -42,7 +42,7 @@ const SingleRecipe = ({ recipe }) => {
                 </CustomButton>
               </div>
               <div className="btn2">
-                <CustomButton style={{ width: "200px" }}>
+                <CustomButton onClick={window.print} style={{ width: "200px" }}>
                   Print Recipe
                 </CustomButton>
               </div>

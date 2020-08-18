@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import NewsletterForm from "../newsletter-form/NewsletterForm";
 import CustomButton from "../custom-button/CustomButton";
+import FormInput from "../form-input/FormInput";
 import "./newsletter-modal.styles.scss";
 
 const NewsletterModal = ({ isShowing, hide }) =>
@@ -28,9 +29,12 @@ const NewsletterModal = ({ isShowing, hide }) =>
               </div>
               <form>
                 <h1>Don't Miss a Recipe</h1>
+                <FormInput label="Name" placeholder="Name" />
                 <label>Email</label>
                 <NewsletterForm />
-                <CustomButton type="submit">Subscribe</CustomButton>
+                <div className="submit-button">
+                  <CustomButton type="submit">Subscribe</CustomButton>
+                </div>
               </form>
             </div>
           </div>
