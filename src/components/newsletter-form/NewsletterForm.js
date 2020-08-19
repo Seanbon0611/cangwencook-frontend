@@ -1,5 +1,4 @@
 import React from "react";
-import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../form-input/FormInput";
 
 const NewsletterForm = () => {

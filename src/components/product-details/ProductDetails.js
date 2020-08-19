@@ -12,30 +12,9 @@ const ProductDetails = ({ item, currentOrder }) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const addLineItem = await axios.post("http://localhost:3000", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      data: {
-        order_id: currentOrder.id,
-        product_id: item.id,
-      },
-    });
   };
   const dispatch = useDispatch();
   const handleClicks = async (item) => {
-    const addLineItem = await fetch("http://localhost:3000/lineitem/new", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        order_id: currentOrder.id,
-        product_id: item.id,
-      }),
-    });
     dispatch(addItem(item));
   };
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -30,9 +30,11 @@ const App = (props) => {
     dispatch({ type: "SET_FIRST_NAME", payload: user.firstName });
   };
   useEffect(() => {
-    const timer = setTimeout(() => {
-      toggle();
-    }, 5000);
+    const timer = () =>
+      setTimeout(() => {
+        toggle();
+      }, 5000);
+    timer();
     return () => clearTimeout(timer);
   }, []);
 
@@ -42,7 +44,7 @@ const App = (props) => {
       .then((res) => res.json())
       .then((json) => checkLoggedIn(json))
       .catch((err) => console.log("error:", err));
-  }, []);
+  }, [useCallback(checkLoggedIn)]);
 
   const logOut = () => {
     const config = {

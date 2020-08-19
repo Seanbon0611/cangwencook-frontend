@@ -8,15 +8,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import CartItem from "../cart-item/CartItem";
 import "./cart-dropdown.styles.scss";
 
-const getModalStyle = () => {
-  const top = 50;
-  const left = 50;
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-};
+// const getModalStyle = () => {
+//   const top = 50;
+//   const left = 50;
+//   return {
+//     top: `${top}%`,
+//     left: `${left}%`,
+//     transform: `translate(-${top}%, -${left}%)`,
+//   };
+// };
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -41,7 +41,7 @@ const CartDropdown = () => {
     0
   );
   const classes = useStyles();
-  const [modalStyle] = useState(getModalStyle);
+  // const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(true);
   const dispatch = useDispatch();
 
