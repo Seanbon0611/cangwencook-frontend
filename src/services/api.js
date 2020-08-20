@@ -1,5 +1,4 @@
-// const API_ROOT = "http://localhost:3000";
-const API_ROOT = "https://can-gwen-cook-backend.herokuapp.com";
+const API_ROOT = "http://localhost:3000";
 
 const login = async (config) => {
   const response = await fetch(`${API_ROOT}/login`, config);
@@ -12,10 +11,7 @@ const signUp = async (config) => {
 };
 
 const getProducts = () => {
-  return fetch(`${API_ROOT}/products`, {
-    credentials: "include",
-    headers: { "Access-Control-Allow-Origin": "*" },
-  });
+  return fetch(`${API_ROOT}/products`, { credentials: "include" });
 };
 
 const recipesPlaylist = () => {
@@ -36,10 +32,7 @@ const getRecipes = async () => {
 };
 
 const autoLogin = () => {
-  return fetch(`${API_ROOT}/autologin`, {
-    credentials: "include",
-    headers: { "Access-Control-Allow-Origin": "*" },
-  });
+  return fetch(`${API_ROOT}/autologin`, { credentials: "include" });
 };
 
 const logOut = (config) => {

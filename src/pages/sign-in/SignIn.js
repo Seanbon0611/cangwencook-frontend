@@ -28,6 +28,7 @@ const Signin = ({ afterLogin }) => {
       method: "POST",
       credentials: "include",
       headers: {
+        "Access-Control-Allow-Origin": "*",
         accept: "application/json",
         "Content-Type": "application/json",
       },

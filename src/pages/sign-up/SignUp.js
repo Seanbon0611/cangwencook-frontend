@@ -30,7 +30,9 @@ const SignUp = () => {
     const config = {
       method: "POST",
       credentials: "include",
+      mode: "no-cors",
       headers: {
+        "Access-Control-Allow-Origin": "*",
         accept: "application/json",
         "Content-Type": "application/json",
       },
