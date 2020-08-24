@@ -29,7 +29,7 @@ const NewsletterModal = ({ isShowing, hide }) =>
               </div>
               <form>
                 <h1>Don't Miss a Recipe</h1>
-                <FormInput label="Name" placeholder="Name" />
+                <FormInput label="Name" />
                 <label>Email</label>
                 <NewsletterForm />
                 <div className="submit-button">
