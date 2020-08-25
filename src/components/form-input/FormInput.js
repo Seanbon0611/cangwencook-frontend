@@ -1,8 +1,7 @@
 import React from "react";
 import "./form-input.styles.scss";
 
-
-const FormInput = ({ asterisk, label, ...otherProps }) => {
+const FormInput = ({ asterisk, label, textarea, ...otherProps }) => {
   return (
     <div className="input-container">
       {label ? (
@@ -10,7 +9,11 @@ const FormInput = ({ asterisk, label, ...otherProps }) => {
           {asterisk ? `${label}*` : label}
         </label>
       ) : null}
-      <input className="form-input" {...otherProps} />
+      {textarea ? (
+        <textarea className="form-input" {...otherProps}></textarea>
+      ) : (
+        <input className="form-input" {...otherProps} />
+      )}
     </div>
   );
 };
