@@ -14,7 +14,7 @@
 }
 
 /* Button style */
-button {
+.custom-button {
   border: none;
   border-radius: 3px;
   padding: 12px 18px;
@@ -22,7 +22,6 @@ button {
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  text-transform: uppercase;
   cursor: pointer;
   color: white;
   background-color: #bedb58;
