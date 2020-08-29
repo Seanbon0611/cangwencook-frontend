@@ -21,12 +21,12 @@ const NewRecipePage = () => {
     netCarbs: null,
     fat: null,
     protein: null,
-    keto: null,
-    paleo: null,
-    lowCalorie: null,
-    dairyFree: null,
-    glutenFree: null,
-    quick: null,
+    keto: false,
+    paleo: false,
+    lowCalorie: false,
+    dairyFree: false,
+    glutenFree: false,
+    quick: false,
   });
   const addIngredients = () => {
     setIngredients([...ingredients, { ...ingredientAttributes }]);
@@ -36,7 +36,9 @@ const NewRecipePage = () => {
     setInstructions([...instructions, { ...instructionAttributes }]);
   };
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setFormData({ ...formData, [name]: value });
   };
 
@@ -66,7 +68,7 @@ const NewRecipePage = () => {
   const prev = () => {
     setStep((s) => s - 1);
   };
-  console.log(instructions);
+  console.log(formData);
   switch (step) {
     case 1:
       return (

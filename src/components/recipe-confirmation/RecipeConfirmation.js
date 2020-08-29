@@ -35,6 +35,7 @@ const RecipeConfirmation = ({
         <p>{`Net Carbs: ${netCarbs}`}</p>
         <p>{`Fat: ${fat}`}</p>
         <p>{`Protein: ${protein}`}</p>
+        <p>{`Keto: ${keto}`}</p>
         <p>Ingredients: </p>
         <ul>
           {ingredients.map((ingredient, index) => {

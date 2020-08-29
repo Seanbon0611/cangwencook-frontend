@@ -9,6 +9,7 @@ const AdminPanel = ({ recipes }) => {
     <div>
       <Switch>
         <Route exact path="/recipes" component={RecipesPage} />
+        <Route exact path="/recipes/new" component={NewRecipePage} />
         <Route
           exact
           path="/recipes/:id/edit"
@@ -20,7 +21,6 @@ const AdminPanel = ({ recipes }) => {
             return recipe ? <EditRecipe recipe={recipe} /> : "Loading...";
           }}
         />
-        <Route exact path="/recipes/new" component={NewRecipePage} />
       </Switch>
     </div>
   );

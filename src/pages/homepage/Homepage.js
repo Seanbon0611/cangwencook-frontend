@@ -24,5 +24,3 @@ const Homepage = ({ recipes }) => {
 };
 
 export default Homepage;
-
-// {loading ? "Loading..." : <VideoCard video={videos[0]} />}
