@@ -24,9 +24,10 @@ const PasswordResetPage = ({ token }) => {
       body: data,
     });
     const json = await response.json();
-    console.log(json);
     if (json.msg) {
       setSuccess(true);
+    } else {
+      setError(json.error);
     }
   };
   if (success === true) {
@@ -39,6 +40,7 @@ const PasswordResetPage = ({ token }) => {
     return (
       <div>
         <form onSubmit={handleSubmit}>
+          {error && <h1>{error}</h1>}
           <FormInput
             type="password"
             label="New Password"

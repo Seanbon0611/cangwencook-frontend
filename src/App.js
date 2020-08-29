@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import NewsletterModal from "./components/newsletter-modal/NewsletterModal";
@@ -11,11 +11,6 @@ import "./App.css";
 
 const App = (props) => {
   const { isShowing, toggle } = useModal();
-  const currentUser = useSelector((state) => state.user.currentUser);
-  const loggedIn = useSelector((state) => state.user.loggedIn);
-  const isAdmin = useSelector((state) => state.user.isAdmin);
-  const loginError = useSelector((state) => state.user.loginError);
-  const firstName = useSelector((state) => state.user.firstName);
   const dispatch = useDispatch();
 
   const checkLoggedIn = (user) => {
@@ -69,21 +64,8 @@ const App = (props) => {
   };
   return (
     <div>
-      <Header
-        loggedIn={loggedIn}
-        loginError={loginError}
-        isAdmin={isAdmin}
-        firstName={firstName}
-        logOut={logOut}
-      />
-      <MainContainer
-        currentUser={currentUser}
-        loggedIn={loggedIn}
-        afterLogin={afterLogin}
-        loginError={loginError}
-        isAdmin={isAdmin}
-        firstName={firstName}
-      />
+      <Header logOut={logOut} />
+      <MainContainer afterLogin={afterLogin} />
       <NewsletterModal isShowing={isShowing} hide={toggle} />
       <Footer />
     </div>

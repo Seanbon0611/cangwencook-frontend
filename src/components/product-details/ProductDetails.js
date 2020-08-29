@@ -2,7 +2,6 @@ import React from "react";
 import CustomButton from "../custom-button/CustomButton";
 import { addItem, removeItemFromCart } from "../../redux/cart/CartAction";
 import { useDispatch } from "react-redux";
-import axios from "axios";
 import "./product-details.styles.scss";
 
 const ProductDetails = ({ item, currentOrder }) => {

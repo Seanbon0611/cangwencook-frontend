@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ReactComponent as Keto } from "../../assets/keys/keto.svg";
 import { ReactComponent as AirFryer } from "../../assets/keys/air-fryer.svg";
@@ -8,12 +9,27 @@ import { ReactComponent as LowCalorie } from "../../assets/keys/low-calorie.svg"
 import "./recipe-card.styles.scss";
 
 const RecipeCard = ({ recipe }) => {
+  const isAdmin = useSelector((state) => state.user.isAdmin);
   const { attributes } = recipe;
   return (
     <div className="recipe-card-container">
-      <Link to={`/recipes/${recipe.id}`}>
-        <img alt="recipe" className="recipe-thumbnail" src={attributes.image} />
-      </Link>
+      {isAdmin ? (
+        <Link to={`/recipes/${recipe.id}/edit`}>
+          <img
+            alt="recipe"
+            className="recipe-thumbnail"
+            src={attributes.image}
+          />
+        </Link>
+      ) : (
+        <Link to={`/recipes/${recipe.id}`}>
+          <img
+            alt="recipe"
+            className="recipe-thumbnail"
+            src={attributes.image}
+          />
+        </Link>
+      )}
       <div className="keys">
         {attributes.keto ? <Keto className="key-type" /> : null}
         {attributes.dairy_free ? <DairyFree className="key-type" /> : null}

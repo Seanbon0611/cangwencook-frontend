@@ -3,7 +3,6 @@ import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
 import { ReactComponent as Pinetrest } from "../../assets/icons/Pinterest.svg";
-import CustomButton from "../../components/custom-button/CustomButton";
 import "./about.styles.scss";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
 import NewsletterForm from "../../components/newsletter-form/NewsletterForm";

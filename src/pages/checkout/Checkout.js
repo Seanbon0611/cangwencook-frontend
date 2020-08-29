@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import CheckoutForm from "../../components/checkout-form/CheckoutForm";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
 import CustomButton from "../../components/custom-button/CustomButton";
-import OrderConfirmation from '../order-confirmation/OrderConfirmation'
+import OrderConfirmation from "../order-confirmation/OrderConfirmation";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { Divider } from "@material-ui/core";
 import axios from "axios";
@@ -88,66 +88,68 @@ const Checkout = ({ currentUser }) => {
       )
         .then((res) => res.json())
         .then(console.log);
-        setSuccess(true)
+      setSuccess(true);
     } catch (err) {
       setCheckoutError(err.message);
     }
   };
 
   if (success) {
-    return <OrderConfirmation />
+    return <OrderConfirmation />;
   } else {
-    return <div className="checkout-container">
-      <h3 className="checkout-header">Check Out</h3>
-      <div className="checkout-details">
-        <div>
-          {cart.length ? (
-            <div>
-              <form onSubmit={handleSubmit}>
-                <CheckoutForm />
-                <div className="payment-info">
-                  <CardElement
-                    className="card-input"
-                    onChange={handleCardDetailsChange}
-                  />
-                </div>
-                {checkoutError && (
-                  <h1 style={{ color: "red" }}>{checkoutError}</h1>
-                )}
-                <CustomButton disabled={isProcessing} type="submit ">
-                  {isProcessing ? "Processing..." : "Place Order"}
-                </CustomButton>
-              </form>
-            </div>
-          ) : null}
-        </div>
-        <div>
-          {cart.length ? (
-            [
-              cart.map((item) => {
-                return (
-                  <div key={item.name} className="">
-                    <CheckoutItem key={item.id} item={item} />
+    return (
+      <div className="checkout-container">
+        <h3 className="checkout-header">Check Out</h3>
+        <div className="checkout-details">
+          <div>
+            {cart.length ? (
+              <div>
+                <form onSubmit={handleSubmit}>
+                  <CheckoutForm />
+                  <div className="payment-info">
+                    <CardElement
+                      className="card-input"
+                      onChange={handleCardDetailsChange}
+                    />
                   </div>
-                );
-              }),
-              <div className='totals'>
-                <Divider />
-                <p>{`Subtotal: $${subtotal.toFixed(2)}`}</p>
-                <p>{`Tax: $${tax.toFixed(2)}`}</p>
-                <p>Shipping: $6.00</p>
-                <Divider />
-                <p>{`Total: $${total.toFixed(2)}`}</p>
-              </div>,
-            ]
-          ) : (
-            <h1 className="cart-empty" variant="body1">
-              Your Cart is Empty!
-            </h1>
-          )}
+                  {checkoutError && (
+                    <h1 style={{ color: "red" }}>{checkoutError}</h1>
+                  )}
+                  <CustomButton disabled={isProcessing} type="submit ">
+                    {isProcessing ? "Processing..." : "Place Order"}
+                  </CustomButton>
+                </form>
+              </div>
+            ) : null}
+          </div>
+          <div>
+            {cart.length ? (
+              [
+                cart.map((item) => {
+                  return (
+                    <div key={item.name} className="">
+                      <CheckoutItem key={item.id} item={item} />
+                    </div>
+                  );
+                }),
+                <div className="totals">
+                  <Divider />
+                  <p>{`Subtotal: $${subtotal.toFixed(2)}`}</p>
+                  <p>{`Tax: $${tax.toFixed(2)}`}</p>
+                  <p>Shipping: $6.00</p>
+                  <Divider />
+                  <p>{`Total: $${total.toFixed(2)}`}</p>
+                </div>,
+              ]
+            ) : (
+              <h1 className="cart-empty" variant="body1">
+                Your Cart is Empty!
+              </h1>
+            )}
+          </div>
         </div>
       </div>
-    </div>;
+    );
   }
 };
 export default Checkout;

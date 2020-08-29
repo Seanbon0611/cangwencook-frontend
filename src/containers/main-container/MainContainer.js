@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "../../pages/homepage/Homepage";
 import RecipesPage from "../../pages/recipes/Recipes";
@@ -21,14 +22,12 @@ const stripePromise = loadStripe(
   "pk_test_51H21vEL37GrW3rTgFD9IYQ3uTzcm66S8GU6ee4khfRinCXNOicIaazI6l0sLxXlwMSdPTvd3Q0aiPTe09XOLE4Gl00snYcwan7"
 );
 
-const MainContainer = ({
-  loggedIn,
-  loginError,
-  isAdmin,
-  firstName,
-  afterLogin,
-  currentUser,
-}) => {
+const MainContainer = ({ afterLogin }) => {
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const loggedIn = useSelector((state) => state.user.loggedIn);
+  const isAdmin = useSelector((state) => state.user.isAdmin);
+  const loginError = useSelector((state) => state.user.loginError);
+  const firstName = useSelector((state) => state.user.firstName);
   const [products, setProducts] = useState([]);
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {

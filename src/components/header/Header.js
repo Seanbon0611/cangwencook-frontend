@@ -4,12 +4,15 @@ import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
 import { ReactComponent as Pinetrest } from "../../assets/icons/Pinterest.svg";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../form-input/FormInput";
 import "./header.styles.scss";
 
-const Header = ({ loggedIn, loginError, isAdmin, logOut }) => {
+const Header = ({ logOut }) => {
+  const loggedIn = useSelector((state) => state.user.loggedIn);
+  const isAdmin = useSelector((state) => state.user.isAdmin);
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -35,7 +38,7 @@ const Header = ({ loggedIn, loginError, isAdmin, logOut }) => {
                 Blog
               </NavLink>
               <NavLink className="option" onClick={logOut} to="/">
-                SIGNOUT
+                Sign Out
               </NavLink>
             </div>
           </div>
@@ -164,7 +167,7 @@ const Header = ({ loggedIn, loginError, isAdmin, logOut }) => {
               Sign-In
             </NavLink>
             <NavLink className="option" to="/signup">
-              <button>Sign-Up</button>
+              <CustomButton>Sign-Up</CustomButton>
             </NavLink>
           </div>
         </div>

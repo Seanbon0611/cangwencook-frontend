@@ -15,7 +15,6 @@ const NewRecipePage = () => {
   ]);
   const [formData, setFormData] = useState({
     title: "",
-
     description: "",
     image: "",
     calories: null,
@@ -67,7 +66,7 @@ const NewRecipePage = () => {
   const prev = () => {
     setStep((s) => s - 1);
   };
-  console.log(ingredients);
+  console.log(instructions);
   switch (step) {
     case 1:
       return (
@@ -99,7 +98,15 @@ const NewRecipePage = () => {
         />
       );
     case 4:
-      return <RecipeConfirmation handleSubmit={handleSubmit} />;
+      return (
+        <RecipeConfirmation
+          instructions={instructions}
+          ingredients={ingredients}
+          formData={formData}
+          handleSubmit={handleSubmit}
+          prev={prev}
+        />
+      );
     default:
       return null;
   }

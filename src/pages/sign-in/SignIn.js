@@ -74,7 +74,7 @@ const Signin = ({ afterLogin }) => {
             name="password"
             onChange={onChange}
           />
-          <CustomButton type="submit" className="ripple">
+          <CustomButton type="submit" className="ripple custom-button">
             Submit
           </CustomButton>
           <p>
