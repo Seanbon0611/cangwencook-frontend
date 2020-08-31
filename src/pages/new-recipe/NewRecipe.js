@@ -3,6 +3,7 @@ import RecipeFormDetails from "../../components/recipe-form-details/RecipeFormDe
 import RecipeFormIngredients from "../../components/recipe-form-ingredients/RecipeFormIngredients";
 import RecipeFormInstructions from "../../components/recipe-form-instructions/RecipeFormInstructions";
 import RecipeConfirmation from "../../components/recipe-confirmation/RecipeConfirmation";
+import api from "../../services/api";
 import "./new-recipe.styles.scss";
 
 const NewRecipePage = () => {
@@ -58,7 +59,34 @@ const NewRecipePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("formData", formData);
+    const data = JSON.stringify({
+      title: formData.title,
+      description: formData.description,
+      image: formData.image,
+      calories: formData.calories,
+      netCarbs: formData.netCarbs,
+      fat: formData.fat,
+      protein: formData.protein,
+      keto: formData.keto,
+      paleo: formData.paleo,
+      lowCalorie: formData.lowCalorie,
+      dairyFree: formData.dairyFree,
+      glutenFree: formData.glutenFree,
+      quick: formData.quick,
+      instructions: instructions,
+      ingredients: ingredients,
+    });
+    const config = {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: data,
+    };
+
+    api.recipes.newRecipe(config).then((json) => console.log(json));
   };
 
   const next = () => {

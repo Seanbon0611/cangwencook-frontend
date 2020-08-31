@@ -32,8 +32,21 @@ const getRecipes = async () => {
   return response.json();
 };
 
-const autoLogin = () => {
-  return fetch(`${API_ROOT}/autologin`, { credentials: "include" });
+const newRecipe = async (config) => {
+  const response = await fetch(`${API_ROOT}/recipes/new`, config);
+  return response.json();
+};
+
+const deleteRecipe = async (id, config) => {
+  const response = await fetch(`${API_ROOT}/recipes/${id}/delete`, config);
+  return response.json();
+};
+
+const autoLogin = async () => {
+  const response = await fetch(`${API_ROOT}/autologin`, {
+    credentials: "include",
+  });
+  return response;
 };
 
 const logOut = (config) => {
@@ -66,5 +79,7 @@ export default {
   },
   recipes: {
     getRecipes: getRecipes,
+    newRecipe: newRecipe,
+    deleteRecipe: deleteRecipe,
   },
 };

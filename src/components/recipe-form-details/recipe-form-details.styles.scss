@@ -1,6 +1,10 @@
 .recipe-form-details-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  .form-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 500px;
+    margin: 0 auto;
+  }
   .recipe-form-checkboxes {
     display: grid;
     grid-template-columns: 1fr 1fr;

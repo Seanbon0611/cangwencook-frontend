@@ -6,6 +6,21 @@ import "./recipes.styles.scss";
 const RecipesPage = () => {
   const [recipes, setRecipes] = useState([]);
 
+  const handleDelete = (id) => {
+    const data = {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id,
+      }),
+    };
+    api.recipes.deleteRecipe(id, data).then((json) => console.log(json));
+  };
+
   useEffect(() => {
     api.recipes
       .getRecipes()
@@ -27,7 +42,13 @@ const RecipesPage = () => {
       </div>
       <div className="recipe-cards">
         {recipes.map((recipe) => {
-          return <RecipeCard key={recipe.id} recipe={recipe} />;
+          return (
+            <RecipeCard
+              key={recipe.id}
+              handleDelete={handleDelete}
+              recipe={recipe}
+            />
+          );
         })}
       </div>
     </div>

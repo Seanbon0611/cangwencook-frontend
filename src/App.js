@@ -38,8 +38,8 @@ const App = (props) => {
       .autoLogin()
       .then((res) => res.json())
       .then((json) => checkLoggedIn(json))
-      .catch((err) => console.log("error:", err));
-  }, [useCallback(checkLoggedIn)]);
+      .catch((err) => console.log(err));
+  }, []);
 
   const logOut = () => {
     const config = {
