@@ -37,6 +37,10 @@ const newRecipe = async (config) => {
   return response.json();
 };
 
+const editRecipe = async (config) => {
+  const response = await fetch(`${API_ROOT}/recipes/${id}/edit`, config);
+  return response.json();
+};
 const deleteRecipe = async (id, config) => {
   const response = await fetch(`${API_ROOT}/recipes/${id}/delete`, config);
   return response.json();
@@ -81,5 +85,6 @@ export default {
     getRecipes: getRecipes,
     newRecipe: newRecipe,
     deleteRecipe: deleteRecipe,
+    editRecipe: editRecipe,
   },
 };
