@@ -11,10 +11,8 @@ const EditRecipe = ({ recipe }) => {
   const [step, setStep] = useState(1);
   const ingredientAttributes = { name: "", measurement: "" };
   const instructionAttributes = { step: "" };
-  const [ingredients, setIngredients] = useState([{ ...ingredientAttributes }]);
-  const [instructions, setInstructions] = useState([
-    { ...instructionAttributes },
-  ]);
+  const [ingredients, setIngredients] = useState(attributes.ingredients);
+  const [instructions, setInstructions] = useState(attributes.instructions);
   const [formData, setFormData] = useState({
     title: attributes.title,
     description: attributes.description,
@@ -80,7 +78,7 @@ const EditRecipe = ({ recipe }) => {
       ingredients: ingredients,
     });
     const config = {
-      method: "POST",
+      method: "PATCH",
       credentials: "include",
       headers: {
         Accept: "application/json",
@@ -89,7 +87,7 @@ const EditRecipe = ({ recipe }) => {
       body: data,
     };
 
-    api.recipes.newRecipe(config).then((json) => console.log(json));
+    api.recipes.editRecipe(config).then((json) => console.log(json));
   };
 
   const next = () => {
@@ -99,7 +97,6 @@ const EditRecipe = ({ recipe }) => {
   const prev = () => {
     setStep((s) => s - 1);
   };
-  console.log(recipe);
   switch (step) {
     case 1:
       return (

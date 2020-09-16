@@ -37,7 +37,7 @@ const newRecipe = async (config) => {
   return response.json();
 };
 
-const editRecipe = async (config) => {
+const editRecipe = async (id, config) => {
   const response = await fetch(`${API_ROOT}/recipes/${id}/edit`, config);
   return response.json();
 };
