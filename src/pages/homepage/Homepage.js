@@ -9,9 +9,12 @@ const Homepage = ({ recipes }) => {
     <div className="homepage">
       <div className="image-container">
         <img
-          alt="home"
-          src="https://storage.googleapis.com/can-gwen-cook-pics/the-new-banner.png"
+          alt="hero"
+          src="https://storage.googleapis.com/can-gwen-cook-pics/iStock-1046086606-1%202.png"
         />
+        <div class="motto">
+          <p>Chopped-Inspired Recipes</p> for your active lifestyle
+        </div>
       </div>
       <h1>Latest Recipes</h1>
       <div className="top-recipes">

@@ -10,7 +10,8 @@ import FormInput from "../form-input/FormInput";
 import "./header.styles.scss";
 
 const Header = ({ logOut }) => {
-  const [activeTab, setActiveTab] = useState(null);
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const isAdmin = useSelector((state) => state.user.isAdmin);
   const handleSubmit = (e) => {
