@@ -54,21 +54,75 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  padding: 0px 40px;
   .nav-options {
     display: flex;
     justify-content: flex-start;
+    .logo {
+      max-width: 100px;
+      max-height: 100px;
+    }
   }
   .signin-and-up {
     display: flex;
     justify-content: flex-end;
+    .signup-btn {
+      padding: 10px 10px;
+      margin-top: 60px;
+
+      height: 2.4rem;
+      border-radius: 3px;
+      background: #0ca16c;
+      color: white;
+      cursor: pointer;
+    }
   }
   .option {
-    padding: 10px 10px;
+    padding: 10px 40px;
     font-weight: 600;
     cursor: pointer;
+    margin-top: 60px;
   }
   .active {
     color: #0ca16c;
+  }
+}
+@media (min-width: 792px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    .nav-options {
+      display: flex;
+      justify-content: flex-start;
+      .logo {
+        max-width: 100px;
+        max-height: 100px;
+      }
+    }
+    .signin-and-up {
+      display: flex;
+      justify-content: flex-end;
+      .signup-btn {
+        padding: 10px 10px;
+        margin-top: 60px;
+
+        height: 2.4rem;
+        border-radius: 3px;
+        background: #0ca16c;
+        color: white;
+        cursor: pointer;
+      }
+    }
+    .option {
+      padding: 10px 40px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 60px;
+    }
+    .active {
+      color: #0ca16c;
+    }
   }
 }

@@ -101,38 +101,30 @@ const Header = ({ logOut }) => {
     }
   } else {
     return (
-      <div className="header">
+      <nav className="header">
         <div className="nav-options">
-          <div className="paths">
-            <NavLink to="/">Logo Goes Here</NavLink>
-            <NavLink className="option" to="/about">
-              About
-            </NavLink>
-            <NavLink className="option" to="/recipes">
-              Recipes
-            </NavLink>
-            <NavLink className="option" to="/blog">
-              Blog
-            </NavLink>
-          </div>
+          <NavLink className="logo" to="/">
+            <Logo className="logo" />
+          </NavLink>
+          <NavLink className="option" to="/about">
+            About
+          </NavLink>
+          <NavLink className="option" to="/recipes">
+            Recipes
+          </NavLink>
+          <NavLink className="option" to="/blog">
+            Blog
+          </NavLink>
         </div>
         <div className="signin-and-up">
           <NavLink className="option" to="/signin">
             Sign-In
           </NavLink>
-          <NavLink
-            className="option"
-            style={{
-              borderRadius: "3px",
-              background: "#0CA16C",
-              color: "white",
-            }}
-            to="/signup"
-          >
+          <NavLink className="signup-btn" to="/signup">
             Sign Up
           </NavLink>
         </div>
-      </div>
+      </nav>
     );
   }
 };
