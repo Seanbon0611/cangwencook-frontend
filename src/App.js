@@ -24,6 +24,7 @@ const App = (props) => {
     dispatch({ type: "ERROR_OCCURED", payload: user.error || null });
     dispatch({ type: "SET_FIRST_NAME", payload: user.firstName });
   };
+
   useEffect(() => {
     const timer = () =>
       setTimeout(() => {

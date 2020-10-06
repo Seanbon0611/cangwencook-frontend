@@ -1,12 +1,11 @@
 .image-container {
-  position: relative;
+  width: 100%;
   padding-bottom: 70px;
   overflow: hidden;
   img {
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    left: 0%;
     width: 100%;
   }
 }

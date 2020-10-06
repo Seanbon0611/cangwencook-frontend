@@ -11,9 +11,7 @@ import "./footer.styles.scss";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="logo">
-        <FooterLogo className="footer-logo" />
-      </div>
+      <div className="logo"></div>
       <div className="section">
         <Link className="footer-link" to="/about">
           About
