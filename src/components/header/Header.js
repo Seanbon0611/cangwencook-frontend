@@ -3,6 +3,8 @@ import { ReactComponent as Logo } from "../../assets/can-gwen-cook-logo.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
+import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
+import { ReactComponent as CloseMenu } from "../../assets/icons/x.svg";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CustomButton from "../custom-button/CustomButton";
@@ -14,9 +16,8 @@ const Header = ({ logOut }) => {
   const [dropdown, setDropdown] = useState(false);
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const isAdmin = useSelector((state) => state.user.isAdmin);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
   if (loggedIn) {
     if (isAdmin) {
       return (
@@ -50,16 +51,6 @@ const Header = ({ logOut }) => {
         <div className="header">
           <div className="nav-options">
             <div className="utilities">
-              <form onSubmit={handleSubmit}>
-                <div className="searchbar-container">
-                  <FormInput
-                    style={{ width: "350px" }}
-                    type="search"
-                    placeholder="Search"
-                    name="search"
-                  />
-                </div>
-              </form>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -124,6 +115,13 @@ const Header = ({ logOut }) => {
           <NavLink className="signup-btn" to="/signup">
             Sign Up
           </NavLink>
+        </div>
+        <div className="mobile-menu-icon" onClick={handleClick}>
+          {click ? (
+            <CloseMenu style={{ width: "30px", cursor: "pointer" }} />
+          ) : (
+            <MenuIcon style={{ width: "30px", cursor: "pointer" }} />
+          )}
         </div>
       </nav>
     );
