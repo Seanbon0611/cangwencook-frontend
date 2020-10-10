@@ -11,75 +11,27 @@ import "./footer.styles.scss";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="logo"></div>
-      <div className="section">
-        <Link className="footer-link" to="/about">
-          About
-        </Link>
-        <p>Our Team</p>
+      <Link className="footer-link" to="/about">
+        About
+      </Link>
+      <Link className="footer-link" to="/blog">
         <p>Blog</p>
-      </div>
-      <div className="section">
-        <a
-          className="footer-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
-        >
-          Food Videos
-        </a>
-        <p>
-          <Link className="footer-link" to="/recipes">
-            Recipe Index
-          </Link>
-        </p>
-        <p>Return Policy</p>
-      </div>
-      <div className="section">
-        <p>Shop</p>
-        <p>Advertise</p>
-        <p>Contact</p>
-      </div>
-      <div className="section">
-        <h3>Subscribe via email</h3>
-        <form
-          method="POST"
-          action="https://na1595191147.activehosted.com/proc.php"
-        >
-          <NewsletterForm />
-        </form>
-        <h3>Follow Us</h3>
-        <div className="socials">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.facebook.com/gwen.kong.9"
-          >
-            <Facebook className="social" />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.instagram.com/cangwencook/"
-          >
-            <Instagram className="social" />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
-          >
-            <Youtube className="social" />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.facebook.com/gwen.kong.9"
-          >
-            <Pinetrest className="social" />
-          </a>
-        </div>
-      </div>
+      </Link>
+      <Link className="footer-link" to="/recipes">
+        Recipes
+      </Link>
+      <Link className="footer-link" to="/recipes">
+        Videos
+      </Link>
+      <Link className="footer-link" to="/recipes">
+        Shop
+      </Link>
+      <Link className="footer-link" to="/recipes">
+        Collaborate
+      </Link>
+      <Link className="footer-link" to="/recipes">
+        Feedback
+      </Link>
     </div>
   );
 };

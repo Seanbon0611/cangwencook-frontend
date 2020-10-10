@@ -6,12 +6,23 @@
     font-size: 1.8rem;
     font-weight: 600;
   }
+  img {
+    width: 100%;
+  }
 }
 h1 {
   color: #4e4d68;
 }
 .top-recipes {
   padding-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 792px) {
+  .top-recipes {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

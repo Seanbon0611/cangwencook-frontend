@@ -8,7 +8,6 @@ import { ReactComponent as CloseMenu } from "../../assets/icons/x.svg";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CustomButton from "../custom-button/CustomButton";
-import FormInput from "../form-input/FormInput";
 import "./header.styles.scss";
 
 const Header = ({ logOut }) => {
@@ -115,13 +114,6 @@ const Header = ({ logOut }) => {
           <NavLink className="signup-btn" to="/signup">
             Sign Up
           </NavLink>
-        </div>
-        <div className="mobile-menu-icon" onClick={handleClick}>
-          {click ? (
-            <CloseMenu style={{ width: "30px", cursor: "pointer" }} />
-          ) : (
-            <MenuIcon style={{ width: "30px", cursor: "pointer" }} />
-          )}
         </div>
       </nav>
     );
