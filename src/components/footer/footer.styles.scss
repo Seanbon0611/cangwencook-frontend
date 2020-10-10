@@ -1,8 +1,15 @@
 .footer {
-  font-weight: 600;
-  padding-bottom: 5rem;
-  display: flex;
-  justify-content: space-evenly;
+  width: 100%;
+  height: 10vh;
+  .newsletter {
+    margin: 0 auto;
+    width: 500px;
+  }
+  .links-container {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 600;
+  }
 }
 
 // .footer {

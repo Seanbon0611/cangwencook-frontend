@@ -12,7 +12,12 @@ const NewsletterForm = () => {
       <input type="hidden" name="act" value="sub" />
       <input type="hidden" name="v" value="2" />
       <div>
-        <FormInput type="text" name="email" required />
+        <FormInput
+          type="text"
+          name="email"
+          required
+          placeholder="E-mail address"
+        />
       </div>
     </div>
   );

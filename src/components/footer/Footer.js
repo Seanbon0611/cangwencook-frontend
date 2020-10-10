@@ -11,27 +11,57 @@ import "./footer.styles.scss";
 const Footer = () => {
   return (
     <div className="footer">
-      <Link className="footer-link" to="/about">
-        About
-      </Link>
-      <Link className="footer-link" to="/blog">
-        <p>Blog</p>
-      </Link>
-      <Link className="footer-link" to="/recipes">
-        Recipes
-      </Link>
-      <Link className="footer-link" to="/recipes">
-        Videos
-      </Link>
-      <Link className="footer-link" to="/recipes">
-        Shop
-      </Link>
-      <Link className="footer-link" to="/recipes">
-        Collaborate
-      </Link>
-      <Link className="footer-link" to="/recipes">
-        Feedback
-      </Link>
+      <p>Hey, let's keep it touch</p>
+      <p>Sign up for our newsletter</p>
+      <form className="newsletter">
+        <NewsletterForm />
+      </form>
+      <div className="socials">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.facebook.com/gwen.kong.9"
+        >
+          <Facebook className="social" />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.instagram.com/cangwencook/"
+        >
+          <Instagram className="social" />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
+        >
+          <Youtube className="social" />
+        </a>
+      </div>
+      <div className="links-container">
+        <Link className="footer-link" to="/about">
+          About
+        </Link>
+        <Link className="footer-link" to="/blog">
+          <p>Blog</p>
+        </Link>
+        <Link className="footer-link" to="/recipes">
+          Recipes
+        </Link>
+        <Link className="footer-link" to="/recipes">
+          Videos
+        </Link>
+        <Link className="footer-link" to="/recipes">
+          Shop
+        </Link>
+        <Link className="footer-link" to="/recipes">
+          Collaborate
+        </Link>
+        <Link className="footer-link" to="/recipes">
+          Feedback
+        </Link>
+      </div>
     </div>
   );
 };
