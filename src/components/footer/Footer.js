@@ -11,8 +11,12 @@ import "./footer.styles.scss";
 const Footer = () => {
   return (
     <div className="footer">
-      <p>Hey, let's keep it touch</p>
-      <p>Sign up for our newsletter</p>
+      <p style={{ fontWeight: "600", fontSize: "16px" }}>
+        Hey, let's keep it touch
+      </p>
+      <p style={{ fontWeight: "400", fontSize: "14px" }}>
+        Sign up for our newsletter!
+      </p>
       <form className="newsletter">
         <NewsletterForm />
       </form>

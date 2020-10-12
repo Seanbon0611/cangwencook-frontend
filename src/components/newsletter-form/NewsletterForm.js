@@ -1,5 +1,6 @@
 import React from "react";
 import FormInput from "../form-input/FormInput";
+import "./newsletter-form.styles.scss";
 
 const NewsletterForm = () => {
   return (
@@ -22,5 +23,4 @@ const NewsletterForm = () => {
     </div>
   );
 };
-
 export default NewsletterForm;
