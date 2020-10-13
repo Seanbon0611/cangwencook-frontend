@@ -66,6 +66,9 @@ const Footer = () => {
           Feedback
         </Link>
       </div>
+      <p className="copywrite">
+        Copyright 2020 CanGwenCook. All rights reserved. Terms of use.
+      </p>
     </div>
   );
 };

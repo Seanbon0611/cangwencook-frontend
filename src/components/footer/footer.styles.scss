@@ -5,10 +5,25 @@
     margin: 0 auto;
     width: 500px;
   }
+  .socials {
+    width: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    .social {
+      width: 37.95px;
+      height: 37.95px;
+    }
+  }
   .links-container {
     display: flex;
     justify-content: space-evenly;
     font-weight: 600;
+  }
+  .copywrite {
+    padding: 20px;
+    font-weight: 400;
+    font-size: 0.8rem;
   }
 }
 
