@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ReactComponent as Logo } from "../../assets/can-gwen-cook-logo.svg";
+import React, { useState, useEffect } from "react";
+import { ReactComponent as Logo } from "../../assets/cgcv2logo.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
@@ -9,36 +9,69 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CustomButton from "../custom-button/CustomButton";
 import "./header.styles.scss";
+// import MobileDropDown from "../mobile-dropdown/MobileDropDown";
 
 const Header = ({ logOut }) => {
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const isAdmin = useSelector((state) => state.user.isAdmin);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 792px)");
+    mediaQuery.addListener(handleMediaQueryChange);
+    handleMediaQueryChange(mediaQuery);
+
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  }, []);
+
+  const handleMediaQueryChange = (mediaQuery) => {
+    if (mediaQuery.matches) {
+      setIsMobileView(true);
+    } else {
+      setIsMobileView(false);
+    }
+  };
+
   if (loggedIn) {
     if (isAdmin) {
       return (
         <div className="header">
-          <NavLink className="logo-container" to="/">
+          <NavLink onClick={closeMobileMenu} className="logo-container" to="/">
             <Logo />
           </NavLink>
           <div className="nav-options">
             <div className="paths">
-              <NavLink className="option" to="/about">
+              <NavLink onClick={closeMobileMenu} className="option" to="/about">
                 Analytics
               </NavLink>
-              <NavLink className="option" to="/recipes">
+              <NavLink
+                onClick={closeMobileMenu}
+                className="option"
+                to="/recipes"
+              >
                 Recipes
               </NavLink>
-              <NavLink className="option" to="/shop">
+              <NavLink onClick={closeMobileMenu} className="option" to="/shop">
                 Edit Inventory
               </NavLink>
-              <NavLink className="option" to="/admin-blog">
+              <NavLink
+                onClick={closeMobileMenu}
+                className="option"
+                to="/admin-blog"
+              >
                 Blog
               </NavLink>
-              <NavLink className="option" onClick={logOut} to="/">
+              <NavLink
+                onClick={closeMobileMenu}
+                className="option"
+                onClick={logOut}
+                to="/"
+              >
                 Sign Out
               </NavLink>
             </div>
@@ -73,16 +106,29 @@ const Header = ({ logOut }) => {
               </a>
             </div>
             <div className="paths">
-              <NavLink className="option" to="/about">
+              <NavLink onClick={closeMobileMenu} className="option" to="/about">
                 About
               </NavLink>
-              <NavLink className="option" to="/recipes">
+              <NavLink
+                onClick={closeMobileMenu}
+                className="option"
+                to="/recipes"
+              >
                 Recipes
               </NavLink>
-              <NavLink className="option" to="/account">
+              <NavLink
+                onClick={closeMobileMenu}
+                className="option"
+                to="/account"
+              >
                 Account
               </NavLink>
-              <NavLink className="option" onClick={logOut} to="/">
+              <NavLink
+                onClick={closeMobileMenu}
+                className="option"
+                onClick={logOut}
+                to="/"
+              >
                 <CustomButton>Signout</CustomButton>
               </NavLink>
             </div>
@@ -93,27 +139,39 @@ const Header = ({ logOut }) => {
   } else {
     return (
       <nav className="header">
-        <div className="nav-options">
-          <NavLink className="logo" to="/">
+        <div className="logo-nav">
+          <NavLink onClick={closeMobileMenu} to="/">
             <Logo className="logo" />
           </NavLink>
-          <NavLink className="option" to="/about">
-            About
-          </NavLink>
-          <NavLink className="option" to="/recipes">
-            Recipes
-          </NavLink>
-          <NavLink className="option" to="/blog">
-            Blog
-          </NavLink>
+          <div className={click ? "nav-options active" : "nav-options"}>
+            <NavLink onClick={closeMobileMenu} to="/about">
+              About
+            </NavLink>
+            <NavLink onClick={closeMobileMenu} to="/recipes">
+              Recipes
+            </NavLink>
+            <NavLink onClick={closeMobileMenu} to="/shop">
+              Shop
+            </NavLink>
+            <NavLink onClick={closeMobileMenu} to="/blog">
+              Blog
+            </NavLink>
+          </div>
         </div>
         <div className="signin-and-up">
-          <NavLink className="option" to="/signin">
+          <NavLink onClick={closeMobileMenu} to="/signin">
             Sign-In
           </NavLink>
-          <NavLink className="signup-btn" to="/signup">
+          <NavLink onClick={closeMobileMenu} to="/signup">
             Sign Up
           </NavLink>
+          <div className="mobile-menu" onClick={handleClick}>
+            {click ? (
+              <CloseMenu className="menu-icon" />
+            ) : (
+              <MenuIcon className="menu-icon" />
+            )}
+          </div>
         </div>
       </nav>
     );
@@ -122,30 +180,30 @@ const Header = ({ logOut }) => {
 
 export default Header;
 
-// <NavLink className="logo-container" to="/">
-// <Logo />
-// </NavLink>
-
-// <div className="utilities">
-//             <a
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               href="https://www.facebook.com/gwen.kong.9"
-//             >
-//               <Facebook className="social" />
-//             </a>
-//             <a
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               href="https://www.instagram.com/cangwencook/"
-//             >
-//               <Instagram className="social" />
-//             </a>
-//             <a
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
-//             >
-//               <Youtube className="social" />
-//             </a>
-//           </div>
+// <header className="header">
+//   <nav className="nav-options">
+//     <NavLink onClick={closeMobileMenu} className="logo" to="/">
+//       <Logo className="logo" />
+//     </NavLink>
+//     <NavLink className="option" to="/about">
+//       About
+//     </NavLink>
+//     <NavLink className="option" to="/recipes">
+//       Recipes
+//     </NavLink>
+//     <NavLink className="option" to="/shop">
+//       Shop
+//     </NavLink>
+//     <NavLink className="option" to="/blog">
+//       Blog
+//     </NavLink>
+//   </nav>
+//   <nav className="signin-up">
+//     <NavLink className="option" to="/signin">
+//       Sign In
+//     </NavLink>
+//     <NavLink className="option" to="/signup">
+//       Sign Up
+//     </NavLink>
+//   </nav>
+// </header>

@@ -1,7 +1,6 @@
 import React from "react";
 import NewsletterForm from "../newsletter-form/NewsletterForm";
 import { Link } from "react-router-dom";
-import { ReactComponent as FooterLogo } from "../../assets/footer-logo.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
@@ -11,8 +10,8 @@ import "./footer.styles.scss";
 const Footer = () => {
   return (
     <div className="footer">
-      <p style={{ fontWeight: "600", fontSize: "16px" }}>
-        Hey, let's keep it touch
+      <p style={{ fontWeight: "600", fontSize: "18px", paddingBottom: "5px" }}>
+        Hey, let's keep it touch!
       </p>
       <p style={{ fontWeight: "400", fontSize: "14px" }}>
         Sign up for our newsletter!
