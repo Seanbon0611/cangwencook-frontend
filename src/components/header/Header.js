@@ -5,6 +5,7 @@ import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
 import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
 import { ReactComponent as CloseMenu } from "../../assets/icons/x.svg";
+import Socials from "../socials/Socials";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CustomButton from "../custom-button/CustomButton";
@@ -170,6 +171,10 @@ const Header = ({ logOut }) => {
             >
               Sign Up
             </NavLink>
+            <div className="option-mobile">
+              <p>Follow Us!</p>
+              <Socials />
+            </div>
           </div>
         </div>
         <div className="signin-and-up">

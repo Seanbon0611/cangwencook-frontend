@@ -31,14 +31,6 @@ const RecipesPage = () => {
     <div className="recipe-container">
       <div className="recipe-header-container">
         <h1 className="recipe-header">Recipes</h1>
-        <div className="filters">
-          <div className="filter">
-            <span>Filter</span>
-          </div>
-          <div className="sort-by">
-            <span>Sort By</span>
-          </div>
-        </div>
       </div>
       <div className="recipe-cards">
         {recipes.map((recipe) => {
