@@ -8,7 +8,7 @@ import { ReactComponent as CloseMenu } from "../../assets/icons/x.svg";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CustomButton from "../custom-button/CustomButton";
-import "./header.styles.scss";
+import "./header.styles.css";
 // import MobileDropDown from "../mobile-dropdown/MobileDropDown";
 
 const Header = ({ logOut }) => {
@@ -144,25 +144,43 @@ const Header = ({ logOut }) => {
             <Logo className="logo" />
           </NavLink>
           <div className={click ? "nav-options active" : "nav-options"}>
-            <NavLink onClick={closeMobileMenu} to="/about">
+            <NavLink className="option" onClick={closeMobileMenu} to="/about">
               About
             </NavLink>
-            <NavLink onClick={closeMobileMenu} to="/recipes">
+            <NavLink className="option" onClick={closeMobileMenu} to="/recipes">
               Recipes
             </NavLink>
-            <NavLink onClick={closeMobileMenu} to="/shop">
+            <NavLink className="option" onClick={closeMobileMenu} to="/shop">
               Shop
             </NavLink>
-            <NavLink onClick={closeMobileMenu} to="/blog">
+            <NavLink className="option" onClick={closeMobileMenu} to="/blog">
               Blog
+            </NavLink>
+            <NavLink
+              className="option-mobile"
+              onClick={closeMobileMenu}
+              to="/signin"
+            >
+              Sign-In
+            </NavLink>
+            <NavLink
+              className="option-mobile mobile-signup"
+              onClick={closeMobileMenu}
+              to="/signup"
+            >
+              Sign Up
             </NavLink>
           </div>
         </div>
         <div className="signin-and-up">
-          <NavLink onClick={closeMobileMenu} to="/signin">
+          <NavLink className="sign-in" onClick={closeMobileMenu} to="/signin">
             Sign-In
           </NavLink>
-          <NavLink onClick={closeMobileMenu} to="/signup">
+          <NavLink
+            className="signup-btn"
+            onClick={closeMobileMenu}
+            to="/signup"
+          >
             Sign Up
           </NavLink>
           <div className="mobile-menu" onClick={handleClick}>
