@@ -1,0 +1,124 @@
+/* Desktop View */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+}
+.logo-nav {
+  display: flex;
+}
+.logo {
+  justify-self: start;
+  width: 100px;
+  height: 100px;
+}
+.nav-options {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 50px;
+  margin-top: 70px;
+  padding-left: 50px;
+  font-weight: 600;
+}
+
+.option-mobile {
+  display: none;
+}
+.signin-and-up {
+  display: flex;
+  margin-top: 53px;
+  font-weight: 600;
+}
+.sign-in {
+  padding-right: 50px;
+  align-self: center;
+}
+.signup-btn {
+  padding: 10px 10px;
+  height: 2.4rem;
+  border-radius: 3px;
+  background: #0ca16c;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+}
+.active {
+  color: #0ca16c;
+}
+.mobile-menu {
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 791px) {
+  /* Mobile View */
+  .header {
+    position: relative;
+  }
+  .nav-options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    padding-left: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .nav-options.active {
+    background: #f5f5f5;
+    right: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+    align-content: center;
+  }
+  .option-mobile {
+    display: block;
+  }
+  .logo {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .hide-nav {
+    display: none;
+  }
+  .signin-and-up {
+    margin-top: 0px;
+  }
+  .signup-btn {
+    display: none;
+  }
+  .mobile-signup {
+    background: #0ca16c;
+    color: white;
+    padding: 20px 0px;
+    width: 80%;
+    align-self: center;
+    border-radius: 3px;
+  }
+  .sign-in {
+    display: none;
+  }
+  .option {
+    padding: 10px 0px;
+    /* border: 1px solid black; */
+  }
+  .active {
+    color: #0ca16c;
+  }
+  .mobile-menu {
+  }
+  .menu-icon {
+    display: block;
+    width: 45px;
+    cursor: pointer;
+    justify-self: end;
+  }
+}
