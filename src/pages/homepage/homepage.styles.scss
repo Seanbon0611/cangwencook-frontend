@@ -1,3 +1,6 @@
+.homepage {
+  padding-bottom: 40px;
+}
 .image-container {
   width: 100%;
   padding-bottom: 70px;
@@ -11,15 +14,17 @@
   }
 }
 h1 {
+  font-size: 1.5rem;
   color: #4e4d68;
 }
 .top-recipes {
   padding-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
 }
 
-@media (min-width: 792px) {
+@media (min-width: 1234px) {
   .top-recipes {
     padding-top: 50px;
     display: grid;

@@ -3,7 +3,7 @@
   height: 10vh;
   .newsletter {
     margin: 0 auto;
-    width: 25vw;
+    width: 420px;
   }
   .socials {
     width: 15vw;
@@ -20,6 +20,8 @@
     display: flex;
     justify-content: space-evenly;
     font-weight: 600;
+    width: 900px;
+    margin: 0 auto;
   }
   .copywrite {
     padding: 20px;
@@ -28,41 +30,20 @@
   }
 }
 
-// .footer {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//   height: 200px;
-//   color: white;
-//   background-color: #4e4d68;
-//   width: 100%;
-//   align-items: center;
-//   z-index: 100;
-//   .logo {
-//     .footer-logo {
-//       width: 179px;
-//       height: 141px;
-//     }
-//   }
-//   a {
-//     padding-right: 10px;
-//     .social {
-//       width: 40px;
-//     }
-//   }
-//   .section {
-//     padding-left: 40px;
-//     text-align: left;
-//     flex-direction: column;
-//     .footer-link {
-//       color: white;
-//     }
-//     h3 {
-//       margin: 0;
-//     }
-//     input {
-//       width: 200px;
-//       height: 40px;
-//       font-size: 18px;
-//     }
-//   }
-// }
+@media screen and (max-width: 792px) {
+  .footer {
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      margin: auto;
+      width: 100%;
+    }
+    .footer-link {
+      padding: 5px 0px;
+    }
+    .newsletter {
+      width: 420px;
+    }
+  }
+}

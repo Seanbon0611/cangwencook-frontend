@@ -20,24 +20,6 @@ const Header = ({ logOut }) => {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 792px)");
-    mediaQuery.addListener(handleMediaQueryChange);
-    handleMediaQueryChange(mediaQuery);
-
-    return () => {
-      mediaQuery.removeListener(handleMediaQueryChange);
-    };
-  }, []);
-
-  const handleMediaQueryChange = (mediaQuery) => {
-    if (mediaQuery.matches) {
-      setIsMobileView(true);
-    } else {
-      setIsMobileView(false);
-    }
-  };
-
   if (loggedIn) {
     if (isAdmin) {
       return (
