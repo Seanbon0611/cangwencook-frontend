@@ -1,14 +1,12 @@
 import React from "react";
 import CustomButton from "../custom-button/CustomButton";
 import { addItem, removeItemFromCart } from "../../redux/cart/CartAction";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./product-details.styles.scss";
 
 const ProductDetails = ({ item, currentOrder }) => {
-  console.log(item);
-  const handleChange = (e) => {
-    console.log(e.target.value);
-  };
+  const cart = useSelector((state) => state.cart.cartItems);
+  const cartQuantity = cart.find((x) => x.id === item.id);
   const handleSubmit = async (e) => {
     e.preventDefault();
   };
@@ -26,7 +24,7 @@ const ProductDetails = ({ item, currentOrder }) => {
           <p>{`$${item.price}`}</p>
         </div>
         <div className="sizes">
-          <select name="size" id="size" onChange={handleChange}>
+          <select name="size" id="size">
             <option>Size</option>
             <option className="size-option" value="xs">
               X-Small
@@ -57,7 +55,9 @@ const ProductDetails = ({ item, currentOrder }) => {
             >
               &#45;
             </div>
-            <span className="value">1</span>
+            <span className="value">
+              {cartQuantity ? cartQuantity.quantity : "0"}
+            </span>
             <div className="plus-minus" onClick={() => dispatch(addItem(item))}>
               &#43;
             </div>
