@@ -46,6 +46,9 @@
 .active {
   color: #0ca16c;
 }
+.signup-btn.active {
+  color: white;
+}
 .mobile-menu {
 }
 

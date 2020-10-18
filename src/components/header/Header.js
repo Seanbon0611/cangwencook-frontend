@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ReactComponent as Logo } from "../../assets/cgcv2logo.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
@@ -14,7 +14,6 @@ import "./header.styles.css";
 
 const Header = ({ logOut }) => {
   const [click, setClick] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(false);
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const isAdmin = useSelector((state) => state.user.isAdmin);
   const handleClick = () => setClick(!click);
