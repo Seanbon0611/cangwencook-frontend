@@ -12,7 +12,7 @@ const NewsletterForm = () => {
       <input type="hidden" name="m" value="0" />
       <input type="hidden" name="act" value="sub" />
       <input type="hidden" name="v" value="2" />
-      <div>
+      <div className="newsletter-input">
         <FormInput
           type="text"
           name="email"

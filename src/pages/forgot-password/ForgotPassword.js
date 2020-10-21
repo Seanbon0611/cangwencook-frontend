@@ -20,7 +20,6 @@ const ForgotPasswordPage = () => {
       body: data,
     });
     const json = await response.json();
-    console.log(json);
     if (json.msg) {
       setSuccess(true);
     }
@@ -36,12 +35,18 @@ const ForgotPasswordPage = () => {
     );
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <FormInput type="email" placeholder="Email" name="email" />
-        <CustomButton type="submit">Reset Password</CustomButton>
+    <div className="forgot-password-page">
+      <form className="email-submit" onSubmit={handleSubmit}>
+        <h1 className="reset-msg">
+          You will receive an email with a link to reset your password.
+        </h1>
+        <div className="email-field">
+          <FormInput type="email" placeholder="Email" name="email" />
+        </div>
+        <div className="submit-email">
+          <CustomButton type="submit">Reset Password</CustomButton>
+        </div>
       </form>
-      <span>You will receive an email with a link to reset your password.</span>
     </div>
   );
 };
