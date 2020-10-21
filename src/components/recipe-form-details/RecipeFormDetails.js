@@ -65,7 +65,7 @@ const RecipeFormDetails = ({ formData, next, prev, handleChange }) => {
         name="image"
         label="Image:"
         onChange={handleChange}
-        type="file"
+        type="text"
       />
       <div className="recipe-form-checkboxes">
         <FormInput
