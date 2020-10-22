@@ -17,7 +17,7 @@ const AboutPage = ({ recipes }) => {
         </h1>
         <div className="about-me-pic-container">
           <img
-            src="https://storage.cloud.google.com/can-gwen-cook-pics/cgc-about-me.png"
+            src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/cgc-about-me.png"
             alt="about-me-pic"
           />
         </div>
