@@ -87,7 +87,7 @@ const EditRecipe = ({ recipe }) => {
       body: data,
     };
 
-    api.recipes.editRecipe(config).then((json) => console.log(json));
+    api.recipes.editRecipe(recipe.id, config).then((json) => console.log(json));
   };
 
   const next = () => {
