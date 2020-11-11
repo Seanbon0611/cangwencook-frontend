@@ -6,7 +6,7 @@ import "./socials.styles.scss";
 
 const Socials = () => {
   return (
-    <div>
+    <>
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -28,7 +28,7 @@ const Socials = () => {
       >
         <Youtube className="social" />
       </a>
-    </div>
+    </>
   );
 };
 

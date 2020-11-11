@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CustomButton from "../custom-button/CustomButton";
 import "./header.styles.css";
-// import MobileDropDown from "../mobile-dropdown/MobileDropDown";
 
 const Header = ({ logOut }) => {
   const [click, setClick] = useState(false);

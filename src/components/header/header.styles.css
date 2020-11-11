@@ -75,6 +75,10 @@
     transition: all 0.5s ease;
   }
 
+  .logo-nav {
+    padding-left: 20px;
+  }
+
   .nav-options.active {
     background: #f5f5f5;
     left: 0;
