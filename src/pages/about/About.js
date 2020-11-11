@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-import Socials from "../../components/socials/Socials";
 import "./about.styles.scss";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
-import NewsletterForm from "../../components/newsletter-form/NewsletterForm";
 
 const AboutPage = ({ recipes }) => {
   const topTwo = recipes.slice(0, 2);
@@ -71,18 +69,6 @@ const AboutPage = ({ recipes }) => {
         <h1>A.B.C : Always be curious!</h1>
       </div>
       <div className="side-content">
-        <div className="newsletter">
-          <h2>Dont Miss a Recipe</h2>
-          <div>
-            <form
-              method="POST"
-              action="https://na1595191147.activehosted.com/proc.php"
-            >
-              <NewsletterForm />
-            </form>
-          </div>
-          <Socials />
-        </div>
         <div className="top-recipes">
           <h1>Top Recipes</h1>
           {topTwo.map((recipe) => {

@@ -45,4 +45,16 @@
 
 .about-p {
   padding: 10px 0px;
+  display: flex;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 791px) {
+  .about-container {
+    display: block;
+    padding: 0px 0px 0px 30px;
+    .side-content {
+      display: flex;
+    }
+  }
 }
