@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./about.styles.scss";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
+import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 
 const AboutPage = ({ recipes }) => {
   const topTwo = recipes.slice(0, 2);
@@ -68,13 +69,16 @@ const AboutPage = ({ recipes }) => {
         </p>
         <h1>A.B.C : Always be curious!</h1>
       </div>
-      <div className="side-content">
-        <div className="top-recipes">
-          <h1>Top Recipes</h1>
+      <div className="top-recipes">
+        <h1>Top Recipes</h1>
+        <div className="side-content">
           {topTwo.map((recipe) => {
             return <RecipeCard key={recipe.id} recipe={recipe} />;
           })}
         </div>
+      </div>
+      <div>
+        <RecipeCarousel recipes={recipes} />
       </div>
     </div>
   );

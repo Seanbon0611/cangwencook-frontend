@@ -1,0 +1,59 @@
+// .left-arrow {
+//   width: 100px;
+//   height: 100px;
+//   z-index: 999;
+// }
+// .right-arrow {
+//   width: 100px;
+//   height: 100px;
+//   z-index: 999;
+// }
+
+// .slider {
+//   display: flex;
+//   margin: 0;
+//   padding: 0;
+//   align-items: center;
+//   overflow: hidden;
+// }
+
+// .slide {
+//   justify-content: center;
+//   // border: 1px solid blue;
+//   // width: 40%;
+//   height: 80vh;
+//   transition: 0.5s;
+//   overflow: hidden;
+// }
+
+// .carousel {
+//   display: flex;
+//   align-items: center;
+// }
+
+.swiper-container {
+  display: none;
+}
+
+@media screen and (max-width: 791px) {
+  .carousel {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    .swiper-container {
+      display: block;
+      width: 80vw;
+
+      .recipe-card-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 60vh;
+      }
+      .swiper-button-next .swiper-button-prev {
+        color: #6f6d6d !important;
+      }
+    }
+  }
+}
