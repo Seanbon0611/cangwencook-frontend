@@ -6,23 +6,39 @@
   padding-bottom: 70px;
   overflow: hidden;
   img {
-    width: 100%;
+    width: 100vw;
   }
 }
 h1 {
   color: #4e4d68;
 }
 .top-recipes {
-  padding-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
+  display: none;
 }
 
-@media (min-width: 1234px) {
+.hero-text {
+  position: absolute;
+  left: 108px;
+  bottom: 65.5%;
+  font-size: 15.5px;
+  color: #303030;
+}
+
+@media (min-width: 791px) {
   .top-recipes {
     padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .top-recipes-mobile {
+    display: none;
+  }
+
+  .hero-text {
+    position: absolute;
+    left: 35%;
+    bottom: 100px;
+    font-size: 36px;
+    color: #303030;
   }
 }
