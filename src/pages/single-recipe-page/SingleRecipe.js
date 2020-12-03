@@ -8,6 +8,7 @@ import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
 import { ReactComponent as GlutenFree } from "../../assets/keys/gluten-free.svg";
 import { ReactComponent as LowCalorie } from "../../assets/keys/low-calorie.svg";
 import { ReactComponent as RecipeKeys } from "../../assets/keys/recipe-key-svg.svg";
+import RecipeKey from "../../components/recipe-key/RecipeKey";
 import CustomButton from "../../components/custom-button/CustomButton";
 import "./single-recipe.styles.scss";
 
@@ -36,35 +37,33 @@ const SingleRecipe = ({ recipe }) => {
               <Bookmark className="interactable" />
             </div>
             <div className="btns-container">
-              <div className="btn1">
-                <CustomButton style={{ width: "200px" }}>
-                  Play Video
-                </CustomButton>
+              <div style={{ paddingRight: "10px" }}>
+                <CustomButton className="btn1">Play Video</CustomButton>
               </div>
-              <div className="btn2">
-                <CustomButton onClick={window.print} style={{ width: "200px" }}>
+              <div>
+                <CustomButton onClick={window.print} className="btn2">
                   Print Recipe
                 </CustomButton>
               </div>
             </div>
           </div>
         </div>
+        <h2>Ingredients:</h2>
+        {attributes.ingredients.map((ingredient, index) => (
+          <p key={index}>
+            {ingredient.measurement} of {ingredient.name}
+          </p>
+        ))}
+        <h2>Procedure:</h2>
+        {attributes.instructions.map((step, index) => (
+          <p key={index}>
+            Step {index + 1}: {step.step}
+          </p>
+        ))}
         <div className="recipe-keys">
-          <RecipeKeys />
+          <RecipeKey />
         </div>
       </div>
-      <h2>Ingredients:</h2>
-      {attributes.ingredients.map((ingredient, index) => (
-        <p key={index}>
-          {ingredient.measurement} of {ingredient.name}
-        </p>
-      ))}
-      <h2>Procedure:</h2>
-      {attributes.instructions.map((step, index) => (
-        <p key={index}>
-          Step {index + 1}: {step.step}
-        </p>
-      ))}
     </div>
   );
 };
