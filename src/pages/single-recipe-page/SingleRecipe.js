@@ -7,7 +7,6 @@ import { ReactComponent as AirFryer } from "../../assets/keys/air-fryer.svg";
 import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
 import { ReactComponent as GlutenFree } from "../../assets/keys/gluten-free.svg";
 import { ReactComponent as LowCalorie } from "../../assets/keys/low-calorie.svg";
-import { ReactComponent as RecipeKeys } from "../../assets/keys/recipe-key-svg.svg";
 import RecipeKey from "../../components/recipe-key/RecipeKey";
 import CustomButton from "../../components/custom-button/CustomButton";
 import "./single-recipe.styles.scss";
@@ -47,19 +46,21 @@ const SingleRecipe = ({ recipe }) => {
               </div>
             </div>
           </div>
+          <div>
+            <h2>Ingredients:</h2>
+            {attributes.ingredients.map((ingredient, index) => (
+              <p key={index}>
+                {ingredient.measurement} of {ingredient.name}
+              </p>
+            ))}
+            <h2>Procedure:</h2>
+            {attributes.instructions.map((step, index) => (
+              <p key={index}>
+                Step {index + 1}: {step.step}
+              </p>
+            ))}
+          </div>
         </div>
-        <h2>Ingredients:</h2>
-        {attributes.ingredients.map((ingredient, index) => (
-          <p key={index}>
-            {ingredient.measurement} of {ingredient.name}
-          </p>
-        ))}
-        <h2>Procedure:</h2>
-        {attributes.instructions.map((step, index) => (
-          <p key={index}>
-            Step {index + 1}: {step.step}
-          </p>
-        ))}
         <div className="recipe-keys">
           <RecipeKey />
         </div>
