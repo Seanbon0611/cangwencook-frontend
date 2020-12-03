@@ -1,0 +1,19 @@
+.key-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.key {
+  width: 100px;
+}
+
+.single-key {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 792px) {
+  .key {
+    width: 10vw;
+  }
+}
