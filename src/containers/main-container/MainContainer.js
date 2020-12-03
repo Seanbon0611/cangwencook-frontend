@@ -6,6 +6,7 @@ import RecipesPage from "../../pages/recipes/Recipes";
 import ShopPage from "../../pages/shop/Shop";
 import CheckoutPage from "../../pages/checkout/Checkout";
 import AboutPage from "../../pages/about/About";
+import Blog from "../../pages/blog/Blog";
 import SignIn from "../../pages/sign-in/SignIn";
 import SignUp from "../../pages/sign-up/SignUp";
 import UserPanel from "../user-panel/UserPanel";
@@ -103,6 +104,7 @@ const MainContainer = ({ afterLogin }) => {
           />
           <Route path="/recipes" render={() => <RecipesPage />} />
           <Route path="/signup" render={() => <SignUp />} />
+          <Route path="/blog" component={Blog} />
           <Route
             path="/signin"
             render={() => <SignIn afterLogin={afterLogin} error={loginError} />}

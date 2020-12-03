@@ -14,7 +14,7 @@ const Homepage = ({ recipes }) => {
           src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/new-hero-image.png"
         />
       </div>
-      <h1>Latest Recipes</h1>
+      <h1 className="latest-recipes">Latest Recipes</h1>
       <div className="top-recipes">
         {topThree.map((recipe) => (
           <RecipeCard key={recipe.id} recipe={recipe} />
