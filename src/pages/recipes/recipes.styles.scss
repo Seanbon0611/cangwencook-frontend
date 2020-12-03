@@ -30,3 +30,11 @@
     align-items: center;
   }
 }
+
+@media screen and (max-width: 792px) {
+  .recipe-container {
+    .recipe-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -20,8 +20,8 @@ const RecipeCarousel = ({ recipes }) => {
       >
         {recipes.map((recipe, index) => {
           return (
-            <SwiperSlide>
-              <RecipeCard recipe={recipe} key={index} />
+            <SwiperSlide key={index}>
+              <RecipeCard recipe={recipe} />
             </SwiperSlide>
           );
         })}
