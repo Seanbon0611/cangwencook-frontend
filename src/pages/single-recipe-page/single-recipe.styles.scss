@@ -22,7 +22,7 @@
       }
       .clickable-container {
         display: flex;
-        width: 100vw;
+        width: 50vw;
         justify-content: space-between;
         .interactable-container {
           .interactable {
@@ -79,45 +79,6 @@
 h2 {
   color: #4e4d68;
 }
-
-// @media screen and (max-width: 792px) {
-//   .single-recipe-container {
-//     .recipe-image-keys-container {
-//       display: block;
-//       .recipe-image-container {
-//         .clickable-container {
-//         }
-//       }
-//       .clickable-container {
-//         display: flex;
-//         width: 20px;
-//         justify-content: space-between;
-//         align-items: center;
-//         .interactable-container {
-//           display: flex;
-//           .interactable {
-//             width: 5px;
-//             // padding-left: 20px;
-//           }
-//         }
-//       }
-//       .btns-container {
-//         width: 100vw;
-//         .btn1 {
-//           font-size: 0.5rem;
-//           width: 30px;
-//         }
-//         .btn1 {
-//           font-size: 0.5rem;
-//           width: 30px;
-//         }
-//       }
-//     }
-//   }
-//   .recipe-keys {
-//     width: 300px;
-//   }
-// }
 
 @media screen and (max-width: 792px) {
   .single-recipe-container {
