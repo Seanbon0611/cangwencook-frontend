@@ -57,7 +57,6 @@ const Signin = ({ afterLogin }) => {
               Click here to sign up.
             </Link>
           </div>
-          <p>*Required</p>
           <FormInput
             asterisk
             type="text"
@@ -74,21 +73,30 @@ const Signin = ({ afterLogin }) => {
             name="password"
             onChange={onChange}
           />
-          <CustomButton type="submit" className="ripple custom-button">
-            Submit
-          </CustomButton>
-          <p>
-            Forgot your password?{" "}
-            <Link className="link-to" to="/forgot-password">
-              Click here
-            </Link>{" "}
-            to reset.
-          </p>
-          <p>
-            By signing up you accept the{" "}
-            <span className="link-to">Terms of Service and Privacy Policy</span>
-            .
-          </p>
+          <p>Password must be at minimum 8 characters</p>
+          <div style={{ padding: "20px 0px 10px 0px" }}>
+            <CustomButton type="submit" className="ripple custom-button">
+              Submit
+            </CustomButton>
+          </div>
+          <div style={{ padding: "20px 0px 20px 0px" }}>
+            <p>
+              Forgot your password?{" "}
+              <Link className="link-to" to="/forgot-password">
+                Click here
+              </Link>{" "}
+              to reset.
+            </p>
+          </div>
+          <div style={{ padding: "20px 0px 20px 0px" }}>
+            <p>
+              By signing up you accept the{" "}
+              <span className="link-to">
+                Terms of Service and Privacy Policy
+              </span>
+              .
+            </p>
+          </div>
         </div>
       </form>
     </div>

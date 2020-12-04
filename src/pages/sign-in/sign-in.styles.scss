@@ -1,15 +1,16 @@
 .sign-in-container {
-  padding-bottom: 70px;
+  padding: 20px 0px 100px 0px;
+  height: 100%;
   .sign-in-inputs {
     display: flex;
     text-align: left;
     flex-direction: column;
     margin: 0 auto;
     margin-top: 75px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     padding-right: 40px;
-    width: 510px;
-    height: auto;
+    width: 37.5vw;
+    height: 100%;
     border: 1px solid black;
     border-radius: 9px;
     padding-left: 50px;
@@ -20,6 +21,7 @@
     }
     .to-signup {
       display: flex;
+      padding: 20px 0px 20px 0px;
       span {
         margin-right: 5px;
       }
@@ -33,5 +35,8 @@
   }
 }
 .link-to {
-  text-decoration: underline !important;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 792px) {
 }
