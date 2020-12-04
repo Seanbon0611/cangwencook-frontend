@@ -39,4 +39,23 @@
 }
 
 @media screen and (max-width: 792px) {
+  .sign-in-container {
+    font-size: 10.5px !important;
+    width: 100vw;
+    .sign-in-inputs {
+      width: 90%;
+      .sign-in-title {
+      }
+      .to-signup {
+        span {
+        }
+        .link-to {
+        }
+      }
+      .ripple {
+      }
+    }
+  }
+  .link-to {
+  }
 }
