@@ -9,7 +9,7 @@
     margin: 0 auto;
     width: 510px;
     .sign-up-title {
-      color: #4E4D68;
+      color: #4e4d68;
     }
     .full-name {
       display: grid;
@@ -19,6 +19,29 @@
       }
       .last-name {
         padding-left: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 792px) {
+  .sign-up-container {
+    padding-top: 75px;
+    padding-bottom: 70px;
+    .form-container {
+      border: 1px solid black;
+      text-align: left;
+      padding: 25px 40px;
+      border-radius: 9px;
+      margin: 0 auto;
+      width: 510px;
+      .sign-up-title {
+      }
+      .full-name {
+        .first-name {
+        }
+        .last-name {
+        }
       }
     }
   }
