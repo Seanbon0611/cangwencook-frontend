@@ -26,15 +26,9 @@
 
 @media screen and (max-width: 792px) {
   .sign-up-container {
-    padding-top: 75px;
-    padding-bottom: 70px;
+    width: 100vw;
     .form-container {
-      border: 1px solid black;
-      text-align: left;
-      padding: 25px 40px;
-      border-radius: 9px;
-      margin: 0 auto;
-      width: 510px;
+      width: 90%;
       .sign-up-title {
       }
       .full-name {
