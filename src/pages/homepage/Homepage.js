@@ -11,8 +11,13 @@ const Homepage = ({ recipes }) => {
       <div className="image-container">
         <img
           alt="hero"
-          src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/new-hero-image.png"
+          src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/hero-image.jpg"
         />
+        <div className="slogan">
+          <span>Chopped-Inspired Recipes</span>
+          <br />
+          <span>For Your Active Lifestyle</span>
+        </div>
       </div>
       <h1 className="latest-recipes">Latest Recipes</h1>
       <div className="top-recipes">
