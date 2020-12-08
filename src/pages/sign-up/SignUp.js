@@ -65,7 +65,7 @@ const SignUp = () => {
           <div>
             <div className="form-container">
               <h1 className="sign-up-title">Create Account</h1>
-              <p>
+              <p style={{ padding: "10px 0 0 0" }}>
                 Already have an account?{" "}
                 <Link to="/signin" className="link-to">
                   Click here to sign in
@@ -125,15 +125,10 @@ const SignUp = () => {
                 onChange={onChange}
               />
               {errors && <h1>{errors}</h1>}
-              <CustomButton type="submit">Create Account</CustomButton>
-              <p>
-                Forgot your password?{" "}
-                <Link className="link-to" to="/forgot-password">
-                  Click here
-                </Link>{" "}
-                to reset.
-              </p>
-              <p>
+              <div style={{ padding: "10px 0" }}>
+                <CustomButton type="submit">Create Account</CustomButton>
+              </div>
+              <p style={{ padding: "10px 0" }}>
                 By signing up you accept the{" "}
                 <span className="link-to">
                   Terms of Service and Privacy Policy
