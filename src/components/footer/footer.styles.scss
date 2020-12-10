@@ -44,6 +44,13 @@
     }
     .newsletter {
       width: 100vw;
+      .newsletter-form {
+        display: flex;
+        justify-content: center;
+        .newsletter-input {
+          width: 100vw;
+        }
+      }
     }
     .copywrite {
       font-size: 10px;
