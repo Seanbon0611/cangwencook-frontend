@@ -1,12 +1,19 @@
 import React from "react";
 import { ReactComponent as Keto } from "../../assets/keys/keto.svg";
+import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
+import { ReactComponent as GlutenFree } from "../../assets/keys/gluten-free.svg";
+import { ReactComponent as AirFryer } from "../../assets/keys/air-fryer.svg";
+import { ReactComponent as LowCalorie } from "../../assets/keys/low-calorie.svg";
+import { ReactComponent as Quick } from "../../assets/keys/quick.svg";
+import { ReactComponent as SlowCooker } from "../../assets/keys/slow-cooker.svg";
+import { ReactComponent as FreezerMeal } from "../../assets/keys/freezer-meals.svg";
+import { ReactComponent as Paleo } from "../../assets/keys/paleo.svg";
+import { ReactComponent as Vegetarian } from "../../assets/keys/vegetarian.svg";
+import { ReactComponent as Seafood } from "../../assets/keys/seafood.svg";
+import { ReactComponent as InstantPot } from "../../assets/keys/instant-pot.svg";
 import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 import { ReactComponent as Comment } from "../../assets/icons/comment.svg";
 import { ReactComponent as Bookmark } from "../../assets/icons/bookmark.svg";
-import { ReactComponent as AirFryer } from "../../assets/keys/air-fryer.svg";
-import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
-import { ReactComponent as GlutenFree } from "../../assets/keys/gluten-free.svg";
-import { ReactComponent as LowCalorie } from "../../assets/keys/low-calorie.svg";
 import RecipeKey from "../../components/recipe-key/RecipeKey";
 import CustomButton from "../../components/custom-button/CustomButton";
 import "./single-recipe.styles.scss";
@@ -22,6 +29,13 @@ const SingleRecipe = ({ recipe }) => {
         {attributes.low_calorie ? <LowCalorie className="key-type" /> : null}
         {attributes.gluten_free ? <GlutenFree className="key-type" /> : null}
         {attributes.air_fryer ? <AirFryer className="key-type" /> : null}
+        {attributes.quick ? <Quick className="key-type" /> : null}
+        {attributes.slowcooker ? <SlowCooker className="key-type" /> : null}
+        {attributes.paleo ? <Paleo className="key-type" /> : null}
+        {attributes.vegetarian ? <Vegetarian className="key-type" /> : null}
+        {attributes.freezermeal ? <FreezerMeal className="key-type" /> : null}
+        {attributes.seafood ? <Seafood className="key-type" /> : null}
+        {attributes.instantpot ? <InstantPot className="key-type" /> : null}
       </div>
       <div className="macros">
         <span>

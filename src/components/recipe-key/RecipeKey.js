@@ -4,8 +4,6 @@ import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
 import { ReactComponent as GlutenFree } from "../../assets/keys/gluten-free.svg";
 import { ReactComponent as AirFryer } from "../../assets/keys/air-fryer.svg";
 import { ReactComponent as LowCalorie } from "../../assets/keys/low-calorie.svg";
-import { ReactComponent as MealPrep } from "../../assets/keys/meal-prep.svg";
-// import { ReactComponent as PressureCooker } from "../../assets/keys/pressure-cooker.svg";
 import { ReactComponent as Quick } from "../../assets/keys/quick.svg";
 import { ReactComponent as SlowCooker } from "../../assets/keys/slow-cooker.svg";
 import { ReactComponent as FreezerMeal } from "../../assets/keys/freezer-meals.svg";
