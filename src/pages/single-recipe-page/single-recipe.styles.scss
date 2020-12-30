@@ -10,6 +10,12 @@
     color: #4e4d68;
     margin: auto;
   }
+  .macros {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    width: 18.7rem;
+  }
   .recipe-image-keys-container {
     display: grid;
     grid-template-columns: 1fr 1fr;

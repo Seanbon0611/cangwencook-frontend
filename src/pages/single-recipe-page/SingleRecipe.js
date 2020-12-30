@@ -23,9 +23,17 @@ const SingleRecipe = ({ recipe }) => {
         {attributes.gluten_free ? <GlutenFree className="key-type" /> : null}
         {attributes.air_fryer ? <AirFryer className="key-type" /> : null}
       </div>
-      <p>Calories: {attributes.calories}</p>
-      <p>Fat: {attributes.fat}g</p>
-      <p>Net Carbs: 5g</p>
+      <div className="macros">
+        <span>
+          <strong>Calories</strong>: {attributes.calories}
+        </span>
+        <span>
+          <strong>Fat</strong>: {attributes.fat}g
+        </span>
+        <span>
+          <strong>Net-Carbs</strong>: 5g
+        </span>
+      </div>
       <div className="recipe-image-keys-container">
         <div className="recipe-image-container">
           <img className="recipe-image" alt="recipe" src={attributes.image} />
@@ -49,13 +57,13 @@ const SingleRecipe = ({ recipe }) => {
           <div>
             <h2>Ingredients:</h2>
             {attributes.ingredients.map((ingredient, index) => (
-              <p key={index}>
+              <p style={{ padding: "10px 0px" }} key={index}>
                 {ingredient.measurement} of {ingredient.name}
               </p>
             ))}
             <h2>Procedure:</h2>
             {attributes.instructions.map((step, index) => (
-              <p key={index}>
+              <p style={{ padding: "10px 0px" }} key={index}>
                 Step {index + 1}: {step.step}
               </p>
             ))}
