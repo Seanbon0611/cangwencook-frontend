@@ -19,21 +19,24 @@ const AboutPage = ({ recipes }) => {
             alt="about-me-pic"
           />
         </div>
-        <h2 style={{ width: "80vw" }}>
-          Hi, my name is Gwen. Welcome to my collection of recipes for your
-          active lifestyle!
-        </h2>
+        <h2 style={{ width: "80vw" }}>Hi, my name is Gwen!</h2>
         <h2>What is your cooking style?</h2>
-        <p className="about-p">I love to call it: Chopped-style Keto Cooking</p>
-        <h2>What is Chopped-style Keto Cooking?</h2>
         <p className="about-p">
-          Imagine opening up your refrigerator, freezer, or dry pantry and
-          creating delicious food with the ingredients you have.
+          I am an amatuer home cook at heart. CanGwenCook is my way of sharing
+          some fun recipes using everyday ingredients which you can pick up at
+          your local grocery store.
         </p>
+        <h2>Who are you cooking for?</h2>
         <p className="about-p">
-          Recipes are created with creativity - a ‘Chopped’ style format to
-          transform an ingredient which would fit into a keto-inspired\ diet
-          where it is low in carbs and sugars but packed with flavor.
+          I can honestly say that I am better at cooking for a smaller group of
+          4-6 people. The size of my kitchen and cookware are made for a couple
+          + a few friends, thus, making massive amounts of food just isn’t going
+          to happen.
+        </p>
+        <p>
+          Typically, my cooking is focused on a protein and veggie diet with
+          minimal carbs. When I do cook carbs, I would cook a rice substitute
+          like quinoa or chickpea rice or whole wheat pasta.
         </p>
         <h2>What are some of your favorite recipes?</h2>
         <p className="about-p">
@@ -50,6 +53,10 @@ const AboutPage = ({ recipes }) => {
           My husband loves the chichiron-breaded chicken parmesan baked with
           your choice of yummy cheese.
         </p>
+        <p>
+          We both enjoy our cheddar bay almond flour biscuits for snacks and as
+          a substitute for carbs.
+        </p>
         <h2>What are you passionate about when you are not cooking?</h2>
         <p className="about-p">
           Urban hiking with my two dogs, Booki & Sparky.
@@ -58,10 +65,7 @@ const AboutPage = ({ recipes }) => {
           Traveling the world for food and mental relaxation. I miss you JAPAN!
         </p>
         <p className="about-p">
-          Hosting music listening sessions for my love in EDM and trance.
-        </p>
-        <p className="about-p">
-          Enjoying the fantastic food scene of the San Francisco, Bay Area.
+          Hosting music listening sessions for my love of trance music.
         </p>
         <p className="about-p">
           Watching short documentaries and content to educate myself on the
