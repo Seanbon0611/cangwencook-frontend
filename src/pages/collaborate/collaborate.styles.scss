@@ -1,0 +1,30 @@
+.collaborate-container {
+  text-align: left;
+  padding: 40px 40px 0px 40px;
+  .page-title {
+    color: var(--main);
+  }
+  .title-socials {
+    display: flex;
+    justify-content: space-between;
+    .links-to-socials {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+    }
+  }
+  .split-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .top-recipes-container {
+      padding-top: 130px;
+      display: flex;
+      justify-content: flex-end;
+      .top-recipes-collab {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+}
