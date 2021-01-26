@@ -11,9 +11,6 @@ import { ReactComponent as Paleo } from "../../assets/keys/paleo.svg";
 import { ReactComponent as Vegetarian } from "../../assets/keys/vegetarian.svg";
 import { ReactComponent as Seafood } from "../../assets/keys/seafood.svg";
 import { ReactComponent as InstantPot } from "../../assets/keys/instant-pot.svg";
-import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
-import { ReactComponent as Comment } from "../../assets/icons/comment.svg";
-import { ReactComponent as Bookmark } from "../../assets/icons/bookmark.svg";
 import RecipeKey from "../../components/recipe-key/RecipeKey";
 import CustomButton from "../../components/custom-button/CustomButton";
 import "./single-recipe.styles.scss";
@@ -52,11 +49,6 @@ const SingleRecipe = ({ recipe }) => {
         <div className="recipe-image-container">
           <img className="recipe-image" alt="recipe" src={attributes.image} />
           <div className="clickable-container">
-            <div className="interactable-container">
-              <Heart className="interactable" />
-              <Comment className="interactable" />
-              <Bookmark className="interactable" />
-            </div>
             <div className="btns-container">
               <div style={{ paddingRight: "10px" }}>
                 <CustomButton className="btn1">Play Video</CustomButton>

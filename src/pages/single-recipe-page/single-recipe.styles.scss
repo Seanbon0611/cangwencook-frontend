@@ -29,52 +29,48 @@
       .clickable-container {
         display: flex;
         width: 50vw;
+        padding: 20px 0px;
         justify-content: space-between;
-        .interactable-container {
-          .interactable {
-            width: 50px;
-            padding-left: 20px;
-          }
+      }
+      .btns-container {
+        display: flex;
+        justify-content: flex-end;
+        .btn1 {
+          border: none;
+          border-radius: 3px;
+          padding: 12px 18px;
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 1rem;
+          cursor: pointer;
+          color: white;
+          background-color: #0ca16c;
+          width: 17vw;
         }
-        .btns-container {
-          display: flex;
-          justify-content: flex-end;
-          .btn1 {
-            border: none;
-            border-radius: 3px;
-            padding: 12px 18px;
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            color: white;
-            background-color: #0ca16c;
-            width: 17vw;
-          }
-          .btn2 {
-            border: none;
-            border-radius: 3px;
-            padding: 12px 18px;
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            color: white;
-            background-color: #0ca16c;
-            width: 17vw;
-          }
+        .btn2 {
+          border: none;
+          border-radius: 3px;
+          padding: 12px 18px;
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 1rem;
+          cursor: pointer;
+          color: white;
+          background-color: #0ca16c;
+          width: 17vw;
         }
       }
     }
   }
-  .keys {
-    display: flex;
-    padding-left: 0px;
-    .key-type {
-      padding: 0px 3px;
-    }
+}
+.keys {
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+  .key-type {
+    padding: 0px 3px;
   }
 }
 
