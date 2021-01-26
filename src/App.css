@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --main: #4e4d68;
+}
+::placeholder {
+  color: #8c8c8c;
+  font-weight: 400;
+}
 * {
   box-sizing: border-box;
   margin: 0;
