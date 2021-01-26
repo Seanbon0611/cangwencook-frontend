@@ -2,10 +2,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ReactComponent as Keto } from "../../assets/keys/keto.svg";
-import { ReactComponent as AirFryer } from "../../assets/keys/air-fryer.svg";
 import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
 import { ReactComponent as GlutenFree } from "../../assets/keys/gluten-free.svg";
+import { ReactComponent as AirFryer } from "../../assets/keys/air-fryer.svg";
 import { ReactComponent as LowCalorie } from "../../assets/keys/low-calorie.svg";
+import { ReactComponent as Quick } from "../../assets/keys/quick.svg";
+import { ReactComponent as SlowCooker } from "../../assets/keys/slow-cooker.svg";
+import { ReactComponent as FreezerMeal } from "../../assets/keys/freezer-meals.svg";
+import { ReactComponent as Paleo } from "../../assets/keys/paleo.svg";
+import { ReactComponent as Vegetarian } from "../../assets/keys/vegetarian.svg";
+import { ReactComponent as Seafood } from "../../assets/keys/seafood.svg";
+import { ReactComponent as InstantPot } from "../../assets/keys/instant-pot.svg";
 import "./recipe-card.styles.scss";
 
 const RecipeCard = ({ recipe, handleDelete }) => {
@@ -39,6 +46,13 @@ const RecipeCard = ({ recipe, handleDelete }) => {
         {attributes.low_calorie ? <LowCalorie className="key-type" /> : null}
         {attributes.gluten_free ? <GlutenFree className="key-type" /> : null}
         {attributes.air_fryer ? <AirFryer className="key-type" /> : null}
+        {attributes.quick ? <Quick className="key-type" /> : null}
+        {attributes.slowcooker ? <SlowCooker className="key-type" /> : null}
+        {attributes.paleo ? <Paleo className="key-type" /> : null}
+        {attributes.vegetarian ? <Vegetarian className="key-type" /> : null}
+        {attributes.freezermeal ? <FreezerMeal className="key-type" /> : null}
+        {attributes.seafood ? <Seafood className="key-type" /> : null}
+        {attributes.instantpot ? <InstantPot className="key-type" /> : null}
       </div>
       <h2 className="recipe-title">{attributes.title}</h2>
       <p variant="body1">{attributes.description}</p>

@@ -1,7 +1,14 @@
 import React from "react";
 import "./form-input.styles.scss";
 
-const FormInput = ({ asterisk, label, textarea, ...otherProps }) => {
+const FormInput = ({
+  asterisk,
+  label,
+  textarea,
+  cols,
+  rows,
+  ...otherProps
+}) => {
   return (
     <div className="input-container">
       {label ? (

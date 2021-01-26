@@ -80,7 +80,7 @@ const NewRecipePage = () => {
       method: "POST",
       credentials: "include",
       headers: {
-        Accept: "application/json",
+        accept: "application/json",
         "Content-Type": "application/json",
       },
       body: data,
