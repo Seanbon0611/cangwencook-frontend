@@ -35,8 +35,11 @@ const AboutPage = ({ recipes }) => {
         </p>
         <p>
           Typically, my cooking is focused on a protein and veggie diet with
-          minimal carbs. When I do cook carbs, I would cook a rice substitute
-          like quinoa or chickpea rice or whole wheat pasta.
+          minimal carbs.
+        </p>
+        <p>
+          When I do cook carbs, I would cook a rice substitute like quinoa or
+          chickpea rice or whole wheat pasta.
         </p>
         <h2>What are some of your favorite recipes?</h2>
         <p className="about-p">
