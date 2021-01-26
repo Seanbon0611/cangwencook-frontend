@@ -54,13 +54,13 @@ const Footer = () => {
         <Link className="footer-link" to="/recipes">
           Videos
         </Link>
-        <Link className="footer-link" to="/recipes">
+        <Link className="footer-link" to="/shop">
           Shop
         </Link>
-        <Link className="footer-link" to="/recipes">
+        <Link className="footer-link" to="/collaborate">
           Collaborate
         </Link>
-        <Link className="footer-link" to="/recipes">
+        <Link className="footer-link" to="/feedback">
           Feedback
         </Link>
       </div>
