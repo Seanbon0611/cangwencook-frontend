@@ -19,6 +19,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import OrderConfirmation from "../../pages/order-confirmation/OrderConfirmation";
 import ForgotPasswordPage from "../../pages/forgot-password/ForgotPassword";
 import PasswordResetPage from "../../pages/password-reset/PasswordReset";
+import CollaboratePage from "../../pages/collaborate/CollaboratePage";
 const stripePromise = loadStripe(
   "pk_test_51H21vEL37GrW3rTgFD9IYQ3uTzcm66S8GU6ee4khfRinCXNOicIaazI6l0sLxXlwMSdPTvd3Q0aiPTe09XOLE4Gl00snYcwan7"
 );
@@ -93,6 +94,7 @@ const MainContainer = ({ afterLogin }) => {
               return recipe ? <SingleRecipe recipe={recipe} /> : "Loading...";
             }}
           />
+
           <Route path="/shop" render={() => <ShopPage products={products} />} />
           <Route
             path="/checkout"
@@ -119,6 +121,10 @@ const MainContainer = ({ afterLogin }) => {
               let token = routerProps.match.params.token;
               return <PasswordResetPage token={token} />;
             }}
+          />
+          <Route
+            path="/collaborate"
+            render={() => <CollaboratePage recipes={recipes} />}
           />
         </Switch>
       </div>
