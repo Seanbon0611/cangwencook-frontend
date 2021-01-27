@@ -1,5 +1,13 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .recipe-container {
   padding-top: 20px;
+  height: 100vh;
+
   .recipe-header-container {
     padding-bottom: 25px;
     display: flex;
