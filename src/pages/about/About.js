@@ -33,11 +33,11 @@ const AboutPage = ({ recipes }) => {
           + a few friends, thus, making massive amounts of food just isn’t going
           to happen.
         </p>
-        <p>
+        <p className="about-p">
           Typically, my cooking is focused on a protein and veggie diet with
           minimal carbs.
         </p>
-        <p>
+        <p className="about-p">
           When I do cook carbs, I would cook a rice substitute like quinoa or
           chickpea rice or whole wheat pasta.
         </p>
@@ -56,7 +56,7 @@ const AboutPage = ({ recipes }) => {
           My husband loves the chichiron-breaded chicken parmesan baked with
           your choice of yummy cheese.
         </p>
-        <p>
+        <p className="about-p">
           We both enjoy our cheddar bay almond flour biscuits for snacks and as
           a substitute for carbs.
         </p>
