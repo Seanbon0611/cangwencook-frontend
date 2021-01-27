@@ -1,0 +1,11 @@
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  .link-to-home {
+    color: var(--secondary);
+    font-weight: 600;
+  }
+}
