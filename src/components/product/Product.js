@@ -6,12 +6,9 @@ import "./product.styles.scss";
 const Product = ({ product }) => {
   return (
     <div className="product-card">
-      <Link to={`/shop/${product.id}`}>
-        <img src={product.image} alt="" />
-      </Link>
+      <img src={product.image} alt="" />
       <div className="collection-footer">
         <span className="name">{product.name}</span>
-        <span className="price">{product.price}</span>
       </div>
     </div>
   );
