@@ -20,6 +20,7 @@ import OrderConfirmation from "../../pages/order-confirmation/OrderConfirmation"
 import ForgotPasswordPage from "../../pages/forgot-password/ForgotPassword";
 import PasswordResetPage from "../../pages/password-reset/PasswordReset";
 import CollaboratePage from "../../pages/collaborate/CollaboratePage";
+import NotFound from "../../pages/not-found/NotFound";
 const stripePromise = loadStripe(
   "pk_test_51H21vEL37GrW3rTgFD9IYQ3uTzcm66S8GU6ee4khfRinCXNOicIaazI6l0sLxXlwMSdPTvd3Q0aiPTe09XOLE4Gl00snYcwan7"
 );
@@ -126,6 +127,7 @@ const MainContainer = ({ afterLogin }) => {
             path="/collaborate"
             render={() => <CollaboratePage recipes={recipes} />}
           />
+          <Route component={NotFound} />
         </Switch>
       </div>
     );

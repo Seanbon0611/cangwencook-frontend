@@ -20,7 +20,7 @@
   }
 }
 .latest-recipes {
-  color: #4e4d68;
+  color: var(--main);
   font-size: 18px;
 }
 .top-recipes {
@@ -41,6 +41,9 @@
     padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .latest-recipes {
+    font-size: 24px;
   }
   .top-recipes-mobile {
     display: none;
