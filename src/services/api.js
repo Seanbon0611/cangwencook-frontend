@@ -50,7 +50,7 @@ const autoLogin = async () => {
   const response = await fetch(`${API_ROOT}/autologin`, {
     credentials: "include",
   });
-  return response;
+  return response.json();
 };
 
 const logOut = (config) => {

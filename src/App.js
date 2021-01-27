@@ -37,7 +37,6 @@ const App = (props) => {
   useEffect(() => {
     api.auth
       .autoLogin()
-      .then((res) => res.json())
       .then((json) => checkLoggedIn(json))
       .catch((err) => console.log(err));
   }, []);
