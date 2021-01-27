@@ -10,6 +10,7 @@ const ShopHeader = () => {
     <div className="shop-header-container">
       <div className="shop-title">
         <h1>Shop</h1>
+        <h2>Coming soon!</h2>
       </div>
       <div className="shop-options">
         <p className="option">WISHLIST</p>

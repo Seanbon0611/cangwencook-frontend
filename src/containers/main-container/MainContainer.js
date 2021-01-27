@@ -97,7 +97,10 @@ const MainContainer = ({ afterLogin }) => {
             }}
           />
 
-          <Route path="/shop" render={() => <ShopPage products={products} />} />
+          <Route
+            path="/shop"
+            render={() => <ShopPage products={products} recipes={recipes} />}
+          />
           <Route
             path="/checkout"
             render={() => (

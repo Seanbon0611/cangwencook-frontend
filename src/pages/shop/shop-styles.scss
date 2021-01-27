@@ -1,8 +1,37 @@
 .shop-container {
-  padding-bottom: 70px;
+  padding: 10px 15px;
+  .title-socials {
+    .shop-header {
+      text-align: left;
+    }
+    .links-to-socials {
+      display: none;
+    }
+  }
   .collections-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
   }
+  .divider {
+    border-top: 1px solid grey;
+  }
+}
 
+@media screen and (min-width: 791px) {
+  .shop-container {
+    padding: 10px 40px;
+    .title-socials {
+      display: flex;
+      justify-content: space-between;
+      .links-to-socials {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+      }
+    }
+    .collections-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
