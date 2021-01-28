@@ -53,6 +53,7 @@ const CollaboratePage = ({ recipes }) => {
           <div className="collab-textarea">
             <label style={{ padding: "0px 0px 10px 0px" }}>Message*</label>
             <textarea
+              style={{ border: "0.75px solid #303030" }}
               cols={30}
               rows={10}
               onChange={(e) => setMessage(e.target.value)}
