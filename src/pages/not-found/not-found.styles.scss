@@ -4,8 +4,19 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  .not-found-text {
+    font-size: 150px;
+  }
   .link-to-home {
     color: var(--secondary);
     font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 791px) {
+  .not-found-container {
+    .not-found-text {
+      font-size: 250px;
+    }
   }
 }
