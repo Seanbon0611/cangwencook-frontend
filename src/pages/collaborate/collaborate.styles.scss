@@ -17,6 +17,7 @@
   .split-content {
     display: grid;
     grid-template-columns: 1fr;
+    padding-bottom: 30px;
     .collab-textarea {
       display: flex;
       flex-direction: column;
@@ -28,6 +29,12 @@
       }
     }
   }
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 @media screen and (min-width: 791px) {

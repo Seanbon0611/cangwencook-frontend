@@ -62,7 +62,7 @@ const CollaboratePage = ({ recipes }) => {
         </form>
         <div className="top-recipes-container">
           <div className="top-recipes-collab">
-            <h1 className="page-title">Top Recipes</h1>
+            <h1 className="page-title">Latest Recipes</h1>
             <div className="side-content">
               {topTwo.map((recipe) => {
                 return <RecipeCard key={recipe.id} recipe={recipe} />;
@@ -71,7 +71,9 @@ const CollaboratePage = ({ recipes }) => {
           </div>
         </div>
       </div>
+      <hr className="divider"></hr>
       <div className="top-recipes-mobile">
+        <h1 className="page-title">Latest Recipes</h1>
         <RecipeCarousel recipes={topThree} />
       </div>
     </div>
