@@ -18,13 +18,19 @@
 @media screen and (max-width: 791px) {
   .recipe-card-container {
     .recipe-thumbnail {
-      width: 261px;
-      height: 261px;
+      width: 200px;
+      height: 200px;
+    }
+    .recipe-title {
+      font-size: 15px;
+    }
+    .recipe-desc {
+      font-size: 10px;
     }
     .keys {
       .key-type {
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
       }
     }
   }

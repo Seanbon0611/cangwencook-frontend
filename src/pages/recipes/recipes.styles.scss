@@ -14,7 +14,7 @@
     align-items: center;
     .recipe-header {
       text-align: left;
-      padding-left: 70px;
+      padding-left: 40px;
       color: #4e4d68;
     }
     .filters {
@@ -40,6 +40,11 @@
 
 @media screen and (max-width: 792px) {
   .recipe-container {
+    .recipe-header-container {
+      .recipe-header {
+        padding-left: 15px;
+      }
+    }
     .recipe-cards {
       grid-template-columns: 1fr;
     }

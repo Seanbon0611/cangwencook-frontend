@@ -55,7 +55,9 @@ const RecipeCard = ({ recipe, handleDelete }) => {
         {attributes.instantpot ? <InstantPot className="key-type" /> : null}
       </div>
       <h2 className="recipe-title">{attributes.title}</h2>
-      <p variant="body1">{attributes.description}</p>
+      <p variant="body1" className="recipe-desc">
+        {attributes.description}
+      </p>
     </div>
   );
 };
