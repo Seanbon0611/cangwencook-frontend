@@ -51,7 +51,7 @@ const Footer = () => {
         <Link className="footer-link" to="/recipes">
           Recipes
         </Link>
-        <Link className="footer-link" to="/recipes">
+        <Link className="footer-link" to="/videos">
           Videos
         </Link>
         <Link className="footer-link" to="/shop">
