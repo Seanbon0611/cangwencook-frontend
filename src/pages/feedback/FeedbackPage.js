@@ -29,7 +29,7 @@ const FeedbackPage = ({ recipes }) => {
   return (
     <div className="collaborate-container">
       <div className="title-socials">
-        <h1 className="page-title">Collaborate</h1>
+        <h1 className="page-title">Feedback</h1>
         <div className="links-to-socials">
           <span style={{ paddingRight: "10px" }}>Follow Us</span>
           <div style={{ width: "128px" }}>

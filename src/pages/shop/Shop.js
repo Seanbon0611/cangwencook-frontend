@@ -38,6 +38,7 @@ const ShopPage = ({ products, recipes }) => {
       </div>
       <TagInstagram />
       <hr className="divider"></hr>
+      <div style={{ padding: "10px 0px" }}></div>
       <div className="top-recipes-mobile">
         <RecipeCarousel recipes={topThree} />
       </div>
