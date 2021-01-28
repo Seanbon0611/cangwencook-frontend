@@ -3,6 +3,7 @@ import CustomButton from "../../components/custom-button/CustomButton";
 import FormInput from "../../components/form-input/FormInput";
 import Socials from "../../components/socials/Socials";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
+import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import "./collaborate.styles.scss";
 
 const CollaboratePage = ({ recipes }) => {
@@ -10,6 +11,7 @@ const CollaboratePage = ({ recipes }) => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const topTwo = recipes.slice(0, 2);
+  const topThree = recipes.slice(0, 3);
   const handleSubmit = () => {
     const config = {
       method: "POST",
@@ -48,12 +50,14 @@ const CollaboratePage = ({ recipes }) => {
             asterisk
             onChange={(e) => setEmail(e.target.value)}
           />
-          <FormInput
-            label="Message"
-            asterisk
-            textarea
-            onChange={(e) => setMessage(e.target.value)}
-          />
+          <div className="collab-textarea">
+            <label style={{ padding: "0px 0px 10px 0px" }}>Message*</label>
+            <textarea
+              cols={30}
+              rows={10}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+          </div>
           <CustomButton type="submit">Send</CustomButton>
         </form>
         <div className="top-recipes-container">
@@ -66,6 +70,9 @@ const CollaboratePage = ({ recipes }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="top-recipes-mobile">
+        <RecipeCarousel recipes={topThree} />
       </div>
     </div>
   );

@@ -1,6 +1,9 @@
 .collaborate-container {
   text-align: left;
-  padding: 40px 40px 0px 40px;
+  padding: 20px 15px 0px 15px;
+  .form-input {
+    width: 100%;
+  }
   .page-title {
     color: var(--main);
   }
@@ -8,22 +11,53 @@
     display: flex;
     justify-content: space-between;
     .links-to-socials {
-      display: flex;
-      align-items: center;
-      font-weight: 600;
+      display: none;
     }
   }
   .split-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    .top-recipes-container {
-      padding-top: 130px;
+    grid-template-columns: 1fr;
+    .collab-textarea {
       display: flex;
-      justify-content: flex-end;
+      flex-direction: column;
+      padding-bottom: 20px;
+    }
+    .top-recipes-container {
+      display: none;
       .top-recipes-collab {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 791px) {
+  .collaborate-container {
+    text-align: left;
+    padding: 40px 40px 0px 40px;
+    .page-title {
+      color: var(--main);
+    }
+    .title-socials {
+      display: flex;
+      justify-content: space-between;
+      .links-to-socials {
         display: flex;
-        flex-direction: column;
-        text-align: center;
+        align-items: center;
+        font-weight: 600;
+      }
+    }
+    .split-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .top-recipes-container {
+        padding-top: 130px;
+        display: flex;
+        justify-content: flex-end;
+        .top-recipes-collab {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+        }
       }
     }
   }
