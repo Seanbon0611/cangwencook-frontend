@@ -1,0 +1,15 @@
+.videos-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  .playbutton {
+    position: relative;
+    top: 40%;
+    left: 1%;
+  }
+  .recipe-thumbnail {
+    width: 315px;
+    height: 315px;
+    border: none;
+    border-radius: 8px;
+  }
+}

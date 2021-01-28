@@ -22,6 +22,8 @@ import PasswordResetPage from "../../pages/password-reset/PasswordReset";
 import CollaboratePage from "../../pages/collaborate/CollaboratePage";
 import NotFound from "../../pages/not-found/NotFound";
 import FeedbackPage from "../../pages/feedback/FeedbackPage";
+import Spinner from "../../components/spinner/Spinner";
+import VideosPage from "../../pages/videos/VideosPage";
 const stripePromise = loadStripe(
   "pk_test_51H21vEL37GrW3rTgFD9IYQ3uTzcm66S8GU6ee4khfRinCXNOicIaazI6l0sLxXlwMSdPTvd3Q0aiPTe09XOLE4Gl00snYcwan7"
 );
@@ -83,7 +85,7 @@ const MainContainer = ({ afterLogin }) => {
               const item = products.find((product) => {
                 return product.id.toString() === itemId;
               });
-              return item ? <SingleProductPage item={item} /> : "Loading...";
+              return item ? <SingleProductPage item={item} /> : <Spinner />;
             }}
           />
           <Route
@@ -93,7 +95,7 @@ const MainContainer = ({ afterLogin }) => {
               const recipe = recipes.find((recipe) => {
                 return recipe.id.toString() === recipeId;
               });
-              return recipe ? <SingleRecipe recipe={recipe} /> : "Loading...";
+              return recipe ? <SingleRecipe recipe={recipe} /> : <Spinner />;
             }}
           />
 
@@ -134,6 +136,10 @@ const MainContainer = ({ afterLogin }) => {
           <Route
             path="/feedback"
             render={() => <FeedbackPage recipes={recipes} />}
+          />
+          <Route
+            path="/videos"
+            render={() => <VideosPage recipes={recipes} />}
           />
           <Route component={NotFound} />
         </Switch>

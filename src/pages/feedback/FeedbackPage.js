@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FormInput from "../../components/form-input/FormInput";
 import CustomButton from "../../components/custom-button/CustomButton";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
+import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import Socials from "../../components/socials/Socials";
 
 const FeedbackPage = ({ recipes }) => {
@@ -9,6 +10,7 @@ const FeedbackPage = ({ recipes }) => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const topTwo = recipes.slice(0, 2);
+  const topThree = recipes.slice(0, 3);
   const handleSubmit = () => {
     const config = {
       method: "POST",
@@ -27,7 +29,7 @@ const FeedbackPage = ({ recipes }) => {
   return (
     <div className="collaborate-container">
       <div className="title-socials">
-        <h1 className="page-title">Feedback</h1>
+        <h1 className="page-title">Collaborate</h1>
         <div className="links-to-socials">
           <span style={{ paddingRight: "10px" }}>Follow Us</span>
           <div style={{ width: "128px" }}>
@@ -47,17 +49,19 @@ const FeedbackPage = ({ recipes }) => {
             asterisk
             onChange={(e) => setEmail(e.target.value)}
           />
-          <FormInput
-            label="Message"
-            asterisk
-            textarea
-            onChange={(e) => setMessage(e.target.value)}
-          />
+          <div className="collab-textarea">
+            <label style={{ padding: "0px 0px 10px 0px" }}>Message*</label>
+            <textarea
+              cols={30}
+              rows={10}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+          </div>
           <CustomButton type="submit">Send</CustomButton>
         </form>
         <div className="top-recipes-container">
           <div className="top-recipes-collab">
-            <h1 className="page-title">Top Recipes</h1>
+            <h1 className="page-title">Latest Recipes</h1>
             <div className="side-content">
               {topTwo.map((recipe) => {
                 return <RecipeCard key={recipe.id} recipe={recipe} />;
@@ -65,6 +69,11 @@ const FeedbackPage = ({ recipes }) => {
             </div>
           </div>
         </div>
+      </div>
+      <hr className="divider"></hr>
+      <div className="top-recipes-mobile">
+        <h1 className="page-title">Latest Recipes</h1>
+        <RecipeCarousel recipes={topThree} />
       </div>
     </div>
   );

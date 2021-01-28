@@ -14,6 +14,7 @@ const NewsletterForm = () => {
       <input type="hidden" name="v" value="2" />
       <div className="newsletter-input">
         <FormInput
+          style={{ width: "80%" }}
           type="text"
           name="email"
           required

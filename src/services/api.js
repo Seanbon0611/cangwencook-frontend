@@ -53,6 +53,11 @@ const autoLogin = async () => {
   return response.json();
 };
 
+const passwordReset = async (config) => {
+  const response = await fetch(`${API_ROOT}/forgot_password`, config);
+  return response.json();
+};
+
 const logOut = (config) => {
   return fetch(`${API_ROOT}/signout`, config);
 };
@@ -67,6 +72,7 @@ export default {
     login: login,
     autoLogin: autoLogin,
     logOut: logOut,
+    passwordReset: passwordReset,
   },
   user: {
     signUp: signUp,

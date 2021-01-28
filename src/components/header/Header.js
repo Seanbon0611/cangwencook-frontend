@@ -152,7 +152,7 @@ const Header = ({ logOut }) => {
               Sign Up
             </NavLink>
             <div className="option-mobile">
-              <p>Follow Us!</p>
+              <p style={{ paddingBottom: "10px" }}>Follow Us!</p>
               <Socials />
             </div>
           </div>
