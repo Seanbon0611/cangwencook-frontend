@@ -40,23 +40,28 @@ const ForgotPasswordPage = () => {
     );
   }
   return (
-    <div className="forgot-password-page">
-      <form className="email-submit" onSubmit={handleSubmit}>
-        <h1 className="reset-msg">
-          You will receive an email with a link to reset your password.
-        </h1>
-        <div className="email-field">
-          <FormInput
-            type="email"
-            placeholder="Email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="submit-email">
-          <CustomButton type="submit">Reset Password</CustomButton>
-        </div>
-      </form>
+    <div className="forgot-password-container">
+      <div className="forgot-pass-form">
+        <h1 className="page-title">Forgot Password</h1>
+        <form onSubmit={handleSubmit}>
+          <p className="forgot-text">
+            You will receive an email with a link to reset your password.
+          </p>
+          <div className="form-input">
+            <FormInput
+              label="Email"
+              asterisk
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="reset-password-btn">
+            <CustomButton type="submit">Reset Password</CustomButton>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
