@@ -11,13 +11,7 @@ SwiperCore.use([Navigation]);
 const RecipeCarousel = ({ recipes }) => {
   return (
     <div className="carousel">
-      <Swiper
-        spaceBetween={0}
-        slidesPerView={1}
-        navigation
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
-      >
+      <Swiper spaceBetween={0} slidesPerView={1} navigation>
         {recipes.map((recipe, index) => {
           return (
             <SwiperSlide key={index}>
