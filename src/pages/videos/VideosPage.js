@@ -20,10 +20,10 @@ const VideosPage = ({ recipes }) => {
         <div>
           <a href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg">
             <div className="playbutton">
-              <PlayButton />
+              <PlayButton className="play-icon" />
             </div>
-            <img className="recipe-thumbnail" src={recipe.attributes.image} />
           </a>
+          <img className="recipe-thumbnail" src={recipe.attributes.image} />
           <div className="keys">
             {recipe.attributes.keto ? <Keto className="key-type" /> : null}
             {recipe.attributes.dairy_free ? (
@@ -57,7 +57,7 @@ const VideosPage = ({ recipes }) => {
             ) : null}
           </div>
           <h2 className="recipe-title">{recipe.attributes.title}</h2>
-          <p variant="body1">{recipe.attributes.description}</p>
+          <p className="recipe-desc">{recipe.attributes.description}</p>
         </div>
       ))}
     </div>
