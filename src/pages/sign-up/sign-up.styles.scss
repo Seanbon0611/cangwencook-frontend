@@ -4,10 +4,13 @@
   .form-container {
     border: 1px solid black;
     text-align: left;
-    padding: 25px 40px;
+    padding: 25px 30px;
     border-radius: 9px;
     margin: 0 auto;
-    width: 510px;
+    width: 461px;
+    .link-to {
+      text-decoration: underline !important;
+    }
     .sign-up-title {
       color: #4e4d68;
     }

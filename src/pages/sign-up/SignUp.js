@@ -5,34 +5,21 @@ import { Link } from "react-router-dom";
 import "./sign-up.styles.scss";
 import api from "../../services/api";
 
-const initialState = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  passwordConfirmation: "",
-};
 const SignUp = () => {
-  const [
-    { firstName, lastName, email, password, passwordConfirmation },
-    setState,
-  ] = useState(initialState);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
-
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const config = {
       method: "POST",
       credentials: "include",
-      mode: "no-cors",
       headers: {
-        "Access-Control-Allow-Origin": "*",
         accept: "application/json",
         "Content-Type": "application/json",
       },
@@ -44,11 +31,15 @@ const SignUp = () => {
         passwordConfirmation: passwordConfirmation,
       }),
     };
+    if (password !== passwordConfirmation) {
+      return setErrors("Passwords do not match");
+    }
     api.user.signUp(config).then((res) => {
+      console.log(res);
       if (res.msg === "Successfully Created") {
-        console.log(res);
         setSuccess(true);
       } else if (res.error) {
+        console.log(res);
         setErrors(res.error);
       }
     });
@@ -59,9 +50,6 @@ const SignUp = () => {
     return (
       <div className="sign-up-container">
         <form onSubmit={handleSubmit}>
-          {Object.entries(errors).map((err) => (
-            <h4 className="error">{`Error: ${err[0]} ${err[1][0]}`}</h4>
-          ))}
           <div>
             <div className="form-container">
               <h1 className="sign-up-title">Create Account</h1>
@@ -72,7 +60,7 @@ const SignUp = () => {
                 </Link>
                 .
               </p>
-              <p>*Required</p>
+              <p style={{ paddingTop: "5px" }}>*Required</p>
               <div className="full-name">
                 <div className="first-name">
                   <FormInput
@@ -82,7 +70,7 @@ const SignUp = () => {
                     name="firstName"
                     required
                     value={firstName}
-                    onChange={onChange}
+                    onChange={(e) => setFirstName(e.target.value)}
                   />
                 </div>
                 <div className="last-name">
@@ -93,18 +81,18 @@ const SignUp = () => {
                     required
                     name="lastName"
                     value={lastName}
-                    onChange={onChange}
+                    onChange={(e) => setLastName(e.target.value)}
                   />
                 </div>
               </div>
               <FormInput
                 asterisk
-                type="text"
+                type="email"
                 label="Email"
                 required
                 name="email"
                 value={email}
-                onChange={onChange}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <FormInput
                 asterisk
@@ -113,7 +101,7 @@ const SignUp = () => {
                 label="Password"
                 name="password"
                 value={password}
-                onChange={onChange}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <FormInput
                 asterisk
@@ -122,9 +110,15 @@ const SignUp = () => {
                 label="Confirm Password"
                 name="passwordConfirmation"
                 value={passwordConfirmation}
-                onChange={onChange}
+                onChange={(e) => setPasswordConfirmation(e.target.value)}
               />
-              {errors && <h1>{errors}</h1>}
+              {Object.entries(errors).map((err, idx) => (
+                <h2
+                  style={{ color: "red" }}
+                  key={idx}
+                  className="error"
+                >{`Error: ${err[0]} ${err[1][0]}`}</h2>
+              ))}
               <div style={{ padding: "10px 0" }}>
                 <CustomButton type="submit">Create Account</CustomButton>
               </div>
