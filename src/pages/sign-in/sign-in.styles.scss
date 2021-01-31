@@ -7,21 +7,18 @@
     flex-direction: column;
     margin: 0 auto;
     margin-top: 75px;
-    padding-bottom: 10px;
-    padding-right: 40px;
-    width: 37.5vw;
+    padding: 0px 30px 10px 30px;
+    width: 461px;
     height: 100%;
     border: 1px solid black;
     border-radius: 9px;
-    padding-left: 50px;
     .sign-in-title {
       padding-top: 20px;
       text-align: left;
       color: #4e4d68;
     }
     .to-signup {
-      display: flex;
-      padding: 20px 0px 20px 0px;
+      padding: 20px 0px;
       span {
         margin-right: 5px;
       }
@@ -40,7 +37,7 @@
 
 @media screen and (max-width: 792px) {
   .sign-in-container {
-    font-size: 10.5px !important;
+    font-size: 16px !important;
     width: 100vw;
     .sign-in-inputs {
       width: 90%;

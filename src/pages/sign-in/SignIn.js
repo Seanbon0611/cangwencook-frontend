@@ -5,22 +5,14 @@ import { Link } from "react-router-dom";
 import api from "../../services/api";
 import "./sign-in.styles.scss";
 
-const initialState = {
-  email: "",
-  password: "",
-};
-
 const Signin = ({ afterLogin }) => {
   const [loginError, setLoginError] = useState(null);
-  const [{ email, password }, setState] = useState(initialState);
-
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const clearState = () => {
-    setState({ ...initialState });
+    setEmail("");
+    setPassword("");
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,7 +39,6 @@ const Signin = ({ afterLogin }) => {
   };
   return (
     <div className="sign-in-container">
-      {loginError && <h1 style={{ color: "red" }}>{loginError}</h1>}
       <form onSubmit={handleSubmit}>
         <div className="sign-in-inputs">
           <h1 className="sign-in-title">Sign-in</h1>
@@ -56,6 +47,7 @@ const Signin = ({ afterLogin }) => {
             <Link to="/signup" className="link-to">
               Click here to sign up.
             </Link>
+            <p style={{ paddingTop: "5px" }}>*Required</p>
           </div>
           <FormInput
             asterisk
@@ -63,7 +55,7 @@ const Signin = ({ afterLogin }) => {
             value={email}
             label="Email"
             name="email"
-            onChange={onChange}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <FormInput
             asterisk
@@ -71,9 +63,9 @@ const Signin = ({ afterLogin }) => {
             value={password}
             label="Password"
             name="password"
-            onChange={onChange}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <p>Password must be at minimum 8 characters</p>
+          {loginError && <h1 style={{ color: "red" }}>{loginError}</h1>}
           <div style={{ padding: "20px 0px 10px 0px" }}>
             <CustomButton type="submit" className="ripple custom-button">
               Submit
@@ -88,7 +80,7 @@ const Signin = ({ afterLogin }) => {
               to reset.
             </p>
           </div>
-          <div style={{ padding: "20px 0px 20px 0px" }}>
+          <div style={{ padding: "0px 0px 20px 0px" }}>
             <p>
               By signing up you accept the{" "}
               <span className="link-to">
