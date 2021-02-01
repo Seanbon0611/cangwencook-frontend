@@ -4,6 +4,7 @@ import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import Socials from "../../components/socials/Socials";
 import Spinner from "../../components/spinner/Spinner";
 import TagInstagram from "../../components/tag-ig/TagInstagram";
+import LazyLoad from "react-lazyload";
 import "./shop-styles.scss";
 
 const ShopPage = ({ products, recipes }) => {
@@ -24,14 +25,16 @@ const ShopPage = ({ products, recipes }) => {
       </div>
       <div className="collections-container">
         {products ? (
-          products.map((product) => {
-            return (
-              <Product
-                key={product.attributes.id}
-                product={product.attributes}
-              />
-            );
-          })
+          products.map((product) => (
+            <LazyLoad
+              key={product.attributes.id}
+              height={100}
+              offset={[-100, 100]}
+              placeholder={<Spinner />}
+            >
+              <Product key={product.id} product={product.attributes} />
+            </LazyLoad>
+          ))
         ) : (
           <Spinner />
         )}
