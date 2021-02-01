@@ -112,8 +112,8 @@ const MainContainer = ({ afterLogin }) => {
             )}
           />
           <Route path="/recipes" render={() => <RecipesPage />} />
-          <Route path="/signup" render={() => <SignUp />} />
-          <Route path="/blog" component={Blog} />
+          {/* <Route path="/signup" render={() => <SignUp />} /> */}
+          <Route path="/blog" render={() => <Blog recipes={recipes} />} />
           <Route
             path="/signin"
             render={() => <SignIn afterLogin={afterLogin} error={loginError} />}

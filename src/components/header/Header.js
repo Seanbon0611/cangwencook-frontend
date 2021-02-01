@@ -61,71 +61,60 @@ const Header = ({ logOut }) => {
       );
     } else {
       return (
-        <nav className="header">
-          <div className="logo-nav">
-            <NavLink onClick={closeMobileMenu} to="/">
-              <Logo className="logo" />
-            </NavLink>
-            <div className={click ? "nav-options active" : "nav-options"}>
-              <NavLink className="option" onClick={closeMobileMenu} to="/about">
+        <div className="header">
+          <div className="nav-options">
+            <div className="utilities">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/gwen.kong.9"
+              >
+                <Facebook className="social" />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/cangwencook/"
+              >
+                <Instagram className="social" />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg"
+              >
+                <Youtube className="social" />
+              </a>
+            </div>
+            <div className="paths">
+              <NavLink onClick={closeMobileMenu} className="option" to="/about">
                 About
               </NavLink>
               <NavLink
-                className="option"
                 onClick={closeMobileMenu}
+                className="option"
                 to="/recipes"
               >
                 Recipes
               </NavLink>
-              <NavLink className="option" onClick={closeMobileMenu} to="/shop">
-                Shop
-              </NavLink>
-              <NavLink className="option" onClick={closeMobileMenu} to="/blog">
-                Blog
-              </NavLink>
               <NavLink
-                className="option-mobile"
                 onClick={closeMobileMenu}
-                to="/signin"
+                className="option"
+                to="/account"
               >
-                Sign-In
+                Account
               </NavLink>
-
               <NavLink
                 onClick={closeMobileMenu}
-                className="option-mobile mobile-signup"
+                className="option"
                 onClick={logOut}
                 to="/"
               >
-                Sign Out
+                <CustomButton>Signout</CustomButton>
               </NavLink>
-              <div className="option-mobile">
-                <p style={{ paddingBottom: "10px" }}>Follow Us!</p>
-                <Socials />
-              </div>
             </div>
           </div>
-          <div className="signin-and-up">
-            <NavLink className="sign-in" onClick={closeMobileMenu} to="/signin">
-              Sign-In
-            </NavLink>
-            <NavLink
-              onClick={closeMobileMenu}
-              className="signup-btn"
-              onClick={logOut}
-              to="/"
-            >
-              Sign Out
-            </NavLink>
-            <div className="mobile-menu" onClick={handleClick}>
-              {click ? (
-                <CloseMenu className="menu-icon" />
-              ) : (
-                <MenuIcon className="menu-icon" />
-              )}
-            </div>
-          </div>
-        </nav>
+        </div>
       );
     }
   } else {
@@ -148,37 +137,13 @@ const Header = ({ logOut }) => {
             <NavLink className="option" onClick={closeMobileMenu} to="/blog">
               Blog
             </NavLink>
-            <NavLink
-              className="option-mobile"
-              onClick={closeMobileMenu}
-              to="/signin"
-            >
-              Sign-In
-            </NavLink>
-            <NavLink
-              className="option-mobile mobile-signup"
-              onClick={closeMobileMenu}
-              to="/signup"
-            >
-              Sign Up
-            </NavLink>
             <div className="option-mobile">
-              <p style={{ paddingBottom: "10px" }}>Follow Us!</p>
+              <p style={{ padding: "10px 0px" }}>Follow Us!</p>
               <Socials />
             </div>
           </div>
         </div>
         <div className="signin-and-up">
-          <NavLink className="sign-in" onClick={closeMobileMenu} to="/signin">
-            Sign-In
-          </NavLink>
-          <NavLink
-            className="signup-btn"
-            onClick={closeMobileMenu}
-            to="/signup"
-          >
-            Sign Up
-          </NavLink>
           <div className="mobile-menu" onClick={handleClick}>
             {click ? (
               <CloseMenu className="menu-icon" />
@@ -193,31 +158,3 @@ const Header = ({ logOut }) => {
 };
 
 export default Header;
-
-// <header className="header">
-//   <nav className="nav-options">
-//     <NavLink onClick={closeMobileMenu} className="logo" to="/">
-//       <Logo className="logo" />
-//     </NavLink>
-//     <NavLink className="option" to="/about">
-//       About
-//     </NavLink>
-//     <NavLink className="option" to="/recipes">
-//       Recipes
-//     </NavLink>
-//     <NavLink className="option" to="/shop">
-//       Shop
-//     </NavLink>
-//     <NavLink className="option" to="/blog">
-//       Blog
-//     </NavLink>
-//   </nav>
-//   <nav className="signin-up">
-//     <NavLink className="option" to="/signin">
-//       Sign In
-//     </NavLink>
-//     <NavLink className="option" to="/signup">
-//       Sign Up
-//     </NavLink>
-//   </nav>
-// </header>
