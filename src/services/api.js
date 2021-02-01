@@ -1,14 +1,13 @@
-// const API_ROOT = "http://localhost:3000";
-const API_ROOT = "https://whispering-beach-85385.herokuapp.com";
+const API_ROOT = "http://localhost:3000";
+// const API_ROOT = "https://whispering-beach-85385.herokuapp.com";
 
 const login = async (config) => {
   const response = await fetch(`${API_ROOT}/login`, config);
   return response.json();
 };
 
-const signUp = async (config) => {
-  const response = await fetch(`${API_ROOT}/user/new`, config);
-  return response.json();
+const signUp = (config) => {
+  return fetch(`${API_ROOT}/user/new`, config).then((res) => res.json());
 };
 
 const getProducts = () => {
@@ -46,11 +45,10 @@ const deleteRecipe = async (id, config) => {
   return response.json();
 };
 
-const autoLogin = async () => {
-  const response = await fetch(`${API_ROOT}/autologin`, {
+const autoLogin = () => {
+  return fetch(`${API_ROOT}/autologin`, {
     credentials: "include",
-  });
-  return response.json();
+  }).then((res) => res.json());
 };
 
 const passwordReset = async (config) => {

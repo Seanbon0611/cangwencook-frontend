@@ -54,7 +54,9 @@ const SingleRecipe = ({ recipe }) => {
           <div className="clickable-container">
             <div className="btns-container">
               <div style={{ paddingRight: "10px" }}>
-                <CustomButton className="btn1">Play Video</CustomButton>
+                <a target="_blank" href={attributes.link}>
+                  <CustomButton className="btn1">Play Video</CustomButton>
+                </a>
               </div>
               <div>
                 <CustomButton onClick={window.print} className="btn2">

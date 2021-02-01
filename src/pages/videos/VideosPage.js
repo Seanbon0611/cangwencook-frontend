@@ -15,51 +15,54 @@ import { ReactComponent as InstantPot } from "../../assets/keys/instant-pot.svg"
 import "./video-page.styles.scss";
 const VideosPage = ({ recipes }) => {
   return (
-    <div className="videos-container">
-      {recipes.map((recipe) => (
-        <div>
-          <a href="https://www.youtube.com/channel/UC7s6USfYN4-_Wk6roCXtdjg">
-            <div className="playbutton">
-              <PlayButton className="play-icon" />
+    <div className="videos-page">
+      <h1 className="page-title">Videos</h1>
+      <div className="videos-container">
+        {recipes.map((recipe) => (
+          <div key={recipe.id}>
+            <a target="_blank" href={recipe.attributes.link}>
+              <div className="playbutton">
+                <PlayButton className="play-icon" />
+              </div>
+            </a>
+            <img className="recipe-thumbnail" src={recipe.attributes.image} />
+            <div className="keys">
+              {recipe.attributes.keto ? <Keto className="key-type" /> : null}
+              {recipe.attributes.dairy_free ? (
+                <DairyFree className="key-type" />
+              ) : null}
+              {recipe.attributes.low_calorie ? (
+                <LowCalorie className="key-type" />
+              ) : null}
+              {recipe.attributes.gluten_free ? (
+                <GlutenFree className="key-type" />
+              ) : null}
+              {recipe.attributes.air_fryer ? (
+                <AirFryer className="key-type" />
+              ) : null}
+              {recipe.attributes.quick ? <Quick className="key-type" /> : null}
+              {recipe.attributes.slowcooker ? (
+                <SlowCooker className="key-type" />
+              ) : null}
+              {recipe.attributes.paleo ? <Paleo className="key-type" /> : null}
+              {recipe.attributes.vegetarian ? (
+                <Vegetarian className="key-type" />
+              ) : null}
+              {recipe.attributes.freezermeal ? (
+                <FreezerMeal className="key-type" />
+              ) : null}
+              {recipe.attributes.seafood ? (
+                <Seafood className="key-type" />
+              ) : null}
+              {recipe.attributes.instantpot ? (
+                <InstantPot className="key-type" />
+              ) : null}
             </div>
-          </a>
-          <img className="recipe-thumbnail" src={recipe.attributes.image} />
-          <div className="keys">
-            {recipe.attributes.keto ? <Keto className="key-type" /> : null}
-            {recipe.attributes.dairy_free ? (
-              <DairyFree className="key-type" />
-            ) : null}
-            {recipe.attributes.low_calorie ? (
-              <LowCalorie className="key-type" />
-            ) : null}
-            {recipe.attributes.gluten_free ? (
-              <GlutenFree className="key-type" />
-            ) : null}
-            {recipe.attributes.air_fryer ? (
-              <AirFryer className="key-type" />
-            ) : null}
-            {recipe.attributes.quick ? <Quick className="key-type" /> : null}
-            {recipe.attributes.slowcooker ? (
-              <SlowCooker className="key-type" />
-            ) : null}
-            {recipe.attributes.paleo ? <Paleo className="key-type" /> : null}
-            {recipe.attributes.vegetarian ? (
-              <Vegetarian className="key-type" />
-            ) : null}
-            {recipe.attributes.freezermeal ? (
-              <FreezerMeal className="key-type" />
-            ) : null}
-            {recipe.attributes.seafood ? (
-              <Seafood className="key-type" />
-            ) : null}
-            {recipe.attributes.instantpot ? (
-              <InstantPot className="key-type" />
-            ) : null}
+            <h2 className="recipe-title">{recipe.attributes.title}</h2>
+            <p className="recipe-desc">{recipe.attributes.description}</p>
           </div>
-          <h2 className="recipe-title">{recipe.attributes.title}</h2>
-          <p className="recipe-desc">{recipe.attributes.description}</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -69,10 +69,10 @@
     width: 100%;
     position: absolute;
     top: 25px;
-    left: -900px;
     padding-left: 0;
     opacity: 0;
-    transition: 0.5s;
+    transform: translateX(-250px);
+    transition: 0.3s;
   }
 
   .logo-nav {
@@ -81,7 +81,8 @@
 
   .nav-options.active {
     background: #f5f5f5;
-    left: 0;
+    transform: translateX(0);
+    right: 1px;
     opacity: 1;
     transition: 0.3s;
     z-index: 1;
@@ -113,6 +114,9 @@
     align-self: center;
     border-radius: 3px;
   }
+  .mobile-signup.active {
+    color: white;
+  }
   .sign-in {
     display: none;
   }
@@ -137,10 +141,10 @@
 @keyframes slideRight {
   0% {
     opacity: 0;
-    transform: translateX(-300px);
+    transform: translateX(-250px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }

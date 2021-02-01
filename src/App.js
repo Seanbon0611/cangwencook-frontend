@@ -35,10 +35,14 @@ const App = (props) => {
   }, []);
 
   useEffect(() => {
-    api.auth
-      .autoLogin()
-      .then((json) => checkLoggedIn(json))
-      .catch((err) => console.log(err));
+    api.auth.autoLogin().then((json) => {
+      if (json.msg === "No User") {
+        console.log(json);
+      } else {
+        checkLoggedIn(json);
+      }
+    });
+    // .catch((err) => console.log(err));
   }, []);
 
   const logOut = () => {
