@@ -71,7 +71,7 @@
     top: 25px;
     padding-left: 0;
     opacity: 0;
-    transform: translateX(-250px);
+    transform: translateX(-800px);
     transition: 0.3s;
   }
 
