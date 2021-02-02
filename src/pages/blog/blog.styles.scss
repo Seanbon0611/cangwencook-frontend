@@ -10,6 +10,12 @@
     color: #4e4d68;
     justify-content: flex-start;
   }
+  .latest-recipes {
+    padding-top: 20px;
+    .top-recipes {
+      display: block;
+    }
+  }
 }
 .coming-soon {
   display: flex;
@@ -23,5 +29,10 @@
 @media screen and (min-width: 791px) {
   .blog-page-container {
     padding: 0px 40px;
+    .latest-recipes {
+      .top-recipes {
+        display: none;
+      }
+    }
   }
 }

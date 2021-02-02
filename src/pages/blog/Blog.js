@@ -32,8 +32,8 @@ const Blog = ({ recipes }) => {
         </p>
       </div>
       <hr className="divider"></hr>
-      <div style={{ paddingTop: "20px" }}>
-        <h2>Latest Recipes</h2>
+      <div className="latest-recipes">
+        <h2 className="top-recipes">Latest Recipes</h2>
         <RecipeCarousel recipes={topThree} />
       </div>
     </div>
