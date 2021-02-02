@@ -6,6 +6,9 @@ import "./recipes.styles.scss";
 import Spinner from "../../components/spinner/Spinner";
 
 const RecipesPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
 

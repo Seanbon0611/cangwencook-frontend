@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactComponent as Keto } from "../../assets/keys/keto.svg";
 import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
 import { ReactComponent as GlutenFree } from "../../assets/keys/gluten-free.svg";
@@ -19,6 +19,9 @@ import CustomButton from "../../components/custom-button/CustomButton";
 import "./single-recipe.styles.scss";
 
 const SingleRecipe = ({ recipe }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { attributes } = recipe;
   return (
     <div className="single-recipe-container">

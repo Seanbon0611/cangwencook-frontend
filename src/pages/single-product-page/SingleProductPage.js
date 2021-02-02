@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProductShowcase from "../../components/product-showcase/ProductShowcase";
 import ProductDetails from "../../components/product-details/ProductDetails";
 import ShopHeader from "../../components/shop-header/ShopHeader";
 import "./single-product-page.styles.scss";
 
 const SingleProductPage = ({ item, currentOrder }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <ShopHeader />

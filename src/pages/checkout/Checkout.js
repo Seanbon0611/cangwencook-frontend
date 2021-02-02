@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import CheckoutForm from "../../components/checkout-form/CheckoutForm";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
@@ -10,6 +10,9 @@ import axios from "axios";
 import "./checkout.styles.scss";
 
 const Checkout = ({ currentUser }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const stripe = useStripe();
   const elements = useElements();
   const [success, setSuccess] = useState(false);

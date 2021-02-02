@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RecipeFormDetails from "../../components/recipe-form-details/RecipeFormDetails";
 import RecipeFormIngredients from "../../components/recipe-form-ingredients/RecipeFormIngredients";
 import RecipeFormInstructions from "../../components/recipe-form-instructions/RecipeFormInstructions";
@@ -7,6 +7,9 @@ import api from "../../services/api";
 import "./new-recipe.styles.scss";
 
 const NewRecipePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [step, setStep] = useState(1);
   const ingredientAttributes = { name: "", measurement: "" };
   const instructionAttributes = { step: "" };

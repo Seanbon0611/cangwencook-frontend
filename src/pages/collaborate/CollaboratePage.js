@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CustomButton from "../../components/custom-button/CustomButton";
 import FormInput from "../../components/form-input/FormInput";
 import Socials from "../../components/socials/Socials";
@@ -7,6 +7,9 @@ import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import "./collaborate.styles.scss";
 
 const CollaboratePage = ({ recipes }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");

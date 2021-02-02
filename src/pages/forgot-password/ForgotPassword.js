@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormInput from "../../components/form-input/FormInput";
 import CustomButton from "../../components/custom-button/CustomButton";
 import "./forgot-password.styles.scss";
@@ -7,7 +7,9 @@ import api from "../../services/api";
 const ForgotPasswordPage = () => {
   const [success, setSuccess] = useState(false);
   const [email, setEmail] = useState("");
-  console.log(email);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const config = {

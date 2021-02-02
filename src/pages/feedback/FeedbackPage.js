@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormInput from "../../components/form-input/FormInput";
 import CustomButton from "../../components/custom-button/CustomButton";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
@@ -11,6 +11,9 @@ const FeedbackPage = ({ recipes }) => {
   const [message, setMessage] = useState("");
   const topTwo = recipes.slice(0, 2);
   const topThree = recipes.slice(0, 3);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleSubmit = () => {
     const config = {
       method: "POST",

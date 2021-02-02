@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CustomButton from "../../components/custom-button/CustomButton";
 import FormInput from "../../components/form-input/FormInput";
 import { Link } from "react-router-dom";
@@ -6,6 +6,9 @@ import "./sign-up.styles.scss";
 import api from "../../services/api";
 
 const SignUp = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");

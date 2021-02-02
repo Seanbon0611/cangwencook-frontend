@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import "./homepage.styles.scss";
 
 const Homepage = ({ recipes }) => {
   const topThree = recipes.slice(0, 3);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="homepage">

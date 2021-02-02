@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactComponent as PlayButton } from "../../assets/icons/playbutton.svg";
 import { ReactComponent as Keto } from "../../assets/keys/keto.svg";
 import { ReactComponent as DairyFree } from "../../assets/keys/dairy-free.svg";
@@ -14,6 +14,9 @@ import { ReactComponent as Seafood } from "../../assets/keys/seafood.svg";
 import { ReactComponent as InstantPot } from "../../assets/keys/instant-pot.svg";
 import "./video-page.styles.scss";
 const VideosPage = ({ recipes }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="videos-page">
       <h1 className="page-title">Videos</h1>

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FormInput from "../../components/form-input/FormInput";
 import CustomButton from "../../components/custom-button/CustomButton";
 import "./account.styles.scss";
 
 const AccountPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="account-page-container">
       <div class="account-header">

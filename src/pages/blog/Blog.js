@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import TagInstagram from "../../components/tag-ig/TagInstagram";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import "./blog.styles.scss";
 
 const Blog = ({ recipes }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const topThree = recipes.slice(0, 3);
   return (
     <div className="blog-page-container">
@@ -21,7 +24,8 @@ const Blog = ({ recipes }) => {
           alt="about-me-pic"
         />
         <p>
-          Hi, my name is Gwen welcome to my collection of keto-inspired recipes!{" "}
+          Hi, my name is Gwen welcome to my collection of healthy and tasty
+          recipes!{" "}
           <Link style={{ textDecoration: "underline" }} to="/about">
             read more
           </Link>

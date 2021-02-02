@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Product from "../../components/product/Product";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import Socials from "../../components/socials/Socials";
@@ -8,6 +8,9 @@ import LazyLoad from "react-lazyload";
 import "./shop-styles.scss";
 
 const ShopPage = ({ products, recipes }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const topThree = recipes.slice(0, 3);
   return (
     <div className="shop-container">

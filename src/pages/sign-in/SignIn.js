@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormInput from "../../components/form-input/FormInput";
 import CustomButton from "../../components/custom-button/CustomButton";
 import { Link } from "react-router-dom";
@@ -6,6 +6,9 @@ import api from "../../services/api";
 import "./sign-in.styles.scss";
 
 const Signin = ({ afterLogin }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [loginError, setLoginError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
