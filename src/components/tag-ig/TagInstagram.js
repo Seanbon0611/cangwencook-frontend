@@ -6,7 +6,7 @@ const TagInstagram = () => {
   return (
     <div className="tag-container">
       <div>
-        <InstaTag />
+        <InstaTag className="logo-size" />
       </div>
       <div>
         <p>SHARE YOUR MOMENTS BY TAGGING</p>

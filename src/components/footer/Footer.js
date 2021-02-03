@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <p style={{ fontWeight: "600", fontSize: "18px", paddingBottom: "5px" }}>
-        Hey, let's keep it touch!
+        Hey, let's keep in touch!
       </p>
       <p style={{ fontWeight: "400", fontSize: "14px" }}>
         Sign up for our newsletter!
