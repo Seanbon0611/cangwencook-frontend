@@ -1,4 +1,6 @@
 .homepage {
+  position: relative;
+  resize: both;
   padding-bottom: 40px;
 }
 .image-container {
@@ -6,22 +8,29 @@
   width: 100%;
   padding-bottom: 70px;
   overflow: hidden;
-  img {
-    width: 100%;
+  .img-bg {
+    width: 100vw;
+    height: 30vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://can-gwen-cook.s3-us-west-1.amazonaws.com/hero-image.jpg");
   }
   .slogan {
     position: absolute;
-    top: 49%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 1.17rem;
+    object-fit: contain;
     color: #303030;
-    font-size: 12px;
     font-weight: bold;
   }
 }
 .latest-recipes {
   color: var(--main);
-  font-size: 18px;
+  font-size: 1.6rem;
+  padding-bottom: 10px;
 }
 .top-recipes {
   display: none;
@@ -29,9 +38,14 @@
 
 @media (min-width: 791px) {
   .image-container {
-    .slogan {
-      font-size: 2em;
-      top: 60%;
+    .img-bg {
+      height: 100vh;
+      background-size: contain;
+      .slogan {
+        top: 62%;
+        left: 50%;
+        font-size: 2.199rem;
+      }
     }
   }
   .top-recipes {
@@ -40,7 +54,8 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
   .latest-recipes {
-    font-size: 24px;
+    font-size: 2rem;
+    padding: 0px;
   }
   .top-recipes-mobile {
     display: none;

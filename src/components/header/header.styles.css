@@ -67,12 +67,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 25px;
     padding-left: 0;
     opacity: 0;
     transform: translateX(-800px);
-    transition: 0.3s;
+    transition: 1s;
   }
 
   .logo-nav {
@@ -84,7 +84,7 @@
     transform: translateX(0);
     right: 1px;
     opacity: 1;
-    transition: 0.3s;
+    transition: 0.5s;
     z-index: 1;
     align-content: center;
     gap: 25px;

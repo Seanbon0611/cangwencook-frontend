@@ -12,14 +12,10 @@ const Homepage = ({ recipes }) => {
   return (
     <div className="homepage">
       <div className="image-container">
-        <img
-          alt="hero"
-          src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/hero-image.jpg"
-        />
-        <div className="slogan">
-          <span>Chopped-Inspired Recipes</span>
-          <br />
-          <span>For Your Active Lifestyle</span>
+        <div className="img-bg">
+          <div className="slogan">
+            <p>Healthy Recipes for Your Active Lifestyle</p>
+          </div>
         </div>
       </div>
       <h1 className="latest-recipes">Latest Recipes</h1>
