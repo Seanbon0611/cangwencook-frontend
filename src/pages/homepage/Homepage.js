@@ -14,7 +14,8 @@ const Homepage = ({ recipes }) => {
       <div className="image-container">
         <div className="img-bg">
           <div className="slogan">
-            <p>Healthy Recipes for Your Active Lifestyle</p>
+            <p>Healthy Recipes for</p>
+            <p>Your Active Lifestyle</p>
           </div>
         </div>
       </div>

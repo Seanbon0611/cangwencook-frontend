@@ -1,15 +1,18 @@
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 12px 40px 100px 40px;
+  padding: 0px 40px 100px 40px;
   text-align: left;
 
   .bio {
     width: 50vw;
   }
 
-  h1 {
+  .page-title {
     color: #4e4d68;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
     padding-bottom: 10px;
     font-weight: 600;
   }
@@ -82,9 +85,6 @@
     h2 {
       font-size: 14px;
       font-weight: 600;
-    }
-    h1 {
-      font-size: medium;
     }
     .about-p {
       font-size: 14px;

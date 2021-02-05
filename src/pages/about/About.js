@@ -11,7 +11,7 @@ const AboutPage = ({ recipes }) => {
   return (
     <div className="about-container">
       <div className="bio">
-        <h1>About Gwen</h1>
+        <h1 className="page-title">About Gwen</h1>
         <div className="about-me-pic-container">
           <img
             style={{ width: "189px", height: "189px" }}

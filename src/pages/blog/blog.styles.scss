@@ -21,9 +21,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  color: #4e4d68;
-  font-size: 80px;
+  height: 400px;
+  color: var(--secondary);
+  font-size: 3rem;
 }
 
 @media screen and (min-width: 791px) {
@@ -34,5 +34,10 @@
         display: none;
       }
     }
+  }
+  .coming-soon {
+    height: 500px;
+    font-size: 4.5rem;
+    font-weight: 600;
   }
 }
