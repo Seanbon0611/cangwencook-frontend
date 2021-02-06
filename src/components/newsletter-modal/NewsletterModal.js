@@ -38,7 +38,7 @@ const NewsletterModal = ({ isShowing, hide }) => {
                     and more!
                   </p>
                   <NewsletterForm />
-                  <div class="sbmt-btn">
+                  <div className="sbmt-btn">
                     <CustomButton type="submit">Submit</CustomButton>
                   </div>
                 </form>
