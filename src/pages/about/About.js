@@ -77,7 +77,7 @@ const AboutPage = ({ recipes }) => {
         <h1>A.B.C : Always be curious!</h1>
       </div>
       <div className="top-recipes">
-        <h2>Top Recipes</h2>
+        <h1>Top Recipes</h1>
         <div className="side-content">
           {topTwo.map((recipe) => {
             return <RecipeCard key={recipe.id} recipe={recipe} />;

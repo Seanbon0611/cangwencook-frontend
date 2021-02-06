@@ -9,7 +9,7 @@ const AccountPage = () => {
   }, []);
   return (
     <div className="account-page-container">
-      <div class="account-header">
+      <div className="account-header">
         <h1>Account Profile</h1>
       </div>
       <div className="split">
