@@ -137,6 +137,9 @@ const Header = ({ logOut }) => {
             <NavLink className="option" onClick={closeMobileMenu} to="/blog">
               Blog
             </NavLink>
+            <NavLink className="option" onClick={closeMobileMenu} to="/videos">
+              Videos
+            </NavLink>
             <div className="option-mobile">
               <p style={{ padding: "10px 0px" }}>Follow Us!</p>
               <Socials />
