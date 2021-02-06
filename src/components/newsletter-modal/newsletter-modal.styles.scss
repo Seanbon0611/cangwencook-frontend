@@ -28,7 +28,7 @@
   border: 1px solid black;
   border-radius: 9px;
   max-width: 436px;
-  max-height: 209px;
+  max-height: 249px;
   width: 90vw;
   height: 100vw;
   padding: 0 20px 0 20px;
@@ -54,8 +54,11 @@
 .modal-content {
   display: grid;
   grid-area: data;
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 20px 0px 20px 20px;
+  .sbmt-btn {
+    display: flex;
+    justify-self: center;
+  }
 }
 
 .button-default {
@@ -71,5 +74,11 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media all and (max-width: 792px) {
+  .modal {
+    max-height: 270px;
   }
 }

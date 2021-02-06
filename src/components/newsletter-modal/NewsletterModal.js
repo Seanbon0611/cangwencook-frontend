@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import CustomButton from "../custom-button/CustomButton";
 import NewsletterForm from "../newsletter-form/NewsletterForm";
 import Socials from "../socials/Socials";
 import "./newsletter-modal.styles.scss";
@@ -37,6 +38,9 @@ const NewsletterModal = ({ isShowing, hide }) => {
                     and more!
                   </p>
                   <NewsletterForm />
+                  <div class="sbmt-btn">
+                    <CustomButton type="submit">Submit</CustomButton>
+                  </div>
                 </form>
               </div>
               <Socials />
