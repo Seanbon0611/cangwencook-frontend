@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import RecipeCard from "../recipe-card/RecipeCard";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import LazyLoad from "react-lazyload";
+import Spinner from "../../components/spinner/Spinner";
 import "./recipe-carousel.styles.scss";
 import "swiper/components/navigation/navigation.scss";
 import "../../../node_modules/swiper/swiper-bundle.css";
@@ -14,9 +16,16 @@ const RecipeCarousel = ({ recipes }) => {
       <Swiper spaceBetween={0} slidesPerView={1} navigation>
         {recipes.map((recipe, index) => {
           return (
-            <SwiperSlide key={index}>
-              <RecipeCard recipe={recipe} />
-            </SwiperSlide>
+            <LazyLoad
+              key={recipe.id}
+              height={100}
+              offset={[-100, 100]}
+              placeholder={<Spinner />}
+            >
+              <SwiperSlide key={index}>
+                <RecipeCard recipe={recipe} />
+              </SwiperSlide>
+            </LazyLoad>
           );
         })}
       </Swiper>

@@ -23,12 +23,16 @@ const VideosPage = ({ recipes }) => {
       <div className="videos-container">
         {recipes.map((recipe) => (
           <div key={recipe.id}>
-            <a target="_blank" href={recipe.attributes.link}>
+            <a target="_blank" href={recipe.attributes.link} rel="noreferrer">
               <div className="playbutton">
                 <PlayButton className="play-icon" />
               </div>
             </a>
-            <img className="recipe-thumbnail" src={recipe.attributes.image} />
+            <img
+              className="recipe-thumbnail"
+              src={recipe.attributes.image}
+              alt={recipe.attributes.title}
+            />
             <div className="keys">
               {recipe.attributes.keto ? <Keto className="key-type" /> : null}
               {recipe.attributes.dairy_free ? (
