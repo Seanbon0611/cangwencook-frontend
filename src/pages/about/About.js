@@ -74,12 +74,10 @@ const AboutPage = ({ recipes }) => {
           Watching short documentaries and content to educate myself on the
           world.
         </p>
-        <h1 style={{ color: "var(--secondary)" }}>
-          A.B.C : Always be curious!
-        </h1>
+        <h1 style={{ color: "var(--main)" }}>A.B.C : Always be curious!</h1>
       </div>
       <div className="top-recipes">
-        <h1 style={{ color: "var(--secondary)" }}>Top Recipes</h1>
+        <h1 style={{ color: "var(--main)" }}>Top Recipes</h1>
         <div className="side-content">
           {topTwo.map((recipe) => {
             return <RecipeCard key={recipe.id} recipe={recipe} />;

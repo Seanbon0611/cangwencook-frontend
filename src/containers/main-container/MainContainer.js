@@ -36,6 +36,7 @@ const MainContainer = ({ afterLogin }) => {
   const firstName = useSelector((state) => state.user.firstName);
   const [products, setProducts] = useState([]);
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     api.product
       .getProducts()
@@ -45,9 +46,10 @@ const MainContainer = ({ afterLogin }) => {
       });
   }, []);
   useEffect(() => {
-    api.recipes
-      .getRecipes()
-      .then((recipesList) => setRecipes(recipesList.recipes.data));
+    api.recipes.getRecipes().then((recipesList) => {
+      setLoading(false);
+      setRecipes(recipesList.recipes.data);
+    });
   }, []);
   if (loggedIn) {
     if (isAdmin) {
@@ -77,7 +79,11 @@ const MainContainer = ({ afterLogin }) => {
     return (
       <div>
         <Switch>
-          <Route exact path="/" render={() => <HomePage recipes={recipes} />} />
+          <Route
+            exact
+            path="/"
+            render={() => <HomePage recipes={recipes} loading={loading} />}
+          />
           <Route
             path="/shop/:id"
             render={(routerProps) => {
