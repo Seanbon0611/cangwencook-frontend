@@ -79,7 +79,7 @@ const AboutPage = ({ recipes }) => {
         </h1>
       </div>
       <div className="top-recipes">
-        <h1>Top Recipes</h1>
+        <h1 style={{ color: "var(--secondary)" }}>Top Recipes</h1>
         <div className="side-content">
           {topTwo.map((recipe) => {
             return <RecipeCard key={recipe.id} recipe={recipe} />;
