@@ -74,7 +74,9 @@ const AboutPage = ({ recipes }) => {
           Watching short documentaries and content to educate myself on the
           world.
         </p>
-        <h1>A.B.C : Always be curious!</h1>
+        <h1 style={{ color: "var(--secondary)" }}>
+          A.B.C : Always be curious!
+        </h1>
       </div>
       <div className="top-recipes">
         <h1>Top Recipes</h1>
