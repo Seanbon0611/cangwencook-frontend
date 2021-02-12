@@ -69,7 +69,6 @@ const VideosPage = ({ recipes }) => {
             <p className="recipe-desc">{recipe.attributes.description}</p>
           </div>
         ))}
-        <img src="../../assets/recipe-cs.png" />
       </div>
     </div>
   );
