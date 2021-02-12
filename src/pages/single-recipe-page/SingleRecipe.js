@@ -66,13 +66,13 @@ const SingleRecipe = ({ recipe }) => {
             </div>
           </div>
           <div>
-            <h2>Ingredients:</h2>
+            <h2 className="recipe-section-header">Ingredients:</h2>
             {attributes.ingredients.map((ingredient, index) => (
               <p style={{ padding: "10px 0px" }} key={index}>
                 {ingredient.measurement} of {ingredient.name}
               </p>
             ))}
-            <h2>Procedure:</h2>
+            <h2 className="recipe-section-header">Procedure:</h2>
             {attributes.instructions.map((step, index) => (
               <p style={{ padding: "10px 0px" }} key={index}>
                 Step {index + 1}: {step.step}
@@ -81,6 +81,7 @@ const SingleRecipe = ({ recipe }) => {
           </div>
         </div>
         <div className="recipe-keys">
+          <h2 className="key-header">Recipe Key</h2>
           <RecipeKey />
         </div>
       </div>
