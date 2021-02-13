@@ -9,7 +9,6 @@ const PasswordResetPage = ({ token }) => {
   }, []);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState([]);
-  console.log(token);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = JSON.stringify({

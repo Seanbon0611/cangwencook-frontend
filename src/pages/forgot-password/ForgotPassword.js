@@ -25,7 +25,6 @@ const ForgotPasswordPage = () => {
     };
 
     api.auth.passwordReset(config).then((data) => {
-      console.log(data);
       if (data.msg) {
         setSuccess(true);
       }

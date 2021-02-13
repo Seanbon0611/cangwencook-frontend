@@ -99,7 +99,6 @@ const NewRecipePage = () => {
   const prev = () => {
     setStep((s) => s - 1);
   };
-  console.log(formData);
   switch (step) {
     case 1:
       return (

@@ -38,11 +38,9 @@ const SignUp = () => {
       return setErrors("Passwords do not match");
     }
     api.user.signUp(config).then((res) => {
-      console.log(res);
       if (res.msg === "Successfully Created") {
         setSuccess(true);
       } else if (res.error) {
-        console.log(res);
         setErrors(res.error);
       }
     });

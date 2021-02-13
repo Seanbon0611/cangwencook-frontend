@@ -37,12 +37,11 @@ const App = (props) => {
   useEffect(() => {
     api.auth.autoLogin().then((json) => {
       if (json.msg === "No User") {
-        console.log(json);
+        localStorage.setItem("user", "No User");
       } else {
         checkLoggedIn(json);
       }
     });
-    // .catch((err) => console.log(err));
   }, []);
 
   const logOut = () => {
