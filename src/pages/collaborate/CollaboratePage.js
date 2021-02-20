@@ -75,7 +75,6 @@ const CollaboratePage = ({ recipes }) => {
           </div>
         </div>
       </div>
-      <hr className="divider"></hr>
       <div className="top-recipes-mobile">
         <h1 className="page-title">Latest Recipes</h1>
         <RecipeCarousel recipes={topThree} />
