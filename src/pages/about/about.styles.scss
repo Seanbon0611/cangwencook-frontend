@@ -46,26 +46,6 @@
     flex-direction: column;
     text-align: center;
     margin-top: 48px;
-    .side-content {
-      .recipe-card-container {
-        .recipe-thumbnail {
-          width: 250px;
-          height: 250px;
-        }
-        .keys {
-          .key-type {
-            height: 45px;
-            width: 45px;
-          }
-        }
-        .recipe-title {
-          font-size: 18px;
-        }
-        .recipe-desc {
-          font-size: 12px;
-        }
-      }
-    }
   }
 }
 

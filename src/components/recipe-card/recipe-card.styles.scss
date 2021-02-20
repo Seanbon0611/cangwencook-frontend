@@ -1,17 +1,21 @@
 .recipe-card-container {
   padding-bottom: 50px;
+
   .recipe-thumbnail {
-    width: 315px;
-    height: 315px;
-    border: none;
-    border-radius: 8px;
+    width: 250px;
+    height: 250px;
   }
   .keys {
     .key-type {
-      width: 60px;
-      height: 60px;
-      padding: 0px 3px;
+      height: 40px;
+      width: 40px;
     }
+  }
+  .recipe-title {
+    font-size: 18px;
+  }
+  .recipe-desc {
+    font-size: 12px;
   }
 }
 
