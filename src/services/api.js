@@ -64,6 +64,10 @@ const getCS = (config) => {
   return fetch(`${API_ROOT}/secret`, config);
 };
 
+const newContact = (config) => {
+  return fetch(`${process.env.REACT_APP_AC_LINK}/`, config);
+};
+
 export default {
   API_ROOT: API_ROOT,
   auth: {
