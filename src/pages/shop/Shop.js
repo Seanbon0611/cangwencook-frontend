@@ -7,9 +7,13 @@ import TagInstagram from "../../components/tag-ig/TagInstagram";
 import LazyLoad from "react-lazyload";
 import "./shop-styles.scss";
 
-const ShopPage = ({ products, recipes }) => {
+const ShopPage = ({ products, recipes, setCurrentPage }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
+    setCurrentPage("6");
+    return () => setCurrentPage("");
   }, []);
   const topThree = recipes.slice(0, 3);
   return (

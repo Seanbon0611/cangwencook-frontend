@@ -4,9 +4,13 @@ import TagInstagram from "../../components/tag-ig/TagInstagram";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import "./blog.styles.scss";
 
-const Blog = ({ recipes }) => {
+const Blog = ({ recipes, setCurrentPage }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
+    setCurrentPage("7");
+    return () => setCurrentPage("");
   }, []);
   const topThree = recipes.slice(0, 3);
   return (

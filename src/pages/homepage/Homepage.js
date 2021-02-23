@@ -4,10 +4,15 @@ import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import Spinner from "../../components/spinner/Spinner";
 import "./homepage.styles.scss";
 
-const Homepage = ({ recipes, loading }) => {
+const Homepage = ({ recipes, loading, setCurrentPage }) => {
   const topThree = recipes.slice(0, 3);
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    setCurrentPage("2");
+    return () => setCurrentPage("");
   }, []);
 
   return (

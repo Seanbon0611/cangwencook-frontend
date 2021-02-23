@@ -3,10 +3,14 @@ import "./about.styles.scss";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 
-const AboutPage = ({ recipes }) => {
+const AboutPage = ({ recipes, setCurrentPage }) => {
   const topTwo = recipes.slice(0, 2);
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
+    setCurrentPage("3");
+    return () => setCurrentPage("");
   }, []);
   return (
     <div className="about-container">

@@ -5,7 +5,7 @@ import RecipeCard from "../../components/recipe-card/RecipeCard";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import Socials from "../../components/socials/Socials";
 
-const FeedbackPage = ({ recipes }) => {
+const FeedbackPage = ({ recipes, setCurrentPage }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -13,6 +13,10 @@ const FeedbackPage = ({ recipes }) => {
   const topThree = recipes.slice(0, 3);
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
+    setCurrentPage("10");
+    return () => setCurrentPage("");
   }, []);
   const handleSubmit = () => {
     const config = {

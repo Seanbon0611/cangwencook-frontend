@@ -19,7 +19,7 @@ import FeedbackPage from "../../pages/feedback/FeedbackPage";
 import Spinner from "../../components/spinner/Spinner";
 import VideosPage from "../../pages/videos/VideosPage";
 
-const MainContainer = ({ afterLogin }) => {
+const MainContainer = ({ afterLogin, setCurrentPage }) => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const isAdmin = useSelector((state) => state.user.isAdmin);
@@ -41,6 +41,7 @@ const MainContainer = ({ afterLogin }) => {
       setLoading(false);
     });
   }, []);
+
   if (loggedIn) {
     if (isAdmin) {
       return (
@@ -56,7 +57,13 @@ const MainContainer = ({ afterLogin }) => {
           <Route
             exact
             path="/"
-            render={() => <HomePage recipes={recipes} loading={loading} />}
+            render={() => (
+              <HomePage
+                recipes={recipes}
+                loading={loading}
+                setCurrentPage={setCurrentPage}
+              />
+            )}
           />
           <Route
             path="/shop/:id"
@@ -75,21 +82,50 @@ const MainContainer = ({ afterLogin }) => {
               const recipe = recipes.find((recipe) => {
                 return recipe.id.toString() === recipeId;
               });
-              return recipe ? <SingleRecipe recipe={recipe} /> : <Spinner />;
+              return recipe ? (
+                <SingleRecipe recipe={recipe} setCurrentPage={setCurrentPage} />
+              ) : (
+                <Spinner />
+              );
             }}
           />
 
           <Route
             path="/shop"
-            render={() => <ShopPage products={products} recipes={recipes} />}
+            render={() => (
+              <ShopPage
+                products={products}
+                recipes={recipes}
+                setCurrentPage={setCurrentPage}
+              />
+            )}
           />
-          <Route path="/recipes" render={() => <RecipesPage />} />
-          <Route path="/blog" render={() => <Blog recipes={recipes} />} />
+          <Route
+            path="/recipes"
+            render={() => <RecipesPage setCurrentPage={setCurrentPage} />}
+          />
+          <Route
+            path="/blog"
+            render={() => (
+              <Blog recipes={recipes} setCurrentPage={setCurrentPage} />
+            )}
+          />
           <Route
             path="/signin"
-            render={() => <SignIn afterLogin={afterLogin} error={loginError} />}
+            render={() => (
+              <SignIn
+                afterLogin={afterLogin}
+                error={loginError}
+                setCurrentPage={setCurrentPage}
+              />
+            )}
           />
-          <Route path="/about" render={() => <AboutPage recipes={recipes} />} />
+          <Route
+            path="/about"
+            render={() => (
+              <AboutPage recipes={recipes} setCurrentPage={setCurrentPage} />
+            )}
+          />
           <Route path="/forgot-password" component={ForgotPasswordPage} />
           <Route
             exact
@@ -101,17 +137,26 @@ const MainContainer = ({ afterLogin }) => {
           />
           <Route
             path="/collaborate"
-            render={() => <CollaboratePage recipes={recipes} />}
+            render={() => (
+              <CollaboratePage
+                recipes={recipes}
+                setCurrentPage={setCurrentPage}
+              />
+            )}
           />
           <Route
             path="/feedback"
-            render={() => <FeedbackPage recipes={recipes} />}
+            render={() => (
+              <FeedbackPage recipes={recipes} setCurrentPage={setCurrentPage} />
+            )}
           />
           <Route
             path="/videos"
-            render={() => <VideosPage recipes={recipes} />}
+            render={() => (
+              <VideosPage recipes={recipes} setCurrentPage={setCurrentPage} />
+            )}
           />
-          <Route component={NotFound} />
+          <Route render={() => <NotFound setCurrentPage={setCurrentPage} />} />
         </Switch>
       </div>
     );

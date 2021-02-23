@@ -13,9 +13,13 @@ import { ReactComponent as Vegetarian } from "../../assets/keys/vegetarian.svg";
 import { ReactComponent as Seafood } from "../../assets/keys/seafood.svg";
 import { ReactComponent as InstantPot } from "../../assets/keys/instant-pot.svg";
 import "./video-page.styles.scss";
-const VideosPage = ({ recipes }) => {
+const VideosPage = ({ recipes, setCurrentPage }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
+    setCurrentPage("8");
+    return () => setCurrentPage("");
   }, []);
   return (
     <div className="videos-page">

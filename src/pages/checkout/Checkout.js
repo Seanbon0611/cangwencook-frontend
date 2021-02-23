@@ -88,9 +88,7 @@ const Checkout = ({ currentUser }) => {
             payment_status: "Paid",
           }),
         }
-      )
-        .then((res) => res.json())
-        .then(console.log);
+      ).then((res) => res.json());
       setSuccess(true);
     } catch (err) {
       setCheckoutError(err.message);

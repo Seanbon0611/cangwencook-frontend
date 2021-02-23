@@ -6,9 +6,13 @@ import RecipeCard from "../../components/recipe-card/RecipeCard";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import "./collaborate.styles.scss";
 
-const CollaboratePage = ({ recipes }) => {
+const CollaboratePage = ({ recipes, setCurrentPage }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
+    setCurrentPage("9");
+    return () => setCurrentPage("");
   }, []);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");

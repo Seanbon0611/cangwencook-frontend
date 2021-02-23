@@ -15,9 +15,13 @@ import RecipeKey from "../../components/recipe-key/RecipeKey";
 import CustomButton from "../../components/custom-button/CustomButton";
 import "./single-recipe.styles.scss";
 
-const SingleRecipe = ({ recipe }) => {
+const SingleRecipe = ({ recipe, setCurrentPage }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
+    setCurrentPage("5");
+    return () => setCurrentPage("");
   }, []);
   const { attributes } = recipe;
   return (

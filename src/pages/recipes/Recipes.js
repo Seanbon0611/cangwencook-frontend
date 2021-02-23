@@ -5,10 +5,15 @@ import api from "../../services/api";
 import "./recipes.styles.scss";
 import Spinner from "../../components/spinner/Spinner";
 
-const RecipesPage = () => {
+const RecipesPage = ({ setCurrentPage }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  useEffect(() => {
+    setCurrentPage("4");
+    return () => setCurrentPage("");
+  }, []);
+
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
 
