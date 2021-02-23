@@ -65,11 +65,17 @@ const getCS = (config) => {
 };
 
 const newContact = (config) => {
-  return fetch(`${process.env.REACT_APP_AC_LINK}/`, config);
+  return fetch(
+    `${process.env.REACT_APP_AC_LINK}/api/3/contacts`,
+    config
+  ).then((res) => res.json());
 };
 
 export default {
   API_ROOT: API_ROOT,
+  activeCampaign: {
+    newContact: newContact,
+  },
   auth: {
     login: login,
     autoLogin: autoLogin,
