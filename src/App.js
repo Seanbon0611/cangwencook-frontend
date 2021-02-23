@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -12,7 +12,21 @@ import "./App.css";
 const App = (props) => {
   const { isShowing, toggle } = useModal();
   const dispatch = useDispatch();
-
+  /*
+  CurrentPage IDs = {
+    landingPage: 2,
+    about: 3,
+    recipes: 4,
+    singleRecipe: 5,
+    shop: 6,
+    blog: 7,
+    videos: 8,
+    collaborate: 9,
+    feedback: 10
+  }
+  
+  */
+  const [currentPage, setCurrentPage] = useState("");
   const checkLoggedIn = (user) => {
     if (user.expires) {
       const expiresAt = Date.parse(user.expires) - Date.now();
@@ -68,8 +82,12 @@ const App = (props) => {
   return (
     <div>
       <Header logOut={logOut} />
-      <MainContainer afterLogin={afterLogin} />
-      <NewsletterModal isShowing={isShowing} hide={toggle} />
+      <MainContainer afterLogin={afterLogin} setCurrentPage={setCurrentPage} />
+      <NewsletterModal
+        isShowing={isShowing}
+        hide={toggle}
+        currentPage={currentPage}
+      />
       <Footer />
     </div>
   );
