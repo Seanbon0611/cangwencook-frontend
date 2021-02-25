@@ -65,16 +65,18 @@ const getCS = (config) => {
 };
 
 const newContact = (config) => {
-  return fetch(
-    `${process.env.REACT_APP_AC_LINK}/api/3/contacts`,
-    config
-  ).then((res) => res.json());
+  return fetch(`${API_ROOT}/new_contact`, config).then((res) => res.json());
+};
+
+const addTagToContact = (config) => {
+  return fetch(`${API_ROOT}/tag`, config).then((res) => res.json());
 };
 
 export default {
   API_ROOT: API_ROOT,
   activeCampaign: {
     newContact: newContact,
+    addTagToContact: addTagToContact,
   },
   auth: {
     login: login,

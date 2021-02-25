@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import api from "../../services/api";
 import CustomButton from "../custom-button/CustomButton";
 import NewsletterForm from "../newsletter-form/NewsletterForm";
 import Socials from "../socials/Socials";
@@ -7,22 +8,46 @@ import "./newsletter-modal.styles.scss";
 
 const NewsletterModal = ({ isShowing, hide, currentPage }) => {
   const [email, setEmail] = useState("");
-  console.log(email);
-  const handleSubmit = (e) => {
+  const [contactId, setContactId] = useState("");
+  const [error, setError] = useState("");
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const config = {
+    const contactConfig = {
       method: "POST",
       headers: {
         accept: "application/json",
-        "Api-token": `${process.env.REACT_APP_AC_KEY}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        contact: {
-          email: email,
-        },
+        email: email,
       }),
     };
-    hide();
+    const newContact = await api.activeCampaign
+      .newContact(contactConfig)
+      .then((data) => {
+        if (data.response.errors) {
+          setError(data.response.errors.error);
+        } else {
+          const addTagConfig = {
+            method: "POST",
+            headers: {
+              accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              contact: data.response.contact.id,
+              tag: currentPage,
+            }),
+          };
+          api.activeCampaign.addTagToContact(addTagConfig).then((data) => {
+            if (data.response.errors) {
+              setError(data.response.errors.title);
+            } else {
+              hide();
+            }
+          });
+        }
+      });
   };
 
   if (isShowing) {
@@ -55,6 +80,7 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
                   <div className="sbmt-btn">
                     <CustomButton type="submit">Submit</CustomButton>
                   </div>
+                  <h3>{error}</h3>
                 </form>
               </div>
               <Socials />
