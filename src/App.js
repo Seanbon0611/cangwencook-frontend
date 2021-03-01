@@ -88,7 +88,7 @@ const App = (props) => {
         hide={toggle}
         currentPage={currentPage}
       />
-      <Footer />
+      <Footer currentPage={currentPage} />
     </div>
   );
 };
