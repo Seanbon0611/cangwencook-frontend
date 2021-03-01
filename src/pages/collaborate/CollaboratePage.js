@@ -5,6 +5,7 @@ import Socials from "../../components/socials/Socials";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import "./collaborate.styles.scss";
+import api from "../../services/api";
 
 const CollaboratePage = ({ recipes, setCurrentPage }) => {
   useEffect(() => {
@@ -19,7 +20,8 @@ const CollaboratePage = ({ recipes, setCurrentPage }) => {
   const [message, setMessage] = useState("");
   const topTwo = recipes.slice(0, 2);
   const topThree = recipes.slice(0, 3);
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const config = {
       method: "POST",
       credentials: "include",
@@ -33,6 +35,7 @@ const CollaboratePage = ({ recipes, setCurrentPage }) => {
         message: message,
       }),
     };
+    api.collaborate.addCollaborate(config).then(console.log);
   };
   return (
     <div className="collaborate-container">
@@ -46,7 +49,7 @@ const CollaboratePage = ({ recipes, setCurrentPage }) => {
         </div>
       </div>
       <div className="split-content">
-        <form>
+        <form onSubmit={handleSubmit}>
           <FormInput
             label="Name"
             asterisk

@@ -4,6 +4,7 @@ import CustomButton from "../../components/custom-button/CustomButton";
 import RecipeCard from "../../components/recipe-card/RecipeCard";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import Socials from "../../components/socials/Socials";
+import api from "../../services/api";
 
 const FeedbackPage = ({ recipes, setCurrentPage }) => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,8 @@ const FeedbackPage = ({ recipes, setCurrentPage }) => {
     setCurrentPage("9");
     return () => setCurrentPage("");
   }, []);
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const config = {
       method: "POST",
       credentials: "include",
@@ -32,6 +34,7 @@ const FeedbackPage = ({ recipes, setCurrentPage }) => {
         message: message,
       }),
     };
+    api.feedback.addFeedback(config).then(console.log);
   };
   return (
     <div className="collaborate-container">
@@ -45,7 +48,7 @@ const FeedbackPage = ({ recipes, setCurrentPage }) => {
         </div>
       </div>
       <div className="split-content">
-        <form>
+        <form onSubmit={handleSubmit}>
           <FormInput
             label="Name"
             asterisk
