@@ -15,7 +15,7 @@ const FeedbackPage = ({ recipes, setCurrentPage }) => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("10");
+    setCurrentPage("9");
     return () => setCurrentPage("");
   }, []);
   const handleSubmit = () => {

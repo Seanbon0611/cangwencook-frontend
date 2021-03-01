@@ -14,13 +14,6 @@ const getProducts = () => {
   return fetch(`${API_ROOT}/products`, { credentials: "include" });
 };
 
-const recipesPlaylist = () => {
-  return fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2C+id&playlistId=PLfjCPTMx3kCppMEQ-OIMWLKvpOrXrDX-b&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
-  );
-  //https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UC7s6USfYN4-_Wk6roCXtdjg&part=snippet,id&order=date&maxResults=3
-};
-
 const getVideos = () => {
   return fetch(
     `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU7s6USfYN4-_Wk6roCXtdjg&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet&maxResults=20`

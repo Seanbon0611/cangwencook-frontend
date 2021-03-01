@@ -20,7 +20,7 @@ const SingleRecipe = ({ recipe, setCurrentPage }) => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("5");
+    setCurrentPage("4");
     return () => setCurrentPage("");
   }, []);
   const { attributes } = recipe;

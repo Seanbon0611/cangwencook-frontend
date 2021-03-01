@@ -12,7 +12,7 @@ const ShopPage = ({ products, recipes, setCurrentPage }) => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("6");
+    setCurrentPage("5");
     return () => setCurrentPage("");
   }, []);
   const topThree = recipes.slice(0, 3);

@@ -11,7 +11,7 @@ const CollaboratePage = ({ recipes, setCurrentPage }) => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("9");
+    setCurrentPage("8");
     return () => setCurrentPage("");
   }, []);
   const [email, setEmail] = useState("");

@@ -14,15 +14,15 @@ const App = (props) => {
   const dispatch = useDispatch();
   /*
   CurrentPage IDs = {
-    landingPage: 2,
-    about: 3,
-    recipes: 4,
-    singleRecipe: 5,
-    shop: 6,
-    blog: 7,
-    videos: 8,
-    collaborate: 9,
-    feedback: 10
+    landingPage: 1,
+    about: 2,
+    recipes: 3,
+    singleRecipe: 4,
+    shop: 5,
+    blog: 6,
+    videos: 7,
+    collaborate: 8,
+    feedback: 9
   }
   
   */

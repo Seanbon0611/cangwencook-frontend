@@ -9,7 +9,7 @@ const Blog = ({ recipes, setCurrentPage }) => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("7");
+    setCurrentPage("6");
     return () => setCurrentPage("");
   }, []);
   const topThree = recipes.slice(0, 3);

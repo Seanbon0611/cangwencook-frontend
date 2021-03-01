@@ -10,7 +10,7 @@ const RecipesPage = ({ setCurrentPage }) => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("4");
+    setCurrentPage("3");
     return () => setCurrentPage("");
   }, []);
 

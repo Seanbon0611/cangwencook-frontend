@@ -8,10 +8,11 @@ import "./newsletter-modal.styles.scss";
 
 const NewsletterModal = ({ isShowing, hide, currentPage }) => {
   const [email, setEmail] = useState("");
-  const [contactId, setContactId] = useState("");
   const [error, setError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    //Config to create new active record contact
     const contactConfig = {
       method: "POST",
       headers: {
@@ -22,12 +23,14 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
         email: email,
       }),
     };
+    //HTTP request to create a n ew Contact within Active Campaign
     const newContact = await api.activeCampaign
       .newContact(contactConfig)
       .then((data) => {
         if (data.response.errors) {
           setError(data.response.errors.error);
         } else {
+          //Once Contact has been created, associate this contact with a tag based on the current page
           const addTagConfig = {
             method: "POST",
             headers: {

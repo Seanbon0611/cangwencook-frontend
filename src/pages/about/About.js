@@ -9,7 +9,7 @@ const AboutPage = ({ recipes, setCurrentPage }) => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("3");
+    setCurrentPage("2");
     return () => setCurrentPage("");
   }, []);
   return (

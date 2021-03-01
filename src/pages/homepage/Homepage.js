@@ -11,7 +11,7 @@ const Homepage = ({ recipes, loading, setCurrentPage }) => {
   }, []);
 
   useEffect(() => {
-    setCurrentPage("2");
+    setCurrentPage("1");
     return () => setCurrentPage("");
   }, []);
 

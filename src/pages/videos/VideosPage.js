@@ -18,7 +18,7 @@ const VideosPage = ({ recipes, setCurrentPage }) => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("8");
+    setCurrentPage("7");
     return () => setCurrentPage("");
   }, []);
   return (
