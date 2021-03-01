@@ -1,7 +1,7 @@
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0px 40px 100px 40px;
+  padding: 0px 40px 100px 0px;
   text-align: left;
 
   .bio {
@@ -17,50 +17,36 @@
     font-weight: 600;
   }
   h2 {
+    color: var(--main);
     margin: 0;
     padding: 20px 0px 0px 0px;
   }
-  .newsletter {
-    margin: 0 auto;
-    margin-top: 60px;
-    text-align: center;
-    width: 300px;
-    height: 160px;
-    border: 1px solid black;
-    border-radius: 8px;
-    flex-direction: column;
-    input {
-      width: 230px;
-      height: 30px;
-      font-size: 18px;
-    }
-    a {
-      padding: 0px 10px 0px 10px;
-      .social {
-        width: 40px;
-      }
-    }
-  }
+
   .top-recipes {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-self: center;
     margin-top: 48px;
+    padding-left: 20rem;
   }
 }
 
 .about-p {
   padding: 10px 0px;
   display: flex;
-  max-width: 600px;
+  width: 60vw;
 }
 
 @media screen and (max-width: 791px) {
   .about-container {
     display: block;
     padding: 0px 15px 0px 15px;
+    .bio {
+      width: 90vw;
+    }
     .top-recipes {
-      margin-top: 10px;
+      padding-left: 0;
     }
     h2 {
       font-size: 14px;
@@ -68,6 +54,7 @@
     }
     .about-p {
       font-size: 14px;
+      width: 90vw;
     }
     .side-content {
       display: none;

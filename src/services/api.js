@@ -14,11 +14,6 @@ const getProducts = () => {
   return fetch(`${API_ROOT}/products`, { credentials: "include" });
 };
 
-const getVideos = () => {
-  return fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU7s6USfYN4-_Wk6roCXtdjg&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet&maxResults=20`
-  );
-};
 const getRecipes = async () => {
   const response = await fetch(`${API_ROOT}/recipes`);
   return response.json();
@@ -65,6 +60,13 @@ const addTagToContact = (config) => {
   return fetch(`${API_ROOT}/tag`, config).then((res) => res.json());
 };
 
+const addFeedback = (config) => {
+  return fetch(`${API_ROOT}/feedback`, config).then((res) => res.json());
+};
+const addCollaborate = (config) => {
+  return fetch(`${API_ROOT}/collaborate`, config).then((res) => res.json());
+};
+
 export default {
   API_ROOT: API_ROOT,
   activeCampaign: {
@@ -86,14 +88,16 @@ export default {
   product: {
     getProducts: getProducts,
   },
-  youtube: {
-    recipesPlaylist: recipesPlaylist,
-    getVideos: getVideos,
-  },
   recipes: {
     getRecipes: getRecipes,
     newRecipe: newRecipe,
     deleteRecipe: deleteRecipe,
     editRecipe: editRecipe,
+  },
+  collaborate: {
+    addCollaborate: addCollaborate,
+  },
+  feedback: {
+    addFeedback: addFeedback,
   },
 };
