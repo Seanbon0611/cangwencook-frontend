@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
+import api from "../../services/api";
 import "./footer.styles.scss";
 
 const Footer = ({ currentPage }) => {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -44,8 +46,6 @@ const Footer = ({ currentPage }) => {
           api.activeCampaign.addTagToContact(addTagConfig).then((data) => {
             if (data.response.errors) {
               setError(data.response.errors.title);
-            } else {
-              hide();
             }
           });
         }
