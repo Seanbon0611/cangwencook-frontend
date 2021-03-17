@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
 import "./socials.styles.scss";
@@ -7,13 +6,6 @@ import "./socials.styles.scss";
 const Socials = () => {
   return (
     <>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.facebook.com/gwen.kong.9"
-      >
-        <Facebook className="social" />
-      </a>
       <a
         target="_blank"
         rel="noopener noreferrer"
