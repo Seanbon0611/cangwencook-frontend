@@ -74,10 +74,17 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
                 </span>
                 <form className="modal-content" onSubmit={handleSubmit}>
                   <h3>Don't Miss Out!</h3>
-                  <p>
-                    Be the first to know about new recipes, seasonal specials
-                    and more!
+                  <p style={{ padding: "3px 0px" }}>
+                    Win a CanGwenCook sweater!
                   </p>
+                  <p>Sign up for our monthly newsletter to enter!</p>
+                  <div className="newsletter-giveaway">
+                    <img
+                      src="https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png"
+                      alt="newsletter giveaway"
+                      className="giveaway-reward"
+                    />
+                  </div>
                   <NewsletterForm onChange={(e) => setEmail(e.target.value)} />
                   <div className="sbmt-btn">
                     <CustomButton type="submit">Submit</CustomButton>
@@ -85,7 +92,9 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
                   <h3>{error}</h3>
                 </form>
               </div>
-              <Socials />
+              <div style={{ paddingBottom: "10px" }}>
+                <Socials />
+              </div>
             </div>
           </div>
         </div>
