@@ -26,7 +26,7 @@ const AboutPage = ({ recipes, setCurrentPage }) => {
         <h2 style={{ width: "80vw" }}>Hi, my name is Gwen!</h2>
         <h2>What is your cooking style?</h2>
         <p className="about-p">
-          I am an amatuer home cook at heart. CanGwenCook is my way of sharing
+          I am an amateur home cook at heart. CanGwenCook is my way of sharing
           some fun recipes using everyday ingredients which you can pick up at
           your local grocery store.
         </p>
