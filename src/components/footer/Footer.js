@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import NewsletterForm from "../newsletter-form/NewsletterForm";
 import { Link } from "react-router-dom";
-import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
 import api from "../../services/api";
@@ -63,13 +62,6 @@ const Footer = ({ currentPage }) => {
         <NewsletterForm onChange={(e) => setEmail(e.target.value)} />
       </form>
       <div className="socials">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.facebook.com/gwen.kong.9"
-        >
-          <Facebook className="social" />
-        </a>
         <a
           target="_blank"
           rel="noopener noreferrer"

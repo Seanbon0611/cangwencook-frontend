@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "../../assets/cgcv2logo.svg";
-import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
 import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
@@ -64,13 +63,6 @@ const Header = ({ logOut }) => {
         <div className="header">
           <div className="nav-options">
             <div className="utilities">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/gwen.kong.9"
-              >
-                <Facebook className="social" />
-              </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"

@@ -27,6 +27,7 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
     const newContact = await api.activeCampaign
       .newContact(contactConfig)
       .then((data) => {
+        hide();
         if (data.response.errors) {
           setError(data.response.errors.error);
         } else {
@@ -45,8 +46,6 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
           api.activeCampaign.addTagToContact(addTagConfig).then((data) => {
             if (data.response.errors) {
               setError(data.response.errors.title);
-            } else {
-              hide();
             }
           });
         }
