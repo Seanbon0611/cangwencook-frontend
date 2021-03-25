@@ -6,7 +6,6 @@ import Spinner from "../../components/spinner/Spinner";
 import "./recipe-carousel.styles.scss";
 import "swiper/components/navigation/navigation.scss";
 import "../../../node_modules/swiper/swiper-bundle.css";
-import "swiper/components/navigation/navigation.scss";
 SwiperCore.use([Navigation]);
 
 const RecipeCarousel = ({ recipes, loading }) => {
