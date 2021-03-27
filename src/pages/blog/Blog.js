@@ -1,24 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import TagInstagram from "../../components/tag-ig/TagInstagram";
 import RecipeCarousel from "../../components/recipe-carousel/RecipeCarousel";
 import "./blog.styles.scss";
+import { blogs } from "../../blogs";
+import EggBlog from "../../blogs/egg-blog/EggBlog";
 
 const Blog = ({ recipes, setCurrentPage }) => {
+  const memoizedTrigger = useCallback(() => {
+    setCurrentPage("6");
+  }, [setCurrentPage]);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    setCurrentPage("6");
+    memoizedTrigger("6");
     return () => setCurrentPage("");
-  }, []);
+  }, [setCurrentPage, memoizedTrigger]);
   const topThree = recipes.slice(0, 3);
   return (
     <div className="blog-page-container">
       <h1 className="page-title">Blog</h1>
-      <div className="coming-soon">
-        <h1 className="coming-soon">COMING SOON!</h1>
-      </div>
+      {blogs.map((blog) => (
+        <div>
+          <Link to="/blog/egg-blog">
+            <h3>{blog.title}</h3>
+            <p>{blog.preview}</p>
+          </Link>
+        </div>
+      ))}
       <TagInstagram />
       <div className="about-me-pic-container">
         <h2>About Gwen</h2>
