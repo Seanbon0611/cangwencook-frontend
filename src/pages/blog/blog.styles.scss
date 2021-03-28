@@ -10,6 +10,31 @@
     color: #4e4d68;
     justify-content: flex-start;
   }
+  .blog-preview-container {
+    overflow-y: scroll;
+    height: 20rem;
+    margin: 10px 0;
+    .blog-preview {
+      display: flex;
+      text-align: left;
+      border-bottom: 2px solid gray;
+      padding-bottom: 10px;
+      .blog-thumbnail {
+        width: 8rem;
+        height: 6rem;
+      }
+      .blog-preview-text {
+        justify-content: flex-end;
+        --max-lines: 3;
+        --lh: 1.3rem;
+        line-height: var(--lh);
+        max-height: calc(var(--lh) * var(--max-lines));
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
   .latest-recipes {
     padding-top: 20px;
     .top-recipes {

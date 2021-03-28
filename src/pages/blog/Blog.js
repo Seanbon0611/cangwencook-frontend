@@ -21,14 +21,27 @@ const Blog = ({ recipes, setCurrentPage }) => {
   return (
     <div className="blog-page-container">
       <h1 className="page-title">Blog</h1>
-      {blogs.map((blog) => (
-        <div>
-          <Link to="/blog/egg-blog">
-            <h3>{blog.title}</h3>
-            <p>{blog.preview}</p>
-          </Link>
-        </div>
-      ))}
+      <div className="blog-preview-container">
+        {blogs.map((blog) => (
+          <div className="blog-preview" key={blog.title}>
+            <Link
+              className="thumbnail-text"
+              style={{ display: "flex" }}
+              to={`/blog/${blog.path}`}
+            >
+              <img
+                className="blog-thumbnail"
+                src={blog.thumbnail}
+                alt="egg blog"
+              />
+              <div>
+                <h3>{blog.title}</h3>
+                <p className="blog-preview-text">{blog.preview}</p>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
       <TagInstagram />
       <div className="about-me-pic-container">
         <h2>About Gwen</h2>
