@@ -16,6 +16,7 @@
     margin: 10px 0;
     .blog-preview {
       display: flex;
+      justify-content: space-between;
       text-align: left;
       border-bottom: 2px solid gray;
       padding-bottom: 10px;
@@ -31,6 +32,7 @@
         max-height: calc(var(--lh) * var(--max-lines));
         overflow: hidden;
         text-overflow: ellipsis;
+        padding-left: 10px;
       }
     }
   }
