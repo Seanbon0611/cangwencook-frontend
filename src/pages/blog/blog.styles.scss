@@ -20,6 +20,7 @@
       text-align: left;
       border-bottom: 2px solid gray;
       padding-bottom: 10px;
+      margin-bottom: 10px;
       .blog-thumbnail {
         width: 8rem;
         height: 6rem;
@@ -32,7 +33,6 @@
         max-height: calc(var(--lh) * var(--max-lines));
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-left: 10px;
       }
     }
   }

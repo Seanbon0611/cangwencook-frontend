@@ -37,6 +37,7 @@ const Blog = ({ recipes, setCurrentPage }) => {
               <div>
                 <h3 style={{ paddingLeft: "10px" }}>{blog.title}</h3>
                 <p className="blog-preview-text">{blog.preview}</p>
+                <span>...</span>
               </div>
             </Link>
           </div>
