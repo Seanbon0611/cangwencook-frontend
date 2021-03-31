@@ -24,11 +24,7 @@ const Blog = ({ recipes, setCurrentPage }) => {
       <div className="blog-preview-container">
         {blogs.map((blog) => (
           <div className="blog-preview" key={blog.title}>
-            <Link
-              className="thumbnail-text"
-              style={{ display: "flex" }}
-              to={`/blog/${blog.path}`}
-            >
+            <Link className="thumbnail-text" to={`/blog/${blog.path}`}>
               <img
                 className="blog-thumbnail"
                 src={blog.thumbnail}
@@ -37,7 +33,6 @@ const Blog = ({ recipes, setCurrentPage }) => {
               <div>
                 <h3 style={{ paddingLeft: "10px" }}>{blog.title}</h3>
                 <p className="blog-preview-text">{blog.preview}</p>
-                <span>...</span>
               </div>
             </Link>
           </div>
