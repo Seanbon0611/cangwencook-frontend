@@ -18,6 +18,8 @@ import NotFound from "../../pages/not-found/NotFound";
 import FeedbackPage from "../../pages/feedback/FeedbackPage";
 import Spinner from "../../components/spinner/Spinner";
 import VideosPage from "../../pages/videos/VideosPage";
+import EggBlog from "../../blogs/egg-blog/EggBlog";
+import { blogs } from "../../blogs";
 
 const MainContainer = ({ afterLogin, setCurrentPage }) => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -105,6 +107,7 @@ const MainContainer = ({ afterLogin, setCurrentPage }) => {
             render={() => <RecipesPage setCurrentPage={setCurrentPage} />}
           />
           <Route
+            exact
             path="/blog"
             render={() => (
               <Blog recipes={recipes} setCurrentPage={setCurrentPage} />
@@ -155,6 +158,18 @@ const MainContainer = ({ afterLogin, setCurrentPage }) => {
             render={() => (
               <VideosPage recipes={recipes} setCurrentPage={setCurrentPage} />
             )}
+          />
+          <Route
+            exact
+            path="/blog/:path"
+            render={(routerProps) => {
+              const blogTitle = routerProps.match.params.path;
+              const blog = blogs.find((blog) => {
+                debugger;
+                return blog.path === blogTitle;
+              });
+              return blog ? <EggBlog /> : <NotFound />;
+            }}
           />
           <Route render={() => <NotFound setCurrentPage={setCurrentPage} />} />
         </Switch>
