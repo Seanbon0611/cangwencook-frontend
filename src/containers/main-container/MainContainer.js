@@ -164,11 +164,13 @@ const MainContainer = ({ afterLogin, setCurrentPage }) => {
             path="/blog/:path"
             render={(routerProps) => {
               const blogTitle = routerProps.match.params.path;
-              const blog = blogs.find((blog) => {
-                debugger;
-                return blog.path === blogTitle;
-              });
-              return blog ? <EggBlog /> : <NotFound />;
+              switch (blogTitle) {
+                case "egg-blog":
+                  return <EggBlog />;
+
+                default:
+                  return <NotFound />;
+              }
             }}
           />
           <Route render={() => <NotFound setCurrentPage={setCurrentPage} />} />
