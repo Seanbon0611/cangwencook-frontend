@@ -107,6 +107,10 @@ const MainContainer = ({ afterLogin, setCurrentPage }) => {
             render={() => <RecipesPage setCurrentPage={setCurrentPage} />}
           />
           <Route
+            path="/blog/egg-blog"
+            render={() => <EggBlog setCurrentPage={setCurrentPage} />}
+          />
+          <Route
             exact
             path="/blog"
             render={() => (
@@ -158,18 +162,6 @@ const MainContainer = ({ afterLogin, setCurrentPage }) => {
             render={() => (
               <VideosPage recipes={recipes} setCurrentPage={setCurrentPage} />
             )}
-          />
-          <Route
-            exact
-            path="/blog/:path"
-            render={(routerProps) => {
-              const blogTitle = routerProps.match.params.path;
-              const blog = blogs.find((blog) => {
-                debugger;
-                return blog.path === blogTitle;
-              });
-              return blog ? <EggBlog /> : <NotFound />;
-            }}
           />
           <Route render={() => <NotFound setCurrentPage={setCurrentPage} />} />
         </Switch>
