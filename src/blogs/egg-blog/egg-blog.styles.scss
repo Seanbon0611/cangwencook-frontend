@@ -1,0 +1,13 @@
+.egg-blog-container {
+  text-align: left;
+  padding: 0px 15px;
+  .egg-thumbnail {
+    width: 23rem;
+  }
+  .table-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    font-size: 8px;
+    overflow: hidden;
+  }
+}
