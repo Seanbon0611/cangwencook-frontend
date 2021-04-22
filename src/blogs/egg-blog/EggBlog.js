@@ -9,7 +9,7 @@ const EggBlog = () => {
         className="egg-thumbnail"
         src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
       />
-      <p>
+      <p className="apply-spacing">
         <strong>Did you know? According to </strong>
         <a
           href="https://www.healthline.com/nutrition/white-vs-brown-eggs#TOC_TITLE_HDR_3"
@@ -20,60 +20,62 @@ const EggBlog = () => {
         </a>
         <strong>...</strong>
       </p>
-      <p>
+      <p className="apply-spacing">
         <em>
           Egg color depends on the breed of the chicken. For example, White
           Leghorn chickens lay white-shelled eggs, while Plymouth Rocks and
           Rhode Island Reds lay brown-shelled eggs (Source 1, 2)
         </em>
       </p>
-      <p>
+      <p className="apply-spacing">
         <em>
           Several studies have found that shell color has no significant effect
           on egg quality and composition (3)
         </em>
       </p>
-      <p>
+      <p className="apply-spacing">
         <strong>Oops, I ALMOST bought the same colored egg yolks!</strong>
       </p>
-      <p>
+      <p className="apply-spacing">
         One carton is labeled organic, pasture-raised eggs. The other carton is
         labeled free-range eggs. (Open Nature is the brand name and has nothing
         to do with the type of egg).&nbsp;
       </p>
-      <p>
+      <p className="apply-spacing">
         The two egg carton labels are clearly different, with distinctive
         keywords labeled to help consumers differentiate the type of egg they
         were going to purchase.
       </p>
-      <p>
+      <p className="apply-spacing">
         <strong>
           The color of the egg yolk from both carton are both yellow but the
           Organic, Pasture-Raised Egg is deeper in yellow
         </strong>
       </p>
-      <p>
+      <p className="apply-spacing">
         <strong>Honestly&hellip;.</strong>
       </p>
-      <p>
+      <p className="apply-spacing">
         I thought the non-organic, free-range carton of eggs would have a
         lighter or more yellower egg-yolk behind the brown-colored shell.
       </p>
-      <p>
+      <p className="apply-spacing">
         I am going to make it easier for you to compare the egg cartons without
         using too many words. You can view the comparison chart I created below
         to evaluate yourself.&nbsp;
       </p>
-      <p>
+      <p className="apply-spacing">
         I want to extend the opportunity for you to be a smarter consumer when
-        it comes to the type of eggs you like to eat. I&rsquo;m sure that many
-        consumers are confused as they walk down the aisles of their local
-        grocery store with only their{" "}
+        it comes to the type of eggs you like to eat.
+      </p>
+      <p className="apply-spacing">
+        I&rsquo;m sure that many consumers are confused as they walk down the
+        aisles of their local grocery store with only their{" "}
         <strong>&lsquo;this is what I grew up on&rsquo;</strong> lens and
         wanting to save a few dollars to end up with a lower quality carton of
         eggs.
       </p>
-      <p>
+      <p className="apply-spacing">
         <em>
           Note: I am not an egg expert. I am a learner and this is what
           I&rsquo;ve learned about the various eggs. There is more in-depth
@@ -81,7 +83,7 @@ const EggBlog = () => {
           type of learning, then please find Google them.
         </em>
       </p>
-      <p>
+      <p className="apply-spacing">
         To help you quickly compare my two carton of eggs with cage-free and
         commercially-farmed eggs{" "}
         <span style={{ textDecoration: "underline" }}>
@@ -91,73 +93,83 @@ const EggBlog = () => {
         <span style={{ textDecoration: "underline" }}>:</span>
       </p>
       <div className="table-container">
-        <strong>Category</strong>
-        <strong>Organic-Eggs</strong>
-        <strong>Free Range eggs</strong>
-        <strong>Cage-Free eggs</strong>
-        <strong>Commercially-farmed Non Organic Eggs</strong>
-        <strong>Color of egg</strong>
-        <span>Brown or White</span>
-        <span>Brown or White</span>
-        <span>Brown or White</span>
-        <span>Brown or White</span>
-        <strong>Cage</strong>
-        <span>Cage-Free</span>
-        <span>Cage-Free</span>
-        <span>Cage-Free</span>
-        <span>Crowded Cages</span>
-        <strong>Access to Outside Area</strong>
-        <span>Yes but no min. requirements on size of outside area</span>
-        <span>
+        <strong className="table-element">Category</strong>
+        <strong className="table-element">Organic-Eggs</strong>
+        <strong className="table-element">Free Range eggs</strong>
+        <strong className="table-element">Cage-Free eggs</strong>
+        <strong className="table-element">
+          Commercially-farmed Non Organic Eggs
+        </strong>
+        <strong className="table-element">Color of egg</strong>
+        <span className="table-element">Brown or White</span>
+        <span className="table-element">Brown or White</span>
+        <span className="table-element">Brown or White</span>
+        <span className="table-element">Brown or White</span>
+        <strong className="table-element">Cage</strong>
+        <span className="table-element">Cage-Free</span>
+        <span className="table-element">Cage-Free</span>
+        <span className="table-element">Cage-Free</span>
+        <span className="table-element">Crowded Cages</span>
+        <strong className="table-element">Access to Outside Area</strong>
+        <span className="table-element">
+          Yes but no min. requirements on size of outside area
+        </span>
+        <span className="table-element">
           Yes but no min. requirements on size of outside area; No guarantee
           outdoor access
         </span>
-        <span>No guarantee outdoor access, and many never see daylight.</span>
-        <span>None</span>
-        <strong>Pasture-Raised</strong>
-        <span>Free roaming</span>
-        <span>Free roaming</span>
-        <span>Free roaming within barns or covered chicken coops</span>
-        <span>None</span>
-        <strong>Feed</strong>
-        <span>
+        <span className="table-element">
+          No guarantee outdoor access, and many never see daylight.
+        </span>
+        <span className="table-element">None</span>
+        <strong className="table-element">Pasture-Raised</strong>
+        <span className="table-element">Free roaming</span>
+        <span className="table-element">Free roaming</span>
+        <span className="table-element">
+          Free roaming within barns or covered chicken coops
+        </span>
+        <span className="table-element">None</span>
+        <strong className="table-element">Feed</strong>
+        <span className="table-element">
           Organic grain, greens and insects as they can roam; No animal
           by-product ever
         </span>
-        <span>
+        <span className="table-element">
           Grain mixture but can supplement their diet with greens and insects as
           they can roam
         </span>
-        <span>Commercial feed</span>
-        <span>Commercial feed</span>
-        <strong>Antibiotics</strong>
-        <span>No</span>
-        <span>Use is unrestricted</span>
-        <span>Use is unrestricted</span>
-        <span>Use is unrestricted</span>
-        <strong>Use of Pesticide/Fertilizer</strong>
-        <span>No, min, Req is 3+ year of pesticide/fertilizer-free land</span>
-        <span>Possible</span>
-        <span>Highly Possible</span>
-        <span>Highly Possible</span>
-        <strong>Macronutrients</strong>
-        <span>Same</span>
-        <span>Same</span>
-        <span>Same</span>
-        <span>Same</span>
+        <span className="table-element">Commercial feed</span>
+        <span className="table-element">Commercial feed</span>
+        <strong className="table-element">Antibiotics</strong>
+        <span className="table-element">No</span>
+        <span className="table-element">Use is unrestricted</span>
+        <span className="table-element">Use is unrestricted</span>
+        <span className="table-element">Use is unrestricted</span>
+        <strong className="table-element">Use of Pesticide/Fertilizer</strong>
+        <span className="table-element">
+          No, min, Req is 3+ year of pesticide/fertilizer-free land
+        </span>
+        <span className="table-element">Possible</span>
+        <span className="table-element">Highly Possible</span>
+        <span className="table-element">Highly Possible</span>
+        <strong className="table-element">Macronutrients</strong>
+        <span className="table-element">Same</span>
+        <span className="table-element">Same</span>
+        <span className="table-element">Same</span>
+        <span className="table-element">Same</span>
       </div>
-      <p>
+      <p className="apply-spacing">
         <strong>
           What is the difference between organic and non-organic eggs?
         </strong>
       </p>
-      <p>
+      <p className="apply-spacing">
         First and foremost, to receive the USDA organic stamp, farmers will need
         to pass this set of requirements. Naturally, meeting a higher set of
         standards could be inferred as a higher quality product. This stamp
         confirms this hypothetical.
       </p>
-      <p>
+      <p className="apply-spacing">
         According to{" "}
         <a
           href="https://www.dovemed.com/healthy-living/wellness-center/are-organic-eggs-healthier-regular-eggs/"
@@ -167,7 +179,7 @@ const EggBlog = () => {
           DovMed.com
         </a>
       </p>
-      <p>
+      <p className="apply-spacing">
         <em>
           Organic food certification is a self-regulated term depending on the
           national government that regulates it. In the United States, organic
@@ -181,7 +193,7 @@ const EggBlog = () => {
           substances can be used.
         </em>
       </p>
-      <p>
+      <p className="apply-spacing">
         <strong>Heathline.com: </strong>
         <a
           href="https://www.healthline.com/nutrition/white-vs-brown-eggs#TOC_TITLE_HDR_3"
@@ -191,7 +203,7 @@ const EggBlog = () => {
           https://www.healthline.com/nutrition/white-vs-brown-eggs#TOC_TITLE_HDR_3
         </a>
       </p>
-      <p>
+      <p className="apply-spacing">
         <strong>DovMed.com: </strong>
         <a
           href="https://www.dovemed.com/healthy-living/wellness-center/are-organic-eggs-healthier-regular-eggs/"
@@ -203,7 +215,7 @@ const EggBlog = () => {
           </strong>
         </a>
       </p>
-      <p>
+      <p className="apply-spacing">
         <strong>Source 1: </strong>
         <a
           href="https://pubmed.ncbi.nlm.nih.gov/22742508/"
@@ -213,7 +225,7 @@ const EggBlog = () => {
           <strong>https://pubmed.ncbi.nlm.nih.gov/22742508/</strong>
         </a>
       </p>
-      <p>
+      <p className="apply-spacing">
         <strong>Source 2: </strong>
         <a
           href="https://pubmed.ncbi.nlm.nih.gov/11194033/"
@@ -223,7 +235,7 @@ const EggBlog = () => {
           <strong>https://pubmed.ncbi.nlm.nih.gov/11194033/</strong>
         </a>
       </p>
-      <p>
+      <p className="apply-spacing">
         <strong>Source 3: </strong>
         <a
           href="https://pubmed.ncbi.nlm.nih.gov/20181877/"

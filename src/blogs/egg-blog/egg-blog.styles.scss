@@ -2,12 +2,24 @@
   text-align: left;
   padding: 0px 15px;
   .egg-thumbnail {
-    width: 23rem;
+    width: 21rem;
+    padding: 10px 0px;
+  }
+  .apply-spacing {
+    padding: 5px 0px;
   }
   .table-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    font-size: 8px;
+    font-size: 7px;
     overflow: hidden;
+    padding: 10px 0px;
+    .table-element {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgb(31, 31, 31);
+      height: 4rem;
+    }
   }
 }
