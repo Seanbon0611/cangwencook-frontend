@@ -1,12 +1,15 @@
 .egg-blog-container {
   text-align: left;
-  padding: 0px 15px;
+  padding: 0px 15px 40px 15px;
   .egg-thumbnail {
     width: 21rem;
     padding: 10px 0px;
   }
   .apply-spacing {
     padding: 5px 0px;
+  }
+  .egg-blog-img {
+    width: 22rem;
   }
   .table-container {
     display: grid;
@@ -20,6 +23,22 @@
       align-items: center;
       border: 1px solid rgb(31, 31, 31);
       height: 4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 791px) {
+  .egg-blog-container {
+    padding: 0px 380px 80px 380px;
+    .egg-thumbnail {
+      width: 41.5rem;
+    }
+    .apply-spacing {
+      width: 42rem;
+      font-size: 1.1rem;
+    }
+    .egg-blog-img {
+      width: 41.5rem;
     }
   }
 }

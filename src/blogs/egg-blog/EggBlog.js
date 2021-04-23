@@ -6,6 +6,7 @@ const EggBlog = () => {
     <div className="egg-blog-container">
       <h1>How well do you know your eggs?</h1>
       <img
+        alt="handfull of eggs"
         className="egg-thumbnail"
         src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
       />
@@ -21,17 +22,17 @@ const EggBlog = () => {
         <strong>...</strong>
       </p>
       <p className="apply-spacing">
-        <em>
+        <span>
           Egg color depends on the breed of the chicken. For example, White
           Leghorn chickens lay white-shelled eggs, while Plymouth Rocks and
           Rhode Island Reds lay brown-shelled eggs (Source 1, 2)
-        </em>
+        </span>
       </p>
       <p className="apply-spacing">
-        <em>
+        <span>
           Several studies have found that shell color has no significant effect
           on egg quality and composition (3)
-        </em>
+        </span>
       </p>
       <p className="apply-spacing">
         <strong>Oops, I ALMOST bought the same colored egg yolks!</strong>
@@ -46,6 +47,16 @@ const EggBlog = () => {
         keywords labeled to help consumers differentiate the type of egg they
         were going to purchase.
       </p>
+      <img
+        className="egg-blog-img"
+        src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/free-range-carton.png"
+        alt="free-range egg carton"
+      />
+      <img
+        className="egg-blog-img"
+        src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/costco-eggs.png"
+        alt="pasture-raised eggs"
+      />
       <p className="apply-spacing">
         <strong>
           The color of the egg yolk from both carton are both yellow but the
