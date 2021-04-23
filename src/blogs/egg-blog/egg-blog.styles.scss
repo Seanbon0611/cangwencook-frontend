@@ -21,9 +21,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding-left: 5px;
       border: 1px solid rgb(31, 31, 31);
       height: 4rem;
     }
+  }
+  a {
+    color: var(--secondary);
   }
 }
 
@@ -39,6 +43,12 @@
     }
     .egg-blog-img {
       width: 41.5rem;
+    }
+    .table-container {
+      font-size: 0.6rem;
+      .table-element {
+        padding-left: 8px;
+      }
     }
   }
 }

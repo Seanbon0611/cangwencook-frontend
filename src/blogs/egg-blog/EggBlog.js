@@ -22,17 +22,13 @@ const EggBlog = () => {
         <strong>...</strong>
       </p>
       <p className="apply-spacing">
-        <span>
-          Egg color depends on the breed of the chicken. For example, White
-          Leghorn chickens lay white-shelled eggs, while Plymouth Rocks and
-          Rhode Island Reds lay brown-shelled eggs (Source 1, 2)
-        </span>
+        Egg color depends on the breed of the chicken. For example, White
+        Leghorn chickens lay white-shelled eggs, while Plymouth Rocks and Rhode
+        Island Reds lay brown-shelled eggs (Source 1, 2)
       </p>
       <p className="apply-spacing">
-        <span>
-          Several studies have found that shell color has no significant effect
-          on egg quality and composition (3)
-        </span>
+        Several studies have found that shell color has no significant effect on
+        egg quality and composition (3)
       </p>
       <p className="apply-spacing">
         <strong>Oops, I ALMOST bought the same colored egg yolks!</strong>
@@ -211,7 +207,9 @@ const EggBlog = () => {
           target="_blank"
           rel="noreferrer"
         >
-          https://www.healthline.com/nutrition/white-vs-brown-eggs#TOC_TITLE_HDR_3
+          <strong>
+            https://www.healthline.com/nutrition/white-vs-brown-eggs#TOC_TITLE_HDR_3
+          </strong>
         </a>
       </p>
       <p className="apply-spacing">
