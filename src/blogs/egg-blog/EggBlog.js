@@ -59,6 +59,16 @@ const EggBlog = () => {
           Organic, Pasture-Raised Egg is deeper in yellow
         </strong>
       </p>
+      <img
+        className="egg-blog-img"
+        src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/organic-pasture.png"
+        alt="organic pasture egg"
+      />
+      <img
+        className="egg-blog-img"
+        src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/non-organic-free.png"
+        alt="non-organic egg"
+      />
       <p className="apply-spacing">
         <strong>Honestly&hellip;.</strong>
       </p>
