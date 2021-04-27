@@ -1,6 +1,6 @@
 export const blogs = [
   {
-    title: "Eggs",
+    title: "How well do you know your eggs?",
     preview:
       "Did you know? According to Healthline.com that Egg color depends on the breed of the chicken. For example, White Leghorn chickens lay white-shelled eggs, while Plymouth Rocks and Rhode Island Reds lay brown-shelled eggs. Several studies have found that shell color has no significant effect on egg quality and composition",
     thumbnail:
