@@ -1,6 +1,6 @@
 .egg-blog-container {
   text-align: left;
-  padding: 5px 15px 40px 15px;
+  padding: 5px 30px 40px 35px;
   .egg-thumbnail {
     width: 21rem;
     padding: 10px 0px;
@@ -14,16 +14,14 @@
   .table-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    font-size: 7px;
+    font-size: 10px;
     overflow: hidden;
     padding: 10px 0px;
     .table-element {
       display: flex;
-      justify-content: center;
       align-items: center;
       padding-left: 5px;
       border: 1px solid rgb(31, 31, 31);
-      height: 4rem;
     }
   }
   a {

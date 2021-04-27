@@ -77,7 +77,7 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
                   <div>
                     <p className="thankyou-txt">Thank you!</p>
                     <p className="thankyou-txt">
-                      Please check your email to confirm entry
+                      Please check your email to confirm entry.
                     </p>
                     <p className="thankyou-txt">
                       If you do not confirm, your entry will not count!
@@ -89,7 +89,9 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
                     <p style={{ padding: "3px 0px" }}>
                       Win a CanGwenCook sweater!
                     </p>
-                    <p>We will have 3 winners at the end of the month!</p>
+                    <p style={{ whiteSpace: "nowrap" }}>
+                      We will have 3 winners at the end of the month!
+                    </p>
                     <div className="newsletter-giveaway">
                       <img
                         src="https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png"
