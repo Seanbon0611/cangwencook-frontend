@@ -7,6 +7,7 @@ import api from "../../services/api";
 import "./footer.styles.scss";
 
 const Footer = ({ currentPage }) => {
+  const [displayThankYou, setDisplayThankYou] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const handleSubmit = async (e) => {
@@ -47,20 +48,42 @@ const Footer = ({ currentPage }) => {
               setError(data.response.errors.title);
             }
           });
+          setDisplayThankYou(!displayThankYou);
         }
       });
   };
   return (
     <div className="footer">
-      <p style={{ fontWeight: "600", fontSize: "18px", paddingBottom: "5px" }}>
-        Hey, let's keep in touch!
-      </p>
-      <p style={{ fontWeight: "400", fontSize: "14px" }}>
-        Sign up for our newsletter!
-      </p>
-      <form className="newsletter" onSubmit={handleSubmit}>
-        <NewsletterForm onChange={(e) => setEmail(e.target.value)} />
-      </form>
+      {displayThankYou ? (
+        <div>
+          <p className="thankyou-txt">Thank you!</p>
+          <p className="thankyou-txt">
+            Please check your email to confirm entry
+          </p>
+          <p className="thankyou-txt">
+            If you do not confirm, your entry will not count!
+          </p>
+        </div>
+      ) : (
+        <div>
+          <p
+            style={{
+              fontWeight: "600",
+              fontSize: "18px",
+              paddingBottom: "5px",
+            }}
+          >
+            Win a CanGwenCook Sweater!
+          </p>
+          <p style={{ fontWeight: "400", fontSize: "14px" }}>
+            3 Winners Will Be Selected!
+          </p>
+          <form className="newsletter" onSubmit={handleSubmit}>
+            <NewsletterForm onChange={(e) => setEmail(e.target.value)} />
+            <button type="submit"></button>
+          </form>
+        </div>
+      )}
       <div className="socials">
         <a
           target="_blank"

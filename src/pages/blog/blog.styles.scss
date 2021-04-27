@@ -25,29 +25,29 @@
       justify-content: space-between;
       text-align: left;
       border-bottom: 2px solid gray;
-      padding-bottom: 10px;
+      padding-bottom: 6px;
       margin-bottom: 10px;
       .thumbnail-text {
         display: flex;
       }
       .blog-thumbnail {
-        width: 8rem;
-        height: 6rem;
+        width: 10rem;
+        height: 8rem;
       }
       .blog-title {
-        font-size: 1.8rem;
         padding: 0px 0px 10px 10px;
         color: var(--main);
       }
       .blog-preview-text {
         padding-left: 10px;
         justify-content: flex-end;
-        --max-lines: 3;
-        --lh: 1.3rem;
+        --max-lines: 4;
+        --lh: 1rem;
         line-height: var(--lh);
         max-height: calc(var(--lh) * var(--max-lines));
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size: 0.7rem;
       }
     }
   }
@@ -80,6 +80,12 @@
         .blog-thumbnail {
           width: 15rem;
           height: 10rem;
+        }
+        .blog-title {
+          font-size: 1.8rem;
+        }
+        .blog-preview-text {
+          font-size: 1rem;
         }
         .text-preview {
           display: flex;
