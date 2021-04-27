@@ -34,6 +34,11 @@
         width: 8rem;
         height: 6rem;
       }
+      .blog-title {
+        font-size: 1.8rem;
+        padding: 0px 0px 10px 10px;
+        color: var(--main);
+      }
       .blog-preview-text {
         padding-left: 10px;
         justify-content: flex-end;
@@ -70,6 +75,18 @@
       }
     }
     .blog-preview-container {
+      .blog-preview {
+        height: 11rem;
+        .blog-thumbnail {
+          width: 15rem;
+          height: 10rem;
+        }
+        .text-preview {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
     }
     .latest-recipes {
       .top-recipes {

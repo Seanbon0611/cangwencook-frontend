@@ -33,8 +33,8 @@ const Blog = ({ recipes, setCurrentPage }) => {
                   src={blog.thumbnail}
                   alt="egg blog"
                 />
-                <div>
-                  <h3 style={{ paddingLeft: "10px" }}>{blog.title}</h3>
+                <div className="text-preview">
+                  <h3 className="blog-title">{blog.title}</h3>
                   <p className="blog-preview-text">{blog.preview}</p>
                 </div>
               </Link>
@@ -55,8 +55,8 @@ const Blog = ({ recipes, setCurrentPage }) => {
               read more
             </Link>
           </p>
-          {topTwo.map((recipe) => {
-            return <RecipeCard recipe={recipe} />;
+          {topTwo.map((recipe, idx) => {
+            return <RecipeCard key={idx} recipe={recipe} />;
           })}
         </div>
       </div>

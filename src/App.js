@@ -40,6 +40,9 @@ const App = (props) => {
   };
 
   useEffect(() => {
+    if (sessionStorage.getItem("firstvisit") === null) {
+      sessionStorage.setItem("firstvisit", true);
+    }
     const timer = () =>
       setTimeout(() => {
         toggle();
