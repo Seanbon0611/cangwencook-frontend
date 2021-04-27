@@ -58,7 +58,7 @@ const Footer = ({ currentPage }) => {
         <div>
           <p className="thankyou-txt">Thank you!</p>
           <p className="thankyou-txt">
-            Please check your email to confirm entry
+            Please check your email to confirm entry.
           </p>
           <p className="thankyou-txt">
             If you do not confirm, your entry will not count!
@@ -80,7 +80,7 @@ const Footer = ({ currentPage }) => {
           </p>
           <form className="newsletter" onSubmit={handleSubmit}>
             <NewsletterForm onChange={(e) => setEmail(e.target.value)} />
-            <button type="submit"></button>
+            <button className="newsletter-btn" type="submit"></button>
           </form>
         </div>
       )}
