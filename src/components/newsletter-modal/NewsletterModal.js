@@ -7,6 +7,7 @@ import Socials from "../socials/Socials";
 import "./newsletter-modal.styles.scss";
 
 const NewsletterModal = ({ isShowing, hide, currentPage }) => {
+  const [displayThankYou, setDisplayThankYou] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const handleSubmit = async (e) => {
@@ -27,7 +28,6 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
     const newContact = await api.activeCampaign
       .newContact(contactConfig)
       .then((data) => {
-        hide();
         if (data.response.errors) {
           setError(data.response.errors.error);
         } else {
@@ -48,6 +48,7 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
               setError(data.response.errors.title);
             }
           });
+          setDisplayThankYou(!displayThankYou);
         }
       });
   };
@@ -72,25 +73,39 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
                 >
                   &times;
                 </span>
-                <form className="modal-content" onSubmit={handleSubmit}>
-                  <h3>Don't Miss Out!</h3>
-                  <p style={{ padding: "3px 0px" }}>
-                    Win a CanGwenCook sweater!
-                  </p>
-                  <p>Sign up for our monthly newsletter to enter!</p>
-                  <div className="newsletter-giveaway">
-                    <img
-                      src="https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png"
-                      alt="newsletter giveaway"
-                      className="giveaway-reward"
+                {displayThankYou ? (
+                  <div>
+                    <p className="thankyou-txt">Thank you!</p>
+                    <p className="thankyou-txt">
+                      Please check your email to confirm entry
+                    </p>
+                    <p className="thankyou-txt">
+                      If you do not confirm, your entry will not count!
+                    </p>
+                  </div>
+                ) : (
+                  <form className="modal-content" onSubmit={handleSubmit}>
+                    <h3>Don't Miss Out!</h3>
+                    <p style={{ padding: "3px 0px" }}>
+                      Win a CanGwenCook sweater!
+                    </p>
+                    <p>We will have 3 winners at the end of the month!</p>
+                    <div className="newsletter-giveaway">
+                      <img
+                        src="https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png"
+                        alt="newsletter giveaway"
+                        className="giveaway-reward"
+                      />
+                    </div>
+                    <NewsletterForm
+                      onChange={(e) => setEmail(e.target.value)}
                     />
-                  </div>
-                  <NewsletterForm onChange={(e) => setEmail(e.target.value)} />
-                  <div className="sbmt-btn">
-                    <CustomButton type="submit">Submit</CustomButton>
-                  </div>
-                  <h3>{error}</h3>
-                </form>
+                    <div className="sbmt-btn">
+                      <CustomButton type="submit">Submit</CustomButton>
+                    </div>
+                    <h3>{error}</h3>
+                  </form>
+                )}
               </div>
               <div style={{ paddingBottom: "10px" }}>
                 <Socials />

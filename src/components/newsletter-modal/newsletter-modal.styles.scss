@@ -33,6 +33,7 @@
   opacity: 0.3;
   cursor: pointer;
   padding: 10px 0px 0px 0px;
+  height: 3rem;
 }
 
 .modal-content {
@@ -45,6 +46,9 @@
   }
 }
 
+.thankyou-txt {
+  padding: 8px 0px;
+}
 .button-default {
   background: #247ba0;
   color: #fff;
