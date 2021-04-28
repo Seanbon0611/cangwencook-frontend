@@ -89,9 +89,7 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
                     <p style={{ padding: "3px 0px" }}>
                       Win a CanGwenCook sweater!
                     </p>
-                    <p style={{ whiteSpace: "nowrap" }}>
-                      We will have 3 winners at the end of the month!
-                    </p>
+                    <p>We will have 3 winners at the end of the month!</p>
                     <div className="newsletter-giveaway">
                       <img
                         src="https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png"
