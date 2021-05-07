@@ -1,6 +1,11 @@
 import React from "react";
 import "./egg-blog.styles.scss";
-import eggchart from "../../assets/Eggchartpng.png";
+import eggchart from "../../assets/eggblog-assets/Eggchartpng.png";
+import freerangeCarton from "../../assets/eggblog-assets/free-range-carton.png";
+import pastureRaised from "../../assets/eggblog-assets/costco-eggs.png";
+import organicPasture from "../../assets/eggblog-assets/organic-pasture.png";
+import nonOrganicFree from "../../assets/eggblog-assets/non-organic-free.png";
+
 const EggBlog = () => {
   return (
     <div className="egg-blog-container">
@@ -45,12 +50,12 @@ const EggBlog = () => {
       </p>
       <img
         className="egg-blog-img"
-        src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/free-range-carton.png"
+        src={freerangeCarton}
         alt="free-range egg carton"
       />
       <img
         className="egg-blog-img"
-        src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/costco-eggs.png"
+        src={pastureRaised}
         alt="pasture-raised eggs"
       />
       <p className="apply-spacing">
@@ -61,12 +66,12 @@ const EggBlog = () => {
       </p>
       <img
         className="egg-blog-img"
-        src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/organic-pasture.png"
+        src={organicPasture}
         alt="organic pasture egg"
       />
       <img
         className="egg-blog-img"
-        src="https://can-gwen-cook.s3-us-west-1.amazonaws.com/non-organic-free.png"
+        src={nonOrganicFree}
         alt="non-organic egg"
       />
       <p className="apply-spacing">
