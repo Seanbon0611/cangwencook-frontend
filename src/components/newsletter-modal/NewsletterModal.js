@@ -4,6 +4,7 @@ import api from "../../services/api";
 import CustomButton from "../custom-button/CustomButton";
 import NewsletterForm from "../newsletter-form/NewsletterForm";
 import Socials from "../socials/Socials";
+import sweaterNeck from "../../assets/shop-assets/sweaterneck1.png";
 import "./newsletter-modal.styles.scss";
 
 const NewsletterModal = ({ isShowing, hide, currentPage }) => {
@@ -44,6 +45,22 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
             }),
           };
           api.activeCampaign.addTagToContact(addTagConfig).then((data) => {
+            if (data.response.errors) {
+              setError(data.response.errors.title);
+            }
+          });
+          const addContestConfig = {
+            method: "POST",
+            headers: {
+              accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              contact: data.response.contact.id,
+              tag: 11,
+            }),
+          };
+          api.activeCampaign.addTagToContact(addContestConfig).then((data) => {
             if (data.response.errors) {
               setError(data.response.errors.title);
             }
@@ -92,7 +109,7 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
                     <p>We will have 3 winners at the end of the month!</p>
                     <div className="newsletter-giveaway">
                       <img
-                        src="https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png"
+                        src={sweaterNeck}
                         alt="newsletter giveaway"
                         className="giveaway-reward"
                       />
