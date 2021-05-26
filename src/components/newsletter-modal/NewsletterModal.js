@@ -44,6 +44,7 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
               tag: currentPage,
             }),
           };
+          //Create a new tag to keep track of the page the user had visited when subscribing
           api.activeCampaign.addTagToContact(addTagConfig).then((data) => {
             if (data.response.errors) {
               setError(data.response.errors.title);
@@ -60,6 +61,7 @@ const NewsletterModal = ({ isShowing, hide, currentPage }) => {
               tag: 11,
             }),
           };
+          //Create a new tag to enroll user into contest
           api.activeCampaign.addTagToContact(addContestConfig).then((data) => {
             if (data.response.errors) {
               setError(data.response.errors.title);
