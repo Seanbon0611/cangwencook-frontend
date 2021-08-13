@@ -26,6 +26,7 @@ const App = (props) => {
   }
   
   */
+
   const [currentPage, setCurrentPage] = useState("");
   const checkLoggedIn = (user) => {
     if (user.expires) {
@@ -40,12 +41,13 @@ const App = (props) => {
   };
 
   useEffect(() => {
-    if (sessionStorage.getItem("firstvisit") === null) {
-      sessionStorage.setItem("firstvisit", true);
-    }
+    let modal_status = localStorage.getItem("visited");
     const timer = () =>
       setTimeout(() => {
-        toggle();
+        if (!modal_status) {
+          toggle();
+          localStorage.setItem("visited", true);
+        }
       }, 5000);
     timer();
     return () => clearTimeout(timer);
