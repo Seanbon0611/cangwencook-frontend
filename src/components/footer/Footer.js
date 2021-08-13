@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NewsletterForm from "../newsletter-form/NewsletterForm";
+import CustomButton from "../custom-button/CustomButton";
 import { Link } from "react-router-dom";
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/Youtube.svg";
@@ -80,7 +81,7 @@ const Footer = ({ currentPage }) => {
           </p>
           <form className="newsletter" onSubmit={handleSubmit}>
             <NewsletterForm onChange={(e) => setEmail(e.target.value)} />
-            <button className="newsletter-btn" type="submit"></button>
+            <CustomButton type="submit">Submit</CustomButton>
           </form>
         </div>
       )}
@@ -124,7 +125,7 @@ const Footer = ({ currentPage }) => {
         </Link>
       </div>
       <p className="copywrite">
-        Copyright 2020 CanGwenCook. All rights reserved. Terms of use.
+        Copyright 2021 CanGwenCook. All rights reserved. Terms of use.
       </p>
     </div>
   );

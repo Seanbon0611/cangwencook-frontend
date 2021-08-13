@@ -2,8 +2,23 @@
   width: 100%;
   height: 10vh;
   .newsletter {
-    margin: 0 auto;
-    width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .newsletter-input {
+      display: flex;
+      justify-content: center;
+    }
+    .input-container {
+      width: 20rem;
+      .form-input {
+        height: 2rem;
+      }
+    }
+    .custom-button {
+      padding: 0.5rem 1rem;
+    }
   }
   .socials {
     width: 15vw;
