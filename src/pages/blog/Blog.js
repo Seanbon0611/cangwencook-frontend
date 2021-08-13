@@ -60,7 +60,6 @@ const Blog = ({ recipes, setCurrentPage }) => {
           })}
         </div>
       </div>
-      <TagInstagram />
       <div className="about-me-pic-container-mobile">
         <h2 className="about-text">About Gwen</h2>
         <img

@@ -1,7 +1,7 @@
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0px 40px 100px 40px;
+  padding: 0px 0px 100px 40px;
   text-align: left;
 
   .bio {
@@ -27,15 +27,16 @@
     flex-direction: column;
     text-align: center;
     align-self: center;
-    margin-top: 48px;
-    padding-left: 20rem;
+    margin-top: 4rem;
+    margin-left: 10rem;
+    width: 20rem;
   }
 }
 
 .about-p {
   padding: 10px 0px;
   display: flex;
-  width: 60vw;
+  width: 50rem;
 }
 
 @media screen and (max-width: 791px) {
@@ -46,7 +47,8 @@
       width: 90vw;
     }
     .top-recipes {
-      padding-left: 0;
+      margin-left: 0px;
+      width: 100vw;
     }
     h2 {
       font-size: 14px;
